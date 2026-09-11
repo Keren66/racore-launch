@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Racore — 更新日志 | Changelog</title>
+<meta name="description" content="Racore 更新日志——每一次产品发布与能力更新，按时间记录在这里。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDI0IiBoZWlnaHQ9IjEwMjQiIHZpZXdCb3g9IjUyMCAzNTIgNTkwIDU5MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJyYWNvcmVHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0Y3NUQzNiIvPjxzdG9wIG9mZnNldD0iMjglIiBzdG9wLWNvbG9yPSIjQTg2QzhEIi8+PHN0b3Agb2Zmc2V0PSI0OCUiIHN0b3AtY29sb3I9IiM1MTdBRUIiLz48c3RvcC1vZmZzZXQ9Ijc0JSIgc3RvcC1jb2xvcj0iIzJDQjZFRSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFCRDBFQSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIGZpbGw9InVybCgjcmFjb3JlR3JhZCkiPjxwYXRoIGQ9Ik01NTMgNDA1IEg4OTkgQzk4OCA0MDUgMTA1NCA0NzcgMTA1NCA1NjggQzEwNTQgNjQ3IDEwMDYgNzA4IDkzMyA3MzEgTDEwOTAgODg4IEg5NjYgTDgzNiA3NTcgTDg3NyA3MTMgTDgyNCA2NjAgSDg5OSBDOTQ2IDY2MCA5NzkgNjI0IDk3OSA1NzIgQzk3OSA1MjcgOTQ4IDQ4OSA4OTkgNDc4IEg2MjYgWiIvPjxwYXRoIGQ9Ik01NTMgNTU4IEg2NzcgTDgzMiA3MTQgTDY2MiA4ODggSDU0MSBMNzEwIDcxNSBaIi8+PC9nPjwvc3ZnPg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RACORE CHANGELOG — tokens shared with index.html (Racore_W aligned)
+   ============================================================ */
+:root{
+  --page-bg:#FFFFFF;
+  --bg-soft:#FAF9FC;
+  --ink:#1D2129;
+  --ink-2:#4E5969;
+  --ink-3:#86909C;
+  --line:#E5E7EB;
+  --line-2:#F0F1F3;
+  --brand:#517AEB;
+  --brand-ghost:rgba(81,122,235,.10);
+  --live:#3ECF8E;
+  --g1:#F75D36; --g2:#A86C8D; --g3:#517AEB; --g4:#2CB6EE; --g5:#1BD0EA;
+  --racore-grad:linear-gradient(135deg,#F75D36 0%,#A86C8D 28%,#517AEB 48%,#2CB6EE 74%,#1BD0EA 100%);
+  --radius:14px;
+  --radius-lg:20px;
+  --sans:"Inter Tight","Noto Sans SC",system-ui,-apple-system,"Segoe UI","PingFang SC",sans-serif;
+  --mono:"SF Mono","Monaco","Menlo","Consolas",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--page-bg);
+  color:var(--ink-2);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.75;
+  overflow-x:hidden;
+}
+::selection{background:rgba(81,122,235,.22);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:4px}
+.mono{font-family:var(--mono)}
+
+/* ---------- top bar (same as index.html) ---------- */
+.bar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:saturate(1.4) blur(12px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s ease,box-shadow .3s ease;
+}
+.bar.scrolled{border-bottom:1px solid var(--line);box-shadow:0 6px 24px -12px rgba(29,33,41,.14)}
+.bar-in{max-width:1240px;margin:0 auto;height:68px;display:flex;align-items:center;gap:24px;padding:0 24px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:-.01em;color:var(--ink)}
+.brand span{
+  background:var(--racore-grad);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+.nav{display:flex;gap:2px;margin-left:8px}
+.nav a{padding:8px 15px;border-radius:999px;font-size:15px;font-weight:500;color:var(--ink);transition:background .15s,color .15s}
+.nav a:hover{background:var(--brand-ghost);color:var(--brand)}
+.nav a.on{background:var(--brand-ghost);color:var(--brand);font-weight:600}
+.bar-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+
+/* ---------- buttons (same as index.html) ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:600;border-radius:999px;padding:0 24px;
+  border:1.5px solid transparent;cursor:pointer;transition:all .18s;white-space:nowrap;
+  height:44px;line-height:1;box-sizing:border-box;
+}
+.btn .arrow{transition:transform .15s}
+.btn:hover .arrow{transform:translateX(3px)}
+.btn-grad{
+  position:relative;color:#fff;border:none;font-weight:700;
+  background:var(--racore-grad);background-size:160% 160%;background-position:0% 50%;
+  isolation:isolate;
+  transition:background-position .5s ease,transform .2s ease,box-shadow .28s ease;
+}
+.btn-grad:hover{transform:translateY(-1px);background-position:100% 50%;box-shadow:0 12px 28px -8px rgba(81,122,235,.45)}
+.btn-grad span{color:#fff;position:relative;z-index:1}
+.btn-ghost{position:relative;background:transparent;color:var(--ink);border:1.5px solid transparent;height:40px;padding:0 18px;font-weight:500}
+.btn-ghost::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;
+  background:var(--racore-grad);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  pointer-events:none;
+}
+.btn-ghost:hover{transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(81,122,235,.35)}
+.btn-ghost:hover span{
+  background:var(--racore-grad);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+.btn-line{border:1.5px solid var(--line);background:#fff;color:var(--ink)}
+.btn-line:hover{border-color:var(--brand);color:var(--brand)}
+.lang{
+  font-family:var(--mono);font-size:12px;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:999px;padding:6px 13px;background:transparent;cursor:pointer;
+  transition:color .15s,border-color .15s;
+}
+.lang:hover{color:var(--brand);border-color:var(--brand)}
+
+/* ---------- page head ---------- */
+.page-head{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line-2);
+  background:
+    radial-gradient(760px 380px at 12% -10%, rgba(247,93,54,.07), transparent 60%),
+    radial-gradient(760px 420px at 88% 0%, rgba(81,122,235,.09), transparent 60%),
+    linear-gradient(180deg,#FBFAFE 0%,var(--page-bg) 100%);
+}
+.page-head-in{max-width:860px;margin:0 auto;padding:76px 24px 56px}
+.kicker{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;margin-bottom:16px;color:var(--brand);
+  background:var(--brand-ghost);padding:7px 15px;border-radius:999px;
+}
+h1.title{font-size:clamp(32px,4.2vw,48px);font-weight:800;line-height:1.15;letter-spacing:-.015em;color:var(--ink)}
+.page-sub{margin-top:14px;font-size:16.5px;color:var(--ink-2);max-width:44em}
+.page-meta{
+  margin-top:22px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:12.5px;color:var(--ink-3);
+}
+.page-meta .sep{opacity:.4}
+.page-meta b{color:var(--brand);font-weight:600}
+
+/* ---------- changelog list (DeepSeek-style doc entries) ---------- */
+.log-in{max-width:860px;margin:0 auto;padding:24px 24px 96px}
+.log-entry{padding:8px 0 40px;border-bottom:1px solid var(--line);position:relative}
+.log-entry:last-of-type{border-bottom:none}
+.log-date{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:13.5px;font-weight:600;color:var(--ink);
+  margin:24px 0 14px;
+}
+.log-date .anchor{
+  font-family:var(--mono);color:var(--ink-3);font-weight:400;font-size:14px;
+  opacity:0;transition:opacity .15s,color .15s;
+}
+.log-entry:hover .anchor,.log-date .anchor:focus-visible{opacity:1}
+.log-date .anchor:hover{color:var(--brand)}
+.log-title{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  font-size:21px;font-weight:700;color:var(--ink);letter-spacing:-.01em;
+  margin-bottom:14px;
+}
+.log-pill{
+  font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.1em;
+  border-radius:999px;padding:4px 11px;flex:none;
+}
+.log-pill.launch{background:var(--racore-grad);color:#fff;display:inline-flex;align-items:center;gap:6px;box-shadow:0 3px 10px -3px rgba(81,122,235,.45)}
+.log-pill.launch .status-dot{margin:0;width:6px;height:6px}
+.log-pill.update{background:var(--brand-ghost);color:var(--brand)}
+.log-pill.soon{background:transparent;border:1px dashed var(--line);color:var(--ink-3);letter-spacing:.1em}
+.status-dot{
+  display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--live);
+  vertical-align:1px;margin-right:6px;animation:statusPulse 1.8s ease-out infinite;
+}
+@keyframes statusPulse{
+  0%{box-shadow:0 0 0 0 rgba(62,207,142,.45)}
+  70%{box-shadow:0 0 0 8px rgba(62,207,142,0)}
+  100%{box-shadow:0 0 0 0 rgba(62,207,142,0)}
+}
+.log-body p{font-size:15.5px;color:var(--ink-2);line-height:1.85;margin-bottom:12px;max-width:46em}
+.log-body ul{margin:6px 0 14px;padding-left:22px;max-width:46em}
+.log-body li{font-size:15px;color:var(--ink-2);line-height:1.8;margin-bottom:6px}
+.log-body li::marker{color:var(--g4)}
+.log-body code{
+  font-family:var(--mono);font-size:13px;background:var(--bg-soft);border:1px solid var(--line);
+  border-radius:6px;padding:2px 7px;color:var(--brand);
+}
+.log-body strong{color:var(--ink);font-weight:700}
+.log-link{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:14px;font-weight:700;color:var(--brand);margin-top:10px;
+}
+.log-link .arrow{transition:transform .15s}
+.log-link:hover .arrow{transform:translateX(4px)}
+.log-entry.soon .log-body p{color:var(--ink-3)}
+.log-more{margin-top:44px;text-align:center;font-size:14.5px;color:var(--ink-3)}
+.log-more b{color:var(--brand);font-weight:700}
+.log-more a:hover b{text-decoration:underline}
+
+/* ---------- bottom CTA strip ---------- */
+.cta-strip{
+  background:linear-gradient(135deg,#FFE3D6 0%,#FBDDE8 30%,#E4E0F8 62%,#D8EFFB 100%);
+  text-align:center;padding:72px 24px;
+}
+.cta-strip h2{font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:-.015em;color:var(--ink)}
+.cta-strip p{margin:12px auto 0;max-width:32em;color:var(--ink-2);font-size:15.5px}
+.cta-row{display:flex;gap:14px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.cta-row .btn{height:48px;padding:0 28px;font-size:15px}
+.btn-white{background:#fff;border:1.5px solid rgba(255,255,255,.9);color:var(--ink);font-weight:600;box-shadow:0 10px 26px -12px rgba(29,33,41,.3)}
+.btn-white:hover{transform:translateY(-1px);border-color:#fff;box-shadow:0 14px 30px -12px rgba(29,33,41,.35)}
+
+/* ---------- footer (same as index.html) ---------- */
+footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 24px 36px;color:var(--ink-2)}
+.foot-in{max-width:1240px;margin:0 auto}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.foot-brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:800;font-size:18px}
+.foot-brand span{
+  background:var(--racore-grad);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.foot-tag{margin-top:12px;font-size:14px;max-width:32ch;line-height:1.75;color:var(--ink-3)}
+.foot-col h5{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px;font-weight:700}
+.foot-col a{display:block;font-size:14px;padding:5px 0;color:var(--ink-2);transition:color .15s}
+.foot-col a:hover{color:var(--brand)}
+.foot-bottom{
+  margin-top:48px;padding-top:22px;border-top:1px solid var(--line-2);
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  font-size:13px;color:var(--ink-3);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:720px){
+  .nav{display:none}
+  .bar-in{gap:10px;flex-wrap:wrap;height:auto;padding:12px 16px}
+  .bar-right{margin-left:auto;flex-wrap:wrap;gap:8px}
+  .page-head-in{padding:56px 18px 40px}
+  .log-in{padding:16px 18px 72px}
+  .log-title{font-size:18px}
+  .cta-strip{padding:56px 18px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .status-dot{animation:none}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="bar" id="top">
+  <div class="bar-in">
+    <a class="brand" href="index.html" aria-label="Racore home">
+      <span>Racore</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.featured">旗舰发布</a>
+      <a href="#log" class="on" data-i18n="nav.changelog">更新日志</a>
+      <a href="index.html#about" data-i18n="nav.about">关于 Racore</a>
+    </nav>
+    <div class="bar-right">
+      <button class="lang" id="langToggle" aria-label="Switch language">EN</button>
+      <a class="btn btn-ghost" href="https://login.iverycloud.com/"><span>GCR Login</span></a>
+      <a class="btn btn-ghost" href="https://login.racorecloud.com/"><span>Global Login</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PAGE HEAD ============ -->
+<section class="page-head" id="log">
+  <div class="page-head-in">
+    <div class="kicker" data-i18n="log.kicker">Changelog</div>
+    <h1 class="title" data-i18n="log.title">更新日志</h1>
+    <p class="page-sub" data-i18n="log.sub">Racore 产品团队的每一次发布与能力更新，都按时间记录在这里。新产品与新能力，从这里率先公布。</p>
+    <div class="page-meta">
+      <span data-i18n="log.latest">最新发布</span><b id="metaLatest">Racoder</b>
+      <span class="sep">·</span><span class="mono" id="metaDate">2026-08</span>
+      <span class="sep">·</span><span id="metaStatus"><span class="status-dot"></span><b>LIVE</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHANGELOG LIST ============ -->
+<main class="log-in">
+  <div id="logList"><!-- rendered by JS from UPDATES (data.js) --></div>
+  <div class="log-more" data-i18n-html="log.hint">有什么期待看到的新能力？<a href="mailto:keren.zhang@verycloud.cn"><b>告诉我们</b></a>——路线图由使用它的人共同塑造。</div>
+</main>
+
+<!-- ============ CTA STRIP ============ -->
+<section class="cta-strip">
+  <h2 data-i18n="cta.h">回到发布中心，看看旗舰产品。</h2>
+  <p data-i18n="cta.p">最新发布已记录在上——回到发布中心看看旗舰产品，或关注下一个发布。</p>
+  <div class="cta-row">
+    <a class="btn btn-grad" href="index.html#featured"><span data-i18n="cta.b1">返回发布中心</span><span class="arrow">→</span></a>
+    <a class="btn btn-white" href="mailto:keren.zhang@verycloud.cn" data-i18n="cta.b2">邮件联系我们</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span>Racore</span></div>
+        <p class="foot-tag" data-i18n="ft.tag">Racore 产品发布中心——新产品与新能力，从这里率先发布。</p>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="ft.c1">发布</h5>
+        <a href="index.html#featured" data-i18n="nav.featured">旗舰发布</a>
+        <a href="https://racoder.verycloud.cn/profile">Racoder</a>
+        <a href="#log" data-i18n="nav.changelog">更新日志</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="ft.c2">平台</h5>
+        <a href="https://www.racorecloud.com/">Racore Cloud</a>
+        <a href="https://login.iverycloud.com/">GCR Login</a>
+        <a href="https://login.racorecloud.com/">Global Login</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="ft.c3">联系</h5>
+        <a href="mailto:keren.zhang@verycloud.cn" data-i18n="ft.contact">联系我们</a>
+        <a href="index.html#about" data-i18n="nav.about">关于 Racore</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Racore · DATA LINK COMMUNICATION PTE.LTD</span>
+      <button class="lang" id="langToggle2" aria-label="Switch language">EN</button>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+/* ============================================================
+   I18N — 默认中文，右上角切换 EN（与 index.html 共用 localStorage key）
+   ============================================================ */
+const I18N = {
+  zh: {
+    "nav.featured":"旗舰发布","nav.changelog":"更新日志","nav.about":"关于 Racore",
+    "log.kicker":"Changelog",
+    "log.title":"更新日志",
+    "log.sub":"Racore 产品团队的每一次发布与能力更新，都按时间记录在这里。新产品与新能力，从这里率先公布。",
+    "log.latest":"最新发布",
+    "log.datePrefix":"时间: ",
+    "log.type.LAUNCH":"发布","log.type.UPDATE":"更新","log.type.SOON":"预告",
+    "log.hint":'有什么期待看到的新能力？<a href="mailto:keren.zhang@verycloud.cn"><b>告诉我们</b></a>——路线图由使用它的人共同塑造。',
+    "cta.h":"回到发布中心，看看旗舰产品。",
+    "cta.p":"最新发布已记录在上——回到发布中心看看旗舰产品，或关注下一个发布。",
+    "cta.b1":"返回发布中心","cta.b2":"邮件联系我们",
+    "ft.tag":"Racore 产品发布中心——新产品与新能力，从这里率先发布。",
+    "ft.c1":"发布","ft.c2":"平台","ft.c3":"联系","ft.contact":"联系我们"
+  },
+  en: {
+    "nav.featured":"Featured","nav.changelog":"Changelog","nav.about":"About",
+    "log.kicker":"Changelog",
+    "log.title":"Changelog",
+    "log.sub":"Every launch and capability update from the Racore product team, recorded in time order. New products are announced here first.",
+    "log.latest":"Latest release",
+    "log.datePrefix":"Date: ",
+    "log.type.LAUNCH":"LAUNCH","log.type.UPDATE":"UPDATE","log.type.SOON":"SOON",
+    "log.hint":'Have something you\'d like to see next? <a href="mailto:keren.zhang@verycloud.cn"><b>Tell us</b></a> — the roadmap is shaped by the people who use it.',
+    "cta.h":"Back to the launch hub — see what's live.",
+    "cta.p":"Every launch is logged here the moment it ships — head back to the hub, or follow for the next one.",
+    "cta.b1":"Back to launch hub","cta.b2":"Email the team",
+    "ft.tag":"Racore's product launch hub — new products and capabilities, announced here first.",
+    "ft.c1":"Launches","ft.c2":"Platform","ft.c3":"Contact","ft.contact":"Contact us"
+  }
+};
+
+let lang = "zh";
+try { lang = localStorage.getItem("racore-lang") || "zh"; } catch(e){}
+const dict = () => I18N[lang] || I18N.zh;
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+/* ---------- render changelog entries (DeepSeek-style) ---------- */
+function renderLog(){
+  const d = dict();
+  const list = document.getElementById("logList");
+  const seenIds = {};
+  list.innerHTML = UPDATES.map(u => {
+    const title = u.title[lang] || u.title.en || u.title.zh;
+    const typeLabel = d["log.type." + u.type] || u.type;
+    const pillCls = u.type.toLowerCase();
+    const pill = u.type === "LAUNCH"
+      ? '<span class="log-pill launch"><span class="status-dot"></span>' + esc(typeLabel) + '</span>'
+      : '<span class="log-pill ' + pillCls + '">' + esc(typeLabel) + '</span>';
+    const paras = (u.body && (u.body[lang] || u.body.en || u.body.zh) || [])
+      .map(p => "<p>" + p + "</p>").join("");
+    const bullets = (u.bullets && (u.bullets[lang] || u.bullets.en || u.bullets.zh))
+      ? "<ul>" + (u.bullets[lang] || u.bullets.en || u.bullets.zh).map(b => "<li>" + b + "</li>").join("") + "</ul>"
+      : "";
+    let link = "";
+    if (u.link && u.link.href){
+      const label = u.link[lang] || u.link.en || u.link.zh;
+      link = '<a class="log-link" href="' + u.link.href + '"><span>' + esc(label) + '</span><span class="arrow">→</span></a>';
+    }
+    let anchorId = "u-" + u.date.replace(/[^0-9A-Za-z-]/g,"");
+    if (seenIds[anchorId]){ seenIds[anchorId]++; anchorId += "-" + seenIds[anchorId]; }
+    else { seenIds[anchorId] = 1; }
+    return '<article class="log-entry' + (u.type === "SOON" ? " soon" : "") + '" id="' + anchorId + '">' +
+      '<h2 class="log-date"><span>' + esc(d["log.datePrefix"]) + '<span class="mono">' + esc(u.date) + '</span></span>' +
+      '<a class="anchor" href="#' + anchorId + '" aria-label="link to this entry">#</a></h2>' +
+      '<h3 class="log-title">' + pill + "<span>" + title + "</span></h3>" +
+      '<div class="log-body">' + paras + bullets + link + '</div>' +
+    '</article>';
+  }).join("");
+}
+
+/* ---------- page meta from latest release ---------- */
+function renderMeta(){
+  const rel = latestRelease();
+  document.getElementById("metaLatest").textContent = rel.product;
+  document.getElementById("metaDate").textContent = rel.date;
+  document.querySelector("#metaStatus b").textContent = rel.type === "SOON" ? "SOON" : "LIVE";
+  document.title = (lang === "zh")
+    ? "Racore — 更新日志 | Changelog"
+    : "Racore — Changelog | 更新日志";
+}
+
+/* ---------- language switching ---------- */
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = (l === "zh") ? "zh-CN" : "en";
+  const d = dict();
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (d[k] != null) el.textContent = d[k];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => {
+    const k = el.getAttribute("data-i18n-html");
+    if (d[k] != null) el.innerHTML = d[k];
+  });
+  renderLog();
+  renderMeta();
+  const label = (l === "zh") ? "EN" : "中文";
+  document.getElementById("langToggle").textContent = label;
+  document.getElementById("langToggle2").textContent = label;
+  try { localStorage.setItem("racore-lang", l); } catch(e){}
+}
+function toggleLang(){ setLang(lang === "zh" ? "en" : "zh"); }
+document.getElementById("langToggle").addEventListener("click", toggleLang);
+document.getElementById("langToggle2").addEventListener("click", toggleLang);
+
+/* ---------- navbar shadow on scroll ---------- */
+(function(){
+  const bar = document.querySelector('.bar');
+  if(!bar) return;
+  function onScroll(){ bar.classList.toggle('scrolled', window.scrollY > 10); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+setLang(lang);
+</script>
+</body>
+</html>
