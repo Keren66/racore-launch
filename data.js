@@ -46,7 +46,7 @@ const UPDATES = [
         "Desktop v0.5.10, multi-model, with Auto routing per task"
       ]
     },
-    link: { href: "mailto:keren.zhang@verycloud.cn", zh: "获取 RacoreClaw", en: "Get RacoreClaw" }
+    link: { href: "https://racoreclaw.verycloud.cn/download", zh: "获取 RacoreClaw", en: "Get RacoreClaw" }
   },
   {
     date: "2026-09",
