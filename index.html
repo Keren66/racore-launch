@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Racore — 产品发布中心 | Product Launch Hub</title>
-<meta name="description" content="Racore 产品发布中心——新产品与新能力，从这里率先发布。含更新日志（Changelog）。最新发布：RacoreClaw 桌面智能体客户端；旗舰产品：融合 CDN 平台（Fusion CDN）、Racoder 智能体 IDE。">
+<meta name="description" content="Racore 产品发布中心——新产品与新能力，从这里率先发布。含更新日志（Changelog）。最新发布：账单系统通用出账标准接口 v0.1（Universal Billing Standard API）与 5 项体验优化；已发布：RacoreClaw 桌面智能体、融合 CDN 平台（Fusion CDN）、Racore CDN CLI、Racoder 智能体 IDE。">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDI0IiBoZWlnaHQ9IjEwMjQiIHZpZXdCb3g9IjUyMCAzNTIgNTkwIDU5MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJyYWNvcmVHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0Y3NUQzNiIvPjxzdG9wIG9mZnNldD0iMjglIiBzdG9wLWNvbG9yPSIjQTg2QzhEIi8+PHN0b3Agb2Zmc2V0PSI0OCUiIHN0b3AtY29sb3I9IiM1MTdBRUIiLz48c3RvcC1vZmZzZXQ9Ijc0JSIgc3RvcC1jb2xvcj0iIzJDQjZFRSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFCRDBFQSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIGZpbGw9InVybCgjcmFjb3JlR3JhZCkiPjxwYXRoIGQ9Ik01NTMgNDA1IEg4OTkgQzk4OCA0MDUgMTA1NCA0NzcgMTA1NCA1NjggQzEwNTQgNjQ3IDEwMDYgNzA4IDkzMyA3MzEgTDEwOTAgODg4IEg5NjYgTDgzNiA3NTcgTDg3NyA3MTMgTDgyNCA2NjAgSDg5OSBDOTQ2IDY2MCA5NzkgNjI0IDk3OSA1NzIgQzk3OSA1MjcgOTQ4IDQ4OSA4OTkgNDc4IEg2MjYgWiIvPjxwYXRoIGQ9Ik01NTMgNTU4IEg2NzcgTDgzMiA3MTQgTDY2MiA4ODggSDU0MSBMNzEwIDcxNSBaIi8+PC9nPjwvc3ZnPg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -418,20 +418,23 @@ h2.title{font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.18;lette
 .claw-pane .claw-panehead + .claw-row:first-of-type{margin-top:6px}
 
 /* ---------- real product screenshot (Racore CDN CLI section) ---------- */
+/* light chrome — tonally matched to the .claw window above (white surface,
+   --bg-soft caption bar, --ink text, brand-blue tag) so the two featured
+   sections read as one visual family. */
 .shot{
   border-radius:var(--radius-lg);overflow:hidden;
-  background:var(--void);border:1px solid var(--void-2);
-  box-shadow:0 40px 90px -44px rgba(29,33,41,.5),0 12px 30px -18px rgba(81,122,235,.22);
+  background:#fff;border:1px solid var(--line);
+  box-shadow:0 40px 90px -44px rgba(29,33,41,.35),0 12px 30px -18px rgba(81,122,235,.18);
 }
 .shot img{display:block;width:100%;height:auto}
 .feat-shot{max-width:512px;margin:0 auto}
 .shot-cap{
   display:flex;align-items:center;gap:9px;flex-wrap:wrap;
-  padding:12px 16px;background:var(--void-2);border-top:1px solid var(--void-line);
-  font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.62);
+  padding:12px 16px;background:var(--bg-soft);border-top:1px solid var(--line-2);
+  font-family:var(--mono);font-size:11px;color:var(--ink-3);
 }
-.shot-cap b{color:#fff;font-weight:600}
-.shot-cap .tag{color:var(--mint);border:1px solid rgba(44,182,238,.35);border-radius:999px;padding:1px 8px}
+.shot-cap b{color:var(--ink);font-weight:600}
+.shot-cap .tag{color:var(--brand);background:var(--brand-ghost);border:1px solid rgba(81,122,235,.3);border-radius:999px;padding:1px 8px}
 .shot-run{
   display:flex;align-items:center;gap:10px;flex-wrap:wrap;cursor:pointer;
   margin-top:14px;padding:11px 15px;border-radius:12px;
@@ -455,6 +458,51 @@ h2.title{font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.18;lette
 .spec-row>b{margin-left:auto;text-align:right;font-weight:600;color:var(--ink)}
 .spec-row>b.mono,.spec-row>b.m{font-family:var(--mono);font-size:11.5px}
 .spec-row>b.m{color:var(--brand)}
+
+/* ---------- billing api demo (2026-10 billing launch) ---------- */
+/* dark only inside the product surface; the strip below stays light chrome */
+.apicard{max-width:100%}
+.apicard .console-body{padding:18px 20px 20px}
+.api-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 0;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.12)}
+.api-tab{
+  font-family:var(--mono);font-size:11.5px;line-height:1;color:rgba(255,255,255,.55);
+  background:transparent;border:1px solid transparent;border-radius:8px;padding:6px 10px;
+  cursor:pointer;transition:background .15s,color .15s,border-color .15s;
+}
+.api-tab:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.06)}
+.api-tab.on{
+  color:#fff;background:rgba(81,122,235,.22);
+  border-color:rgba(81,122,235,.45);box-shadow:inset 0 0 0 1px rgba(81,122,235,.16);
+}
+.api-pane{min-height:330px}
+.api-pane[hidden]{display:none}
+.api-req{display:flex;align-items:center;gap:8px;margin:16px 0 10px;font-family:var(--mono);font-size:12.5px;min-width:0}
+.api-m{flex:none;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:3px 7px;border-radius:6px;border:1px solid transparent}
+.api-m.get{color:#7DE9FB;background:rgba(27,208,234,.16);border-color:rgba(27,208,234,.42)}
+.api-m.post{color:#FFA98F;background:rgba(247,93,54,.18);border-color:rgba(247,93,54,.42)}
+.api-m.put{color:#FFD489;background:rgba(249,168,37,.18);border-color:rgba(249,168,37,.42)}
+.api-path{color:rgba(255,255,255,.9);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.api-code{
+  margin:0;padding:14px 16px;border-radius:10px;background:rgba(255,255,255,.04);
+  font-family:var(--mono);font-size:11.8px;line-height:1.7;color:rgba(255,255,255,.72);
+  white-space:pre;overflow:auto;max-height:300px;
+}
+.api-code::-webkit-scrollbar{width:8px;height:8px}
+.api-code::-webkit-scrollbar-track{background:transparent}
+.api-code::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:99px}
+.api-note{margin-top:10px;font-size:12px;color:rgba(255,255,255,.45)}
+.bilstrip{
+  margin-top:56px;padding:26px 28px;background:#fff;
+  border:1px solid var(--line-2);border-radius:var(--radius-lg);
+  box-shadow:0 1px 2px rgba(29,33,41,.03),0 18px 40px -34px rgba(29,33,41,.3);
+}
+.bilstrip-h{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px}
+.bilstrip-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.bilstrip-item{display:flex;flex-direction:column}
+.bilstrip-item .n{display:block;font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--brand);margin-bottom:6px}
+.bilstrip-item .t{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.45}
+.bilstrip-item .d{margin-top:6px;font-size:12.5px;color:var(--ink-2);line-height:1.6}
+@media (min-width:1001px){.bilstrip-item .t{min-height:2.9em}}
 
 /* ---------- about (pastel spec cards, W style) ---------- */
 .ab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -514,6 +562,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
   .claw-main{grid-template-columns:160px 1fr}
+  .bilstrip-grid{grid-template-columns:repeat(2,1fr)}
   .hero-inner{grid-template-columns:1fr;gap:44px;padding:88px 20px 64px}
   .hero-visual{justify-content:center}
   .console{max-width:560px}
@@ -524,6 +573,9 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
 @media (max-width:720px){
   .claw-main{grid-template-columns:1fr}
   .claw-side{display:none}
+  .bilstrip-grid{grid-template-columns:1fr}
+  .bilstrip{padding:20px 18px}
+  .api-code{font-size:10.5px}
   .nav{display:none}
   .bar-in{gap:10px;flex-wrap:wrap;height:auto;padding:12px 16px}
   .bar-right{margin-left:auto;flex-wrap:wrap;gap:8px}
@@ -552,7 +604,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
       <span>Racore</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="#featured" data-i18n="nav.featured">旗舰发布</a>
+      <a href="#billing" data-i18n="nav.featured">旗舰发布</a>
       <a href="changelog.html" data-i18n="nav.changelog">更新日志</a>
       <a href="#about" data-i18n="nav.about">关于 Racore</a>
     </nav>
@@ -572,7 +624,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
       <h1 class="display" data-i18n-html="hero.h1">新产品，<em>从这里率先发布</em>。</h1>
       <p class="hero-sub" data-i18n="hero.sub">这里是 Racore 产品团队发布新产品与新能力的地方——从智能体开发工具到云平台服务。收藏本页：更新日志会持续记录每一次发布。</p>
       <div class="hero-cta">
-        <a class="btn btn-grad" href="#featured"><span data-i18n="hero.cta1">看看旗舰发布</span><span class="arrow">→</span></a>
+        <a class="btn btn-grad" href="#billing"><span data-i18n="hero.cta1">看看旗舰发布</span><span class="arrow">→</span></a>
         <a class="btn btn-line" href="changelog.html"><span data-i18n="hero.cta2">浏览更新日志</span></a>
       </div>
       <div class="hero-meta" data-i18n-html="hero.meta"><b>AWS Partner</b> · <b>Cloudflare Partner</b> · 20+ 产品的多云平台</div>
@@ -598,10 +650,234 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
   </div>
 </section>
 
-<!-- ============ FEATURED LAUNCH: RACORECLAW ============ -->
-<section class="section" id="featured">
+<!-- ============ FEATURED LAUNCH: RACORE BILLING ============ -->
+<section class="section" id="billing">
   <div class="feat-head">
-    <div class="kicker" data-i18n="claw.kicker">旗舰发布 · 2026 年 9 月</div>
+    <div class="kicker" data-i18n="bil.kicker">旗舰发布 · 2026 年 10 月</div>
+    <h2 class="title" data-i18n="bil.title">账单系统——通用出账标准接口 v0.1，对外开放。</h2>
+    <p class="sec-sub" data-i18n="bil.sub">一套 REST 接口打通客户、绑定、用量、折扣、账单与告警：第三方平台按 /api/v1/platform/{platformCode} 接入，就能跑完从用量上传到归档推送的全链路。本次同时上线 5 项体验优化。</p>
+  </div>
+  <div class="feat-split">
+    <div class="console apicard" id="apiWin" aria-label="Racore Billing API console demo">
+      <div class="console-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="console-title">racore — billing api v0.1</span>
+      </div>
+      <div class="console-body">
+        <div class="api-tabs" role="tablist" aria-label="billing api endpoints">
+          <button class="api-tab on" type="button" role="tab" data-api="bills" aria-selected="true" aria-controls="api-pane-bills" data-i18n="bil.tab.bills">账单明细</button>
+          <button class="api-tab" type="button" role="tab" data-api="customers" aria-selected="false" aria-controls="api-pane-customers" data-i18n="bil.tab.customers">客户同步</button>
+          <button class="api-tab" type="button" role="tab" data-api="usage" aria-selected="false" aria-controls="api-pane-usage" data-i18n="bil.tab.usage">用量文件</button>
+          <button class="api-tab" type="button" role="tab" data-api="discount" aria-selected="false" aria-controls="api-pane-discount" data-i18n="bil.tab.discount">折扣配置</button>
+          <button class="api-tab" type="button" role="tab" data-api="alert" aria-selected="false" aria-controls="api-pane-alert" data-i18n="bil.tab.alert">告警规则</button>
+        </div>
+        <div class="api-pane" id="api-pane-bills" role="tabpanel">
+          <div class="api-req"><span class="api-m get">GET</span><span class="api-path">/bills/lines?billcycle=202609&amp;customerId=C20260001</span></div>
+          <pre class="api-code">{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "pageNum": 1,
+    "pageSize": 10,
+    "total": 2,
+    "list": [
+      {
+        "resourceId": "E110MNM7YSP4BE", "productCode": "CLOUDFRONT",
+        "regionCode": "AP", "usageType": "TRAFFIC",
+        "description": "AP-DataTransfer-Out-Bytes", "usageAmount": 12.5,
+        "listAmount": 800.00, "discountAmount": 160.00,
+        "taxAmount": 0.00, "amount": 640.00
+      },
+      {
+        "resourceId": "E1AAAAAAAAAAAA", "productCode": "CLOUDFRONT",
+        "regionCode": "AP", "usageType": "HTTPS",
+        "description": "AP-Requests-HTTPS", "usageAmount": 1000000,
+        "listAmount": 260.00, "discountAmount": 52.00,
+        "taxAmount": 0.00, "amount": 208.00
+      }
+    ]
+  }
+}</pre>
+        </div>
+        <div class="api-pane" id="api-pane-customers" role="tabpanel" hidden>
+          <div class="api-req"><span class="api-m post">POST</span><span class="api-path">/customers</span></div>
+          <pre class="api-code">// request
+{
+  "list": [
+    {
+      "externalUserId": "cdn-u-8891",
+      "customerName": "某某科技",
+      "status": "ENABLED"
+    }
+  ]
+}
+
+// response
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "successCount": 1,
+    "fails": [],
+    "list": [
+      {
+        "customerId": "C20260001",
+        "externalUserId": "cdn-u-8891",
+        "customerName": "某某科技",
+        "status": "ENABLED",
+        "taxRate": 0
+      }
+    ]
+  }
+}</pre>
+        </div>
+        <div class="api-pane" id="api-pane-usage" role="tabpanel" hidden>
+          <div class="api-req"><span class="api-m put">PUT</span><span class="api-path">/usage-files/202609/202609_202609141430_001.csv.down</span></div>
+          <pre class="api-code">{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "billcycle": "202609",
+    "fileName": "202609_202609141430_001.csv",
+    "status": "COMPLETED"
+  }
+}</pre>
+        </div>
+        <div class="api-pane" id="api-pane-discount" role="tabpanel" hidden>
+          <div class="api-req"><span class="api-m post">POST</span><span class="api-path">/discount-configs</span></div>
+          <pre class="api-code">// request
+{
+  "kind": "PRODUCT_PERCENT",
+  "name": "EC2 八折",
+  "customerId": "C20260001",
+  "productCode": "AmazonEC2",
+  "rate": 0.8,
+  "status": "ENABLED",
+  "billcycleFrom": "202609"
+}
+
+// response
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "id": "D20260001",
+    "kind": "PRODUCT_PERCENT",
+    "customerId": "C20260001",
+    "productCode": "AmazonEC2",
+    "rate": 0.8,
+    "status": "ENABLED",
+    "billcycleFrom": "202609",
+    "billcycleTo": null
+  }
+}</pre>
+        </div>
+        <div class="api-pane" id="api-pane-alert" role="tabpanel" hidden>
+          <div class="api-req"><span class="api-m post">POST</span><span class="api-path">/alert-rules</span></div>
+          <pre class="api-code">// request
+{
+  "name": "客户月应付金额 80%",
+  "customerId": "C20260001",
+  "threshold": 10000,
+  "triggerPercent": 80,
+  "notifyIntervalHours": 24,
+  "emails": [
+    "ops@example.com"
+  ],
+  "status": "ENABLED"
+}
+
+// response
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "id": "AR20260001",
+    "customerId": "C20260001",
+    "threshold": 10000,
+    "triggerPercent": 80,
+    "notifyIntervalHours": 24,
+    "status": "ENABLED"
+  }
+}</pre>
+        </div>
+        <div class="api-note" data-i18n="bil.apinote">统一响应 { code, message, data, requestId } · 成功 code = 0</div>
+      </div>
+    </div>
+    <div class="feat-copy">
+      <div class="ide-feats">
+        <div class="ide-feat">
+          <span class="ide-feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.8"></ellipse><path d="M5 5.5v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6"></path><path d="M5 11.5v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6"></path></svg></span>
+          <div>
+            <h4 data-i18n="bil.f1h">一套接口，跑完整条出账链路</h4>
+            <p data-i18n="bil.f1p">客户、绑定、用量、折扣、账单、告警、操作记录 9 个模块统一在 /api/v1/platform/{platformCode} 之下，第三方平台一次接入即可完成对接。</p>
+          </div>
+        </div>
+        <div class="ide-feat">
+          <span class="ide-feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10" width="15" height="10" rx="2.5"></rect><path d="M8 10V7.5a4 4 0 0 1 8 0V10"></path><path d="M12 14v2.5"></path></svg></span>
+          <div>
+            <h4 data-i18n="bil.f2h">出账顺序固定，归档即锁定</h4>
+            <p data-i18n="bil.f2p">明细改价 → 产品折扣 → 统一折扣 → 税 → 应付金额；归档后用量、折扣、税率变化不再改这份账单，推送失败可重试。</p>
+          </div>
+        </div>
+        <div class="ide-feat">
+          <span class="ide-feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="5" rx="1.5"></rect><rect x="2.5" y="16" width="6" height="5" rx="1.5"></rect><rect x="15.5" y="16" width="6" height="5" rx="1.5"></rect><path d="M12 7.5v4M12 11.5H5.5v4.5M12 11.5h6.5v4.5"></path></svg></span>
+          <div>
+            <h4 data-i18n="bil.f3h">客户 + 对象两级，改绑不串账</h4>
+            <p data-i18n="bil.f3p">折扣与告警都记在 customerId 名下，对象从 A 改绑到 B 后，A 的配置不会算到 B。</p>
+          </div>
+        </div>
+      </div>
+      <div class="spec">
+        <div class="spec-h" data-i18n="bil.spec.h">接口规格</div>
+        <div class="spec-row"><span data-i18n="bil.c1">基路径</span><b class="mono">/api/v1/platform/{platformCode}</b></div>
+        <div class="spec-row"><span data-i18n="bil.c2">认证</span><b class="mono">Authorization: Bearer</b></div>
+        <div class="spec-row"><span data-i18n="bil.c3">模块</span><b class="m" data-i18n="bil.v3">客户 · 绑定 · 用量 · 折扣 · 账单 · 告警</b></div>
+        <div class="spec-row"><span data-i18n="bil.c4">分页</span><b class="mono">pageNum / pageSize ≤ 100</b></div>
+        <div class="spec-row"><span data-i18n="bil.c5">版本</span><b class="m">v0.1</b></div>
+      </div>
+      <div class="feat-cta-row">
+        <a class="btn btn-grad" href="changelog.html"><span data-i18n="bil.cta">查看更新日志</span><span class="arrow">→</span></a>
+        <span class="feat-note" data-i18n="bil.note">金额主单位两位小数 · 默认 USD · 账期 billcycle = yyyyMM</span>
+      </div>
+    </div>
+  </div>
+  <div class="bilstrip">
+    <div class="bilstrip-h" data-i18n="bil.opt.h">本次同时上线 · 5 项体验优化</div>
+    <div class="bilstrip-grid">
+      <div class="bilstrip-item">
+        <span class="n">01</span>
+        <div class="t" data-i18n="bil.opt1.t">微软账单明细支持订阅 ID 查询</div>
+        <div class="d" data-i18n="bil.opt1.d">按订阅 ID 直接检索账单明细，查账少绕一步</div>
+      </div>
+      <div class="bilstrip-item">
+        <span class="n">02</span>
+        <div class="t" data-i18n="bil.opt2.t">管理租户账单详情页新增归档标识</div>
+        <div class="d" data-i18n="bil.opt2.d">账单是否已归档，在详情页一眼看到</div>
+      </div>
+      <div class="bilstrip-item">
+        <span class="n">03</span>
+        <div class="t" data-i18n="bil.opt3.t">Usage 配置详情页返回逻辑优化</div>
+        <div class="d" data-i18n="bil.opt3.d">从哪个入口进来就回哪个页面，不用重新找</div>
+      </div>
+      <div class="bilstrip-item">
+        <span class="n">04</span>
+        <div class="t" data-i18n="bil.opt4.t">Usage 配置页兼容历史还原数据</div>
+        <div class="d" data-i18n="bil.opt4.d">旧还原配置的展示与保存更顺，历史数据可查可改</div>
+      </div>
+      <div class="bilstrip-item">
+        <span class="n">05</span>
+        <div class="t" data-i18n="bil.opt5.t">消费检测告警新增产品维度成本汇总</div>
+        <div class="d" data-i18n="bil.opt5.d">告警邮件带按产品的成本汇总，快速定位异常来源</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED LAUNCH: RACORECLAW ============ -->
+<section class="section" id="claw">
+  <div class="feat-head">
+    <div class="kicker" data-i18n="claw.kicker">近期发布 · 2026 年 9 月</div>
     <h2 class="title" data-i18n="claw.title">RacoreClaw——接上 MCP，用一个对话框管好云上的一切。</h2>
     <p class="sec-sub" data-i18n="claw.sub">Racore 桌面智能体客户端：本地 stdio 与远程 Streamable HTTP / SSE 的 MCP 服务统一纳管，导入 JSON 即可添加，保存后热重载。查域名、创建加速、看流量账单、收邮件、操作飞书——一句话下达，工具调用与结果全程可见。</p>
   </div>
@@ -916,8 +1192,13 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
   <div class="feat-split">
     <div class="feat-shot">
       <figure class="shot">
+        <div class="claw-titlebar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="claw-wtitle">Amazon Quick Desktop <em>Add MCP</em></span>
+          <span class="claw-wright"><i></i><i></i><i></i></span>
+        </div>
         <img src="assets/racore-cli-amazon-quick.png" width="476" height="403" alt="Amazon Quick Desktop · Add MCP · 粘贴 racore-cli 配置">
-        <figcaption class="shot-cap"><b>Amazon Quick Desktop</b> &middot; Add MCP <span class="tag">stdio</span> <span data-i18n="cli.shot.cap">粘贴 racore-cli 配置即可接入</span></figcaption>
+        <figcaption class="shot-cap"><span class="tag">stdio</span> <span data-i18n="cli.shot.cap">粘贴 racore-cli 配置即可接入</span></figcaption>
       </figure>
       <div class="shot-run" id="cliCmd" role="button" tabindex="0"><span class="p">$</span> racore-cli serve <span class="cursor-blink"></span></div>
       <div class="shot-run-out" id="cliOut" data-i18n="cli.out">&check; MCP Server 已启动 (stdio) &middot; 可被 Kiro / Quick Desktop / Claude Desktop 调用</div>
@@ -1107,7 +1388,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
       </div>
       <div class="foot-col">
         <h5 data-i18n="ft.c1">发布</h5>
-        <a href="#featured" data-i18n="nav.featured">旗舰发布</a>
+        <a href="#billing" data-i18n="nav.featured">旗舰发布</a>
         <a href="https://racoder.verycloud.cn/profile">Racoder</a>
         <a href="changelog.html" data-i18n="nav.changelog">更新日志</a>
       </div>
@@ -1147,7 +1428,29 @@ const I18N = {
     "ch.k1":"最新发布","ch.k2":"状态","ch.k3":"发布时间","ch.k4":"研发中",
     "ch.live":"LIVE","ch.soon":"SOON","ch.v4":"更多产品在路上",
     "ch.out":"✓ 已关注——新发布将第一时间出现在本页",
-    "claw.kicker":"旗舰发布 · 2026 年 9 月",
+    "bil.kicker":"旗舰发布 · 2026 年 10 月",
+    "bil.title":"账单系统——通用出账标准接口 v0.1，对外开放。",
+    "bil.sub":"一套 REST 接口打通客户、绑定、用量、折扣、账单与告警：第三方平台按 /api/v1/platform/{platformCode} 接入，就能跑完从用量上传到归档推送的全链路。本次同时上线 5 项体验优化。",
+    "bil.f1h":"一套接口，跑完整条出账链路",
+    "bil.f1p":"客户、绑定、用量、折扣、账单、告警、操作记录 9 个模块统一在 /api/v1/platform/{platformCode} 之下，第三方平台一次接入即可完成对接。",
+    "bil.f2h":"出账顺序固定，归档即锁定",
+    "bil.f2p":"明细改价 → 产品折扣 → 统一折扣 → 税 → 应付金额；归档后用量、折扣、税率变化不再改这份账单，推送失败可重试。",
+    "bil.f3h":"客户 + 对象两级，改绑不串账",
+    "bil.f3p":"折扣与告警都记在 customerId 名下，对象从 A 改绑到 B 后，A 的配置不会算到 B。",
+    "bil.spec.h":"接口规格",
+    "bil.c1":"基路径","bil.c2":"认证","bil.c3":"模块","bil.c4":"分页","bil.c5":"版本",
+    "bil.v3":"客户 · 绑定 · 用量 · 折扣 · 账单 · 告警",
+    "bil.tab.bills":"账单明细","bil.tab.customers":"客户同步","bil.tab.usage":"用量文件","bil.tab.discount":"折扣配置","bil.tab.alert":"告警规则",
+    "bil.note":"金额主单位两位小数 · 默认 USD · 账期 billcycle = yyyyMM",
+    "bil.apinote":"统一响应 { code, message, data, requestId } · 成功 code = 0",
+    "bil.cta":"查看更新日志",
+    "bil.opt.h":"本次同时上线 · 5 项体验优化",
+    "bil.opt1.t":"微软账单明细支持订阅 ID 查询","bil.opt1.d":"按订阅 ID 直接检索账单明细，查账少绕一步",
+    "bil.opt2.t":"管理租户账单详情页新增归档标识","bil.opt2.d":"账单是否已归档，在详情页一眼看到",
+    "bil.opt3.t":"Usage 配置详情页返回逻辑优化","bil.opt3.d":"从哪个入口进来就回哪个页面，不用重新找",
+    "bil.opt4.t":"Usage 配置页兼容历史还原数据","bil.opt4.d":"旧还原配置的展示与保存更顺，历史数据可查可改",
+    "bil.opt5.t":"消费检测告警新增产品维度成本汇总","bil.opt5.d":"告警邮件带按产品的成本汇总，快速定位异常来源",
+    "claw.kicker":"近期发布 · 2026 年 9 月",
     "claw.title":"RacoreClaw——接上 MCP，用一个对话框管好云上的一切。",
     "claw.sub":"Racore 桌面智能体客户端：本地 stdio 与远程 Streamable HTTP / SSE 的 MCP 服务统一纳管，导入 JSON 即可添加，保存后热重载。查域名、创建加速、看流量账单、收邮件、操作飞书——一句话下达，工具调用与结果全程可见。",
     "claw.nav.new":"新对话","claw.nav.models":"模型","claw.nav.channels":"频道","claw.nav.skills":"技能","claw.nav.cron":"定时任务","claw.nav.dream":"梦境",
@@ -1266,7 +1569,29 @@ const I18N = {
     "ch.k1":"latest release","ch.k2":"status","ch.k3":"launched","ch.k4":"in the lab",
     "ch.live":"LIVE","ch.soon":"SOON","ch.v4":"more on the way",
     "ch.out":"✓ following — new launches will appear on this page",
-    "claw.kicker":"Featured launch · September 2026",
+    "bil.kicker":"Flagship launch · October 2026",
+    "bil.title":"The Billing System — the Universal Billing Standard API v0.1 is open.",
+    "bil.sub":"One set of REST endpoints connects customers, bindings, usage, discounts, bills and alerts: a third-party platform integrates under /api/v1/platform/{platformCode} and runs the whole chain, from usage upload to archive and push. Five experience improvements ship alongside.",
+    "bil.f1h":"One API surface for the entire billing chain",
+    "bil.f1p":"Customer, binding, usage, discount, bill, alert and operation-log modules — nine in all — sit under /api/v1/platform/{platformCode}, so a third-party platform integrates once and is done.",
+    "bil.f2h":"A fixed rating order, and archiving locks the bill",
+    "bil.f2p":"Line adjustment → product discount → unified discount → tax → amount due. Once archived, later changes to usage, discounts or tax rates no longer move that bill, and a failed push can be retried.",
+    "bil.f3h":"Customer and resource tiers — rebinding never leaks",
+    "bil.f3p":"Discounts and alerts are recorded against customerId; when a resource moves from A to B, the configuration on A never lands on B.",
+    "bil.spec.h":"API spec",
+    "bil.c1":"Base path","bil.c2":"Auth","bil.c3":"Modules","bil.c4":"Paging","bil.c5":"Version",
+    "bil.v3":"Customers · Bindings · Usage · Discounts · Bills · Alerts",
+    "bil.tab.bills":"Bill lines","bil.tab.customers":"Customers","bil.tab.usage":"Usage files","bil.tab.discount":"Discounts","bil.tab.alert":"Alert rules",
+    "bil.note":"Amounts in major units, two decimals · USD by default · billcycle = yyyyMM",
+    "bil.apinote":"Uniform envelope { code, message, data, requestId } · code = 0 on success",
+    "bil.cta":"View the changelog",
+    "bil.opt.h":"Also shipping · 5 experience improvements",
+    "bil.opt1.t":"Bill lines searchable by subscription ID","bil.opt1.d":"Look up bill lines directly by subscription ID — one step less per reconciliation",
+    "bil.opt2.t":"Archived flag on the managed-tenant bill page","bil.opt2.d":"See at a glance whether a bill has been archived",
+    "bil.opt3.t":"Better back navigation from Usage config details","bil.opt3.d":"Return to the page you came from, without hunting for it again",
+    "bil.opt4.t":"Usage config page handles restored historical data","bil.opt4.d":"Older restored configurations display and save cleanly; historical data stays viewable and editable",
+    "bil.opt5.t":"Product-level cost breakdown in spend alerts","bil.opt5.d":"Alert emails now carry a per-product cost summary, so anomalies are quick to trace",
+    "claw.kicker":"Recent launch · September 2026",
     "claw.title":"RacoreClaw — plug in MCP, run your cloud from one dialogue.",
     "claw.sub":"Racore's desktop agent client: local stdio and remote Streamable HTTP / SSE MCP servers managed in one place — import JSON to add one, hot-reload on save. Query domains, create acceleration, read traffic and billing, fetch email, operate Lark — one sentence in, tool calls and results in plain sight.",
     "claw.nav.new":"New chat","claw.nav.models":"Models","claw.nav.channels":"Channels","claw.nav.skills":"Skills","claw.nav.cron":"Scheduled","claw.nav.dream":"Dream",
@@ -1449,6 +1774,30 @@ document.getElementById("langToggle2").addEventListener("click", toggleLang);
   function toggle(){ on = !on; out.classList.toggle("show", on); }
   cmd.addEventListener("click", toggle);
   cmd.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); toggle(); } });
+})();
+
+/* ---------- billing api demo: click-driven endpoint tabs (no autoplay) ---------- */
+(function(){
+  const win = document.getElementById("apiWin");
+  if(!win) return;
+  const tabs  = win.querySelectorAll(".api-tab");
+  const panes = win.querySelectorAll(".api-pane");
+  if(!tabs.length || !panes.length) return;
+  function show(name){
+    panes.forEach(p => { p.hidden = (p.id !== "api-pane-" + name); });
+    tabs.forEach(t => {
+      const on = (t.dataset.api === name);
+      t.classList.toggle("on", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+    });
+  }
+  tabs.forEach(t => {
+    t.addEventListener("click", () => show(t.dataset.api));
+    t.addEventListener("keydown", e => {
+      if(e.key === "Enter" || e.key === " "){ e.preventDefault(); show(t.dataset.api); }
+    });
+  });
 })();
 
 /* ---------- live IDE (agent typing code) ---------- */

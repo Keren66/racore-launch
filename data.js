@@ -14,6 +14,43 @@
    ============================================================ */
 const UPDATES = [
   {
+    date: "2026-10-19",
+    type: "LAUNCH",
+    product: "Racore Billing",
+    title: { zh: "账单系统：通用出账标准接口 v0.1 对外开放", en: "Billing System: the Universal Billing Standard API v0.1 is open" },
+    body: {
+      zh: [
+        "<strong>账单系统</strong>本次对外开放<strong>通用出账标准接口 v0.1</strong>：客户同步、对象绑定、用量上传、折扣配置、账单查询与导出、归档推送、金额告警——整套出账能力收敛到一组 REST 接口，第三方平台按 <code>/api/v1/platform/{platformCode}</code> 接入即可跑完从用量到账单的全链路。",
+        "同时上线 5 项体验优化：微软账单明细列表支持订阅 ID 查询、管理租户账单详情页新增归档标识、Usage 配置详情页返回逻辑优化、Usage 配置页面兼容历史还原数据、账单日消费检测告警新增产品维度成本汇总。"
+      ],
+      en: [
+        "<strong>The Billing System</strong> now opens the <strong>Universal Billing Standard API v0.1</strong>: customer sync, resource binding, usage upload, discount configuration, bill query and PDF export, archive and push, amount alerts — the whole billing capability behind one set of REST endpoints, so a third-party platform integrates under <code>/api/v1/platform/{platformCode}</code> and runs the entire usage-to-invoice chain.",
+        "Five experience improvements ship with it: bill lines searchable by subscription ID for Microsoft bills, an archived flag on the managed-tenant bill detail page, better back navigation from the Usage configuration detail, restored historical data supported on the Usage configuration page, and a product-level cost breakdown in daily-spend alert emails."
+      ]
+    },
+    bullets: {
+      zh: [
+        "统一基路径 /api/v1/platform/{platformCode}，Bearer 认证；金额主单位、两位小数，默认 USD",
+        "客户与用量对象两级：对象级折扣与告警必须同时带 customerId + resourceId，对象改绑不串客户",
+        "用量文件按账期上传（数据文件 + 同名 .down 表示传完），同名重传覆盖不累加",
+        "固定出账顺序：明细改价 → 产品折扣 → 统一折扣 → 税 → 应付金额，只影响未发布账单",
+        "归档即锁定，推送独立：未配地址或推送失败停在已归档并可重试，状态为 UNPUBLISHED / ARCHIVED / PUBLISHED",
+        "金额告警按应付金额触发，推送失败同样写入告警历史；操作记录保留 180 天",
+        "同一批优化：账单明细支持订阅 ID 查询、账单详情页归档标识、Usage 配置页返回与历史数据兼容、消费告警新增产品维度成本汇总"
+      ],
+      en: [
+        "One base path, /api/v1/platform/{platformCode}, with Bearer authentication; amounts in major units with two decimals, USD by default",
+        "Two tiers — customer and usage resource: object-level discounts and alerts must carry both customerId and resourceId, and rebinding a resource never crosses customers",
+        "Usage files upload per billcycle (the data file plus a same-named .down marker signals completion); re-uploading the same name overwrites rather than accumulates",
+        "A fixed rating order: line adjustment → product discount → unified discount → tax → amount due, applied only to unpublished bills",
+        "Archiving locks the bill while push stays independent — with no endpoint configured or a failed push the bill remains archived and retryable, with states UNPUBLISHED / ARCHIVED / PUBLISHED",
+        "Amount alerts trigger on the amount due, and failed pushes are still written to alert history; operation records are retained for 180 days",
+        "In the same batch: bill lines searchable by subscription ID, an archived flag on the bill detail page, back navigation and historical-data compatibility on the Usage configuration page, and a product-level cost breakdown in spend alerts"
+      ]
+    },
+    link: null
+  },
+  {
     date: "2026-09-11",
     type: "LAUNCH",
     product: "RacoreClaw",
