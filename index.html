@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Racore — 产品发布中心 | Product Launch Hub</title>
-<meta name="description" content="Racore 产品发布中心——新产品与新能力，从这里率先发布。含更新日志（Changelog）。最新发布：账单系统通用出账标准接口 v0.1（Universal Billing Standard API）与 5 项体验优化；已发布：RacoreClaw 桌面智能体、融合 CDN 平台（Fusion CDN）、Racore CDN CLI、Racoder 智能体 IDE。">
+<meta name="description" content="Racore 产品发布中心——新产品与新能力，从这里率先发布。含更新日志（Changelog）。最新发布：融合 CDN 1.1.2（Cloudflare 渠道全面接入、TLS 1.3、全新日志架构）；已发布：账单系统通用出账标准接口 v0.1、RacoreClaw 桌面智能体、融合 CDN 平台、Racore CDN CLI、Racoder 智能体 IDE。">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDI0IiBoZWlnaHQ9IjEwMjQiIHZpZXdCb3g9IjUyMCAzNTIgNTkwIDU5MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJyYWNvcmVHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0Y3NUQzNiIvPjxzdG9wIG9mZnNldD0iMjglIiBzdG9wLWNvbG9yPSIjQTg2QzhEIi8+PHN0b3Agb2Zmc2V0PSI0OCUiIHN0b3AtY29sb3I9IiM1MTdBRUIiLz48c3RvcC1vZmZzZXQ9Ijc0JSIgc3RvcC1jb2xvcj0iIzJDQjZFRSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFCRDBFQSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIGZpbGw9InVybCgjcmFjb3JlR3JhZCkiPjxwYXRoIGQ9Ik01NTMgNDA1IEg4OTkgQzk4OCA0MDUgMTA1NCA0NzcgMTA1NCA1NjggQzEwNTQgNjQ3IDEwMDYgNzA4IDkzMyA3MzEgTDEwOTAgODg4IEg5NjYgTDgzNiA3NTcgTDg3NyA3MTMgTDgyNCA2NjAgSDg5OSBDOTQ2IDY2MCA5NzkgNjI0IDk3OSA1NzIgQzk3OSA1MjcgOTQ4IDQ4OSA4OTkgNDc4IEg2MjYgWiIvPjxwYXRoIGQ9Ik01NTMgNTU4IEg2NzcgTDgzMiA3MTQgTDY2MiA4ODggSDU0MSBMNzEwIDcxNSBaIi8+PC9nPjwvc3ZnPg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -604,7 +604,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
       <span>Racore</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="#billing" data-i18n="nav.featured">旗舰发布</a>
+      <a href="#featured" data-i18n="nav.featured">旗舰发布</a>
       <a href="changelog.html" data-i18n="nav.changelog">更新日志</a>
       <a href="#about" data-i18n="nav.about">关于 Racore</a>
     </nav>
@@ -624,7 +624,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
       <h1 class="display" data-i18n-html="hero.h1">新产品，<em>从这里率先发布</em>。</h1>
       <p class="hero-sub" data-i18n="hero.sub">这里是 Racore 产品团队发布新产品与新能力的地方——从智能体开发工具到云平台服务。收藏本页：更新日志会持续记录每一次发布。</p>
       <div class="hero-cta">
-        <a class="btn btn-grad" href="#billing"><span data-i18n="hero.cta1">看看旗舰发布</span><span class="arrow">→</span></a>
+        <a class="btn btn-grad" href="#featured"><span data-i18n="hero.cta1">看看旗舰发布</span><span class="arrow">→</span></a>
         <a class="btn btn-line" href="changelog.html"><span data-i18n="hero.cta2">浏览更新日志</span></a>
       </div>
       <div class="hero-meta" data-i18n-html="hero.meta"><b>AWS Partner</b> · <b>Cloudflare Partner</b> · 20+ 产品的多云平台</div>
@@ -650,10 +650,98 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
   </div>
 </section>
 
-<!-- ============ FEATURED LAUNCH: RACORE BILLING ============ -->
+<!-- ============ FEATURED RELEASE: FUSION CDN 1.1.2 ============ -->
+<section class="section" id="featured">
+  <div class="feat-head">
+    <div class="kicker" data-i18n="cdn2.kicker">版本发布 · 2026 年 10 月 23 日</div>
+    <h2 class="title" data-i18n="cdn2.title">融合 CDN 1.1.2——Cloudflare 渠道全面接入，日志架构换代。</h2>
+    <p class="sec-sub" data-i18n="cdn2.sub">本次版本带来 5 项新增能力、5 项体验优化与 4 项问题修复：Cloudflare 渠道全面支持，创建域名可指定回源协议与回源端口，HTTPS 支持 TLS 1.3，全新日志架构上线，注册审核结果通过站内信与邮件通知。</p>
+  </div>
+  <div class="feat-split">
+    <div class="console" style="max-width:100%">
+      <div class="console-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="console-title">racore — fusion cdn v1.1.2</span>
+      </div>
+      <div class="console-body">
+        <div class="p" data-i18n="cdn2.c0"># 版本通道 · 1.1.2 已上线</div>
+        <div class="kv"><span data-i18n="cdn2.c1">版本</span><b class="mono">v1.1.2</b></div>
+        <div class="kv"><span data-i18n="cdn2.c2">加速渠道</span><b class="m">CloudFront · Cloudflare</b></div>
+        <div class="kv"><span data-i18n="cdn2.c3">回源</span><b class="m" data-i18n="cdn2.v3">HTTP / HTTPS · 自定义端口</b></div>
+        <div class="kv"><span data-i18n="cdn2.c4">传输安全</span><b class="mono">TLS 1.3</b></div>
+        <div class="kv"><span data-i18n="cdn2.c5">日志架构</span><b class="m" data-i18n="cdn2.v5">全新架构 · 统一采集查询</b></div>
+        <div class="kv"><span data-i18n="cdn2.c6">证书状态</span><b class="m" data-i18n="cdn2.v6">自动更新 · 过期可识别</b></div>
+        <div class="cmd" id="cdn2Cmd" role="button" tabindex="0"><span class="p">$</span> racore cdn channel enable --vendor cloudflare <span class="cursor-blink"></span></div>
+        <div class="cmd-out" id="cdn2Out" data-i18n="cdn2.out">✓ Cloudflare 渠道已接入 · 域名可按渠道切换调度</div>
+      </div>
+    </div>
+    <div class="feat-copy">
+      <div class="ide-feats">
+        <div class="ide-feat">
+          <span class="ide-feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg></span>
+          <div>
+            <h4 data-i18n="cdn2.f1h">双渠道同台：CloudFront + Cloudflare</h4>
+            <p data-i18n="cdn2.f1p">Cloudflare 渠道全面支持，与 CloudFront 同台调度——域名按业务选择加速渠道，一个控制台管完，不必再为每家厂商各开一套后台。</p>
+          </div>
+        </div>
+        <div class="ide-feat">
+          <span class="ide-feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8"></path><path d="M8 21h8"></path><path d="M12 3v4"></path><circle cx="12" cy="14" r="1.6"></circle></svg></span>
+          <div>
+            <h4 data-i18n="cdn2.f2h">回源与传输按业务配置</h4>
+            <p data-i18n="cdn2.f2p">创建域名时可指定回源协议（HTTP / HTTPS）与回源端口；HTTPS 侧支持 TLS 1.3，握手更快、协议更现代。</p>
+          </div>
+        </div>
+        <div class="ide-feat">
+          <span class="ide-feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></span>
+          <div>
+            <h4 data-i18n="cdn2.f3h">日志与证书换代</h4>
+            <p data-i18n="cdn2.f3p">全新日志架构统一采集与查询；证书状态自动更新，即将过期与已过期可识别，创建域名时只展示可用证书。</p>
+          </div>
+        </div>
+      </div>
+      <div class="feat-cta-row">
+        <a class="btn btn-grad" href="https://www.racorecloud.com/"><span data-i18n="cdn2.cta">进入平台</span><span class="arrow">&rarr;</span></a>
+        <a class="btn btn-ghost" style="height:44px" href="assets/racore-fusioncdn-whitepaper-v1.1.pdf"><span data-i18n="cdn2.cta2">下载产品白皮书</span><span class="arrow">&rarr;</span></a>
+        <span class="feat-note" data-i18n-html="cdn2.note">版本 <b>1.1.2</b> · 白皮书 V1.1R26C06A · 另有 4 项问题修复，详见更新日志</span>
+      </div>
+    </div>
+  </div>
+  <div class="bilstrip">
+    <div class="bilstrip-h" data-i18n="cdn2.opt.h">本次同时上线 · 5 项体验优化</div>
+    <div class="bilstrip-grid">
+      <div class="bilstrip-item">
+        <span class="n">01</span>
+        <div class="t" data-i18n="cdn2.opt1.t">证书状态自动更新</div>
+        <div class="d" data-i18n="cdn2.opt1.d">即将过期、已过期可识别，即将过期的证书仍可正常使用</div>
+      </div>
+      <div class="bilstrip-item">
+        <span class="n">02</span>
+        <div class="t" data-i18n="cdn2.opt2.t">证书访问权限收紧</div>
+        <div class="d" data-i18n="cdn2.opt2.d">加强证书访问权限控制，进一步保障账户数据安全</div>
+      </div>
+      <div class="bilstrip-item">
+        <span class="n">03</span>
+        <div class="t" data-i18n="cdn2.opt3.t">缓存规则批量设置</div>
+        <div class="d" data-i18n="cdn2.opt3.d">规则可批量设置；设置不可修改的请求头/响应头时增加提示</div>
+      </div>
+      <div class="bilstrip-item">
+        <span class="n">04</span>
+        <div class="t" data-i18n="cdn2.opt4.t">域名、证书列表页优化</div>
+        <div class="d" data-i18n="cdn2.opt4.d">列表页体验优化，导出域名时支持附带标签</div>
+      </div>
+      <div class="bilstrip-item">
+        <span class="n">05</span>
+        <div class="t" data-i18n="cdn2.opt5.t">命中率按流量加权</div>
+        <div class="d" data-i18n="cdn2.opt5.d">平均流量命中率改为按实际流量加权，更准确反映缓存效果</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECENT LAUNCH: RACORE BILLING ============ -->
 <section class="section" id="billing">
   <div class="feat-head">
-    <div class="kicker" data-i18n="bil.kicker">旗舰发布 · 2026 年 10 月</div>
+    <div class="kicker" data-i18n="bil.kicker">近期发布 · 2026 年 10 月</div>
     <h2 class="title" data-i18n="bil.title">账单系统——通用出账标准接口 v0.1，对外开放。</h2>
     <p class="sec-sub" data-i18n="bil.sub">一套 REST 接口打通客户、绑定、用量、折扣、账单与告警：第三方平台按 /api/v1/platform/{platformCode} 接入，就能跑完从用量上传到归档推送的全链路。本次同时上线 5 项体验优化。</p>
   </div>
@@ -1129,7 +1217,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
 <!-- ============ PREVIOUS LAUNCH: FUSION CDN ============ -->
 <section class="section" id="fusioncdn">
   <div class="feat-head">
-    <div class="kicker" data-i18n="fus.kicker">旗舰发布 · 2026 年 9 月</div>
+    <div class="kicker" data-i18n="fus.kicker">近期发布 · 2026 年 9 月</div>
     <h2 class="title" data-i18n="fus.title">融合 CDN 平台——一个入口，调度全球 CDN。</h2>
     <p class="sec-sub" data-i18n="fus.sub">整合 AWS CloudFront、Cloudflare 等全球主流 CDN 资源，自研智能调度引擎为每次请求选择最优节点——多云 CDN 的接入、配置、监控与账单，在一个平台完成。</p>
   </div>
@@ -1388,7 +1476,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
       </div>
       <div class="foot-col">
         <h5 data-i18n="ft.c1">发布</h5>
-        <a href="#billing" data-i18n="nav.featured">旗舰发布</a>
+        <a href="#featured" data-i18n="nav.featured">旗舰发布</a>
         <a href="https://racoder.verycloud.cn/profile">Racoder</a>
         <a href="changelog.html" data-i18n="nav.changelog">更新日志</a>
       </div>
@@ -1428,7 +1516,30 @@ const I18N = {
     "ch.k1":"最新发布","ch.k2":"状态","ch.k3":"发布时间","ch.k4":"研发中",
     "ch.live":"LIVE","ch.soon":"SOON","ch.v4":"更多产品在路上",
     "ch.out":"✓ 已关注——新发布将第一时间出现在本页",
-    "bil.kicker":"旗舰发布 · 2026 年 10 月",
+    "cdn2.kicker":"版本发布 · 2026 年 10 月 23 日",
+    "cdn2.title":"融合 CDN 1.1.2——Cloudflare 渠道全面接入，日志架构换代。",
+    "cdn2.sub":"本次版本带来 5 项新增能力、5 项体验优化与 4 项问题修复：Cloudflare 渠道全面支持，创建域名可指定回源协议与回源端口，HTTPS 支持 TLS 1.3，全新日志架构上线，注册审核结果通过站内信与邮件通知。",
+    "cdn2.c0":"# 版本通道 · 1.1.2 已上线",
+    "cdn2.c1":"版本","cdn2.c2":"加速渠道","cdn2.c3":"回源","cdn2.c4":"传输安全","cdn2.c5":"日志架构","cdn2.c6":"证书状态",
+    "cdn2.v3":"HTTP / HTTPS · 自定义端口",
+    "cdn2.v5":"全新架构 · 统一采集查询",
+    "cdn2.v6":"自动更新 · 过期可识别",
+    "cdn2.out":"✓ Cloudflare 渠道已接入 · 域名可按渠道切换调度",
+    "cdn2.f1h":"双渠道同台：CloudFront + Cloudflare",
+    "cdn2.f1p":"Cloudflare 渠道全面支持，与 CloudFront 同台调度——域名按业务选择加速渠道，一个控制台管完，不必再为每家厂商各开一套后台。",
+    "cdn2.f2h":"回源与传输按业务配置",
+    "cdn2.f2p":"创建域名时可指定回源协议（HTTP / HTTPS）与回源端口；HTTPS 侧支持 TLS 1.3，握手更快、协议更现代。",
+    "cdn2.f3h":"日志与证书换代",
+    "cdn2.f3p":"全新日志架构统一采集与查询；证书状态自动更新，即将过期与已过期可识别，创建域名时只展示可用证书。",
+    "cdn2.cta":"进入平台","cdn2.cta2":"下载产品白皮书",
+    "cdn2.note":"版本 <b>1.1.2</b> · 白皮书 V1.1R26C06A · 另有 4 项问题修复，详见更新日志",
+    "cdn2.opt.h":"本次同时上线 · 5 项体验优化",
+    "cdn2.opt1.t":"证书状态自动更新","cdn2.opt1.d":"即将过期、已过期可识别，即将过期的证书仍可正常使用",
+    "cdn2.opt2.t":"证书访问权限收紧","cdn2.opt2.d":"加强证书访问权限控制，进一步保障账户数据安全",
+    "cdn2.opt3.t":"缓存规则批量设置","cdn2.opt3.d":"规则可批量设置；设置不可修改的请求头/响应头时增加提示",
+    "cdn2.opt4.t":"域名、证书列表页优化","cdn2.opt4.d":"列表页体验优化，导出域名时支持附带标签",
+    "cdn2.opt5.t":"命中率按流量加权","cdn2.opt5.d":"平均流量命中率改为按实际流量加权，更准确反映缓存效果",
+    "bil.kicker":"近期发布 · 2026 年 10 月",
     "bil.title":"账单系统——通用出账标准接口 v0.1，对外开放。",
     "bil.sub":"一套 REST 接口打通客户、绑定、用量、折扣、账单与告警：第三方平台按 /api/v1/platform/{platformCode} 接入，就能跑完从用量上传到归档推送的全链路。本次同时上线 5 项体验优化。",
     "bil.f1h":"一套接口，跑完整条出账链路",
@@ -1569,7 +1680,30 @@ const I18N = {
     "ch.k1":"latest release","ch.k2":"status","ch.k3":"launched","ch.k4":"in the lab",
     "ch.live":"LIVE","ch.soon":"SOON","ch.v4":"more on the way",
     "ch.out":"✓ following — new launches will appear on this page",
-    "bil.kicker":"Flagship launch · October 2026",
+    "cdn2.kicker":"Version release · October 23, 2026",
+    "cdn2.title":"Fusion CDN 1.1.2 — the Cloudflare channel lands, and the logging stack is rebuilt.",
+    "cdn2.sub":"This release brings 5 new capabilities, 5 experience improvements and 4 fixes: full Cloudflare channel support, a configurable origin protocol and port at domain creation, TLS 1.3 over HTTPS, a brand-new logging architecture, and signup-review results delivered by in-app message and email.",
+    "cdn2.c0":"# release channel · 1.1.2 is live",
+    "cdn2.c1":"version","cdn2.c2":"channels","cdn2.c3":"origin","cdn2.c4":"transport","cdn2.c5":"logging","cdn2.c6":"certs",
+    "cdn2.v3":"HTTP / HTTPS · custom port",
+    "cdn2.v5":"new stack · one place to query",
+    "cdn2.v6":"auto-updated · expiry detected",
+    "cdn2.out":"✓ Cloudflare channel connected · domains can switch vendors",
+    "cdn2.f1h":"Two channels, one console: CloudFront + Cloudflare",
+    "cdn2.f1p":"Cloudflare is fully supported and dispatched alongside CloudFront — pick the channel per domain and manage both from one console instead of a separate back office for every vendor.",
+    "cdn2.f2h":"Origin and transport, configured your way",
+    "cdn2.f2p":"Choose the origin protocol (HTTP / HTTPS) and origin port when a domain is created; HTTPS now supports TLS 1.3 for a faster, more modern handshake.",
+    "cdn2.f3h":"A new logging stack, smarter certificates",
+    "cdn2.f3p":"The rebuilt logging architecture unifies collection and querying; certificate status updates automatically, expiring and expired certs are recognised, and only usable certificates are offered at domain creation.",
+    "cdn2.cta":"Open the platform","cdn2.cta2":"Download the whitepaper",
+    "cdn2.note":"Version <b>1.1.2</b> · whitepaper V1.1R26C06A · plus 4 bug fixes, detailed in the changelog",
+    "cdn2.opt.h":"Shipping in the same release · 5 improvements",
+    "cdn2.opt1.t":"Certificate status updates itself","cdn2.opt1.d":"Expiring and expired are recognised; a cert nearing expiry still serves traffic",
+    "cdn2.opt2.t":"Tighter certificate access control","cdn2.opt2.d":"Certificate access is further restricted to protect account data",
+    "cdn2.opt3.t":"Bulk cache-rule editing","cdn2.opt3.d":"Rules can be set in bulk, with a hint when a header cannot be modified",
+    "cdn2.opt4.t":"Better domain and certificate lists","cdn2.opt4.d":"Cleaner list pages, and domain export can include tags",
+    "cdn2.opt5.t":"Traffic-weighted cache hit ratio","cdn2.opt5.d":"Average hit ratio is now weighted by real traffic, a truer picture of cache efficiency",
+    "bil.kicker":"Recent launch · October 2026",
     "bil.title":"The Billing System — the Universal Billing Standard API v0.1 is open.",
     "bil.sub":"One set of REST endpoints connects customers, bindings, usage, discounts, bills and alerts: a third-party platform integrates under /api/v1/platform/{platformCode} and runs the whole chain, from usage upload to archive and push. Five experience improvements ship alongside.",
     "bil.f1h":"One API surface for the entire billing chain",
@@ -1769,6 +1903,17 @@ document.getElementById("langToggle2").addEventListener("click", toggleLang);
 (function(){
   const cmd = document.getElementById("cliCmd");
   const out = document.getElementById("cliOut");
+  if(!cmd || !out) return;
+  let on = false;
+  function toggle(){ on = !on; out.classList.toggle("show", on); }
+  cmd.addEventListener("click", toggle);
+  cmd.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); toggle(); } });
+})();
+
+/* ---------- fusion cdn 1.1.2 console: channel command ---------- */
+(function(){
+  const cmd = document.getElementById("cdn2Cmd");
+  const out = document.getElementById("cdn2Out");
   if(!cmd || !out) return;
   let on = false;
   function toggle(){ on = !on; out.classList.toggle("show", on); }

@@ -14,6 +14,57 @@
    ============================================================ */
 const UPDATES = [
   {
+    date: "2026-10-23",
+    type: "UPDATE",
+    product: "Fusion CDN",
+    title: { zh: "融合 CDN 1.1.2 版本发布：Cloudflare 渠道全面接入", en: "Fusion CDN 1.1.2: Cloudflare channel support, TLS 1.3 and a new logging stack" },
+    body: {
+      zh: [
+        "<strong>融合 CDN 1.1.2</strong> 正式发布：新增 Cloudflare 渠道支持，创建域名时可指定回源协议（HTTP / HTTPS）与回源端口，HTTPS 支持 TLS 1.3；注册审核通过后通过站内信与邮件通知，日志架构全面换代。",
+        "同时上线 5 项体验优化与 4 项问题修复：证书状态自动更新并识别即将过期/已过期，证书访问权限收紧，缓存规则支持批量设置，域名与证书列表页优化（导出可附带标签），平均流量命中率改为按实际流量加权。"
+      ],
+      en: [
+        "<strong>Fusion CDN 1.1.2</strong> is out: full Cloudflare channel support, a configurable origin protocol (HTTP / HTTPS) and origin port at domain creation, TLS 1.3 over HTTPS, signup-review results delivered by in-app message and email, and a completely rebuilt logging architecture.",
+        "Five experience improvements and four fixes ship with it: certificate status updates automatically with expiring/expired detection, certificate access control is tightened, cache rules can be set in bulk, the domain and certificate lists are cleaner (domain export can carry tags), and the average cache hit ratio is now weighted by real traffic."
+      ]
+    },
+    bullets: {
+      zh: [
+        "新增：全面支持 Cloudflare 渠道，与 CloudFront 同台调度",
+        "新增：创建域名时可指定回源协议（HTTP / HTTPS）与回源端口",
+        "新增：HTTPS 支持 TLS 1.3",
+        "新增：注册审核通过后，通过站内信与邮件通知",
+        "新增：全面支持全新日志架构",
+        "优化：证书状态自动更新，可识别即将过期/已过期，即将过期的证书仍可正常使用，创建域名时仅展示可用证书",
+        "优化：加强证书访问权限控制，保障账户数据安全",
+        "优化：缓存规则支持批量设置，设置不可修改的请求头/响应头时增加提示",
+        "优化：域名、证书列表页优化，导出域名时支持附带标签",
+        "优化：平均流量命中率改为按实际流量加权，更准确反映整体缓存效果",
+        "修复：文件后缀包含 . 时缓存规则不生效",
+        "修复：同一账号可创建同名标签",
+        "修复：任务中心按日期筛选时无法查询结束日当天任务",
+        "修复：内容包含特殊字符时显示异常或保存失败；工单联系电话改为选填并支持常见号码格式"
+      ],
+      en: [
+        "New: full Cloudflare channel support, dispatched alongside CloudFront",
+        "New: configurable origin protocol (HTTP / HTTPS) and origin port at domain creation",
+        "New: TLS 1.3 support over HTTPS",
+        "New: signup-review results delivered by in-app message and email",
+        "New: the rebuilt logging architecture is fully supported",
+        "Improved: certificate status updates automatically with expiring/expired detection — an expiring cert still serves, and only usable certs are offered at domain creation",
+        "Improved: tighter certificate access control to protect account data",
+        "Improved: cache rules can be set in bulk, with a hint when a header cannot be modified",
+        "Improved: cleaner domain and certificate lists, and domain export can include tags",
+        "Improved: the average cache hit ratio is weighted by real traffic for a truer picture of cache efficiency",
+        "Fixed: cache rules failed to apply when a file extension contained a dot",
+        "Fixed: the same account could create duplicate tag names",
+        "Fixed: the task centre could not query tasks on the end date when filtering by date",
+        "Fixed: content with special characters displayed incorrectly or failed to save; the ticket phone number is now optional and accepts common formats"
+      ]
+    },
+    link: { href: "assets/racore-fusioncdn-whitepaper-v1.1.pdf", zh: "下载产品白皮书", en: "Download the whitepaper" }
+  },
+  {
     date: "2026-10-19",
     type: "LAUNCH",
     product: "Racore Billing",
