@@ -423,6 +423,13 @@ h2.title{font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.18;lette
    SVG generated from Natural Earth 110m land. */
 .fus-grid{display:grid;grid-template-columns:minmax(0,1.24fr) minmax(0,.76fr);gap:44px;align-items:center}
 .cdndash{min-height:0}
+/* the 1.1.2 window carries less content per pane — tighten its sidebar so the
+   window height is driven by the pane instead of the nav column */
+.cdnver .claw-navitem{padding:6px 18px}
+.cdnver .claw-side-h{padding:12px 18px 5px}
+.cdnver .claw-gw{padding:10px 18px 2px}
+#cdnver-pane-ov{justify-content:space-between}
+#cdnver-pane-ov .cdn-specs{margin-top:0;padding-top:0}
 .cdndash .claw-center{padding:14px 16px 15px;display:flex;flex-direction:column;gap:11px}
 .cdn-pane[hidden]{display:none}
 .cdn-pane{display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -476,6 +483,9 @@ h2.title{font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.18;lette
 .cdn-row-r .rl{font-family:var(--mono);font-size:9.5px;color:var(--ink-2);text-align:right}
 .cdn-row-r .rh{font-family:var(--mono);font-size:9.5px;color:#0E9F6E;text-align:right}
 .cdn-specs{display:flex;align-items:center;gap:13px;flex-wrap:wrap;padding:0 1px;font-size:9px;color:var(--ink-3)}
+.cdn-specs{margin-top:auto;padding-top:6px}
+.cdndash .claw-center{display:flex;flex-direction:column}
+.cdndash .cdn-pane:not([hidden]){flex:1 1 auto;min-height:0}
 .cdn-specs>span{display:inline-flex;align-items:center;gap:5px}
 .cdn-specs i{font-style:normal}
 .cdn-specs b{font-family:var(--mono);font-size:9px;font-weight:600;color:var(--ink-2)}
@@ -490,13 +500,45 @@ h2.title{font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.18;lette
 .cdn-log{font-family:var(--mono);font-size:9px;line-height:1.95;color:var(--ink-2);background:var(--bg-soft);border:1px solid var(--line-2);border-radius:10px;padding:8px 10px;white-space:pre;overflow:hidden;text-overflow:ellipsis}
 .cdn-log b{color:#0E9F6E;font-weight:600}
 .cdn-log .t{color:var(--ink-3)}
+.cdn-bars{display:flex;flex-direction:column;gap:7px;border:1px solid var(--line-2);border-radius:11px;padding:10px 12px;background:#fff}
+.cdn-bar{display:grid;grid-template-columns:58px 1fr 16px;align-items:center;gap:9px;font-size:9.5px;color:var(--ink-2)}
+.cdn-bar i{position:relative;height:6px;border-radius:99px;background:var(--line-2);overflow:hidden}
+.cdn-bar i::after{content:"";position:absolute;inset:0;width:var(--w,0);border-radius:99px;background:var(--brand)}
+.cdn-bar.opt i::after{background:#7C6AE8}
+.cdn-bar.fix i::after{background:#E8618C}
+.cdn-bar b{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink);text-align:right}
+.cdn-chan2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.cdn-chan-card{border:1px solid var(--line-2);border-radius:11px;padding:8px 10px 9px;background:#fff;transition:border-color .2s,box-shadow .2s}
+.cdn-chan-card .top{display:flex;align-items:center;gap:6px}
+.cdn-chan-card .ri{width:7px;height:7px;border-radius:50%;flex:none}
+.cdn-chan-card .ri.cf{background:var(--brand)}
+.cdn-chan-card .ri.cl{background:#F6821F}
+.cdn-chan-card b{font-size:11px;font-weight:700;color:var(--ink)}
+.cdn-chan-card .cm{margin-top:5px;font-family:var(--mono);font-size:9px;color:var(--ink-3)}
+.cdn-chan-card.cl.on{border-color:rgba(246,130,31,.55);box-shadow:0 8px 20px -12px rgba(246,130,31,.85)}
+.pill{font-size:8.5px;font-weight:700;border-radius:999px;padding:1.5px 7px;white-space:nowrap}
+.cdn-chan-card .pill{margin-left:auto}
+.pill-ok{color:#0E9F6E;background:rgba(62,207,142,.16)}
+.pill-new{color:#C2620B;background:rgba(246,130,31,.16)}
+.cdn-chip.ok{color:#0E9F6E;background:rgba(62,207,142,.14);border-color:rgba(62,207,142,.35)}
+.cdn-list{display:flex;flex-direction:column}
+.cdn-row-t{display:flex;gap:7px;align-items:flex-start;padding:6px 2px;border-bottom:1px solid var(--line-2);font-size:10.5px;line-height:1.55;color:var(--ink-2)}
+.cdn-row-t:last-child{border-bottom:none}
+.cdn-row-t .tg{flex:none;margin-top:1px;font-size:8.5px;font-weight:700;border-radius:4px;padding:1px 5px;white-space:nowrap}
+.cdn-row-t .tg-new{color:var(--brand);background:var(--brand-ghost)}
+.cdn-row-t .tg-opt{color:#7C6AE8;background:rgba(124,106,232,.13)}
+.cdn-row-t .tg-fix{color:#E8618C;background:rgba(232,97,140,.13)}
+.cdn-row-t .tx{min-width:0}
+.navcnt{display:none;margin-left:auto;font-family:var(--mono);font-size:9px;font-weight:600;color:var(--ink-3);background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;padding:0 5px}
+.navcnt:not(:empty){display:inline-block}
+.claw-navitem.on .navcnt{color:var(--brand);border-color:rgba(81,122,235,.3);background:var(--brand-ghost)}
 .cdn-foot{display:flex;align-items:center;gap:9px;padding:9px 15px;border-top:1px solid var(--line-2);background:var(--bg-soft);font-family:var(--mono);font-size:10.5px;color:var(--ink-2);cursor:pointer;transition:background .15s}
 .cdn-foot:hover{background:#fff}
 .cdn-foot .p{color:var(--brand)}
 .cdn-foot .cursor-blink{width:6px;height:12px;background:var(--brand);vertical-align:-2px}
 .cdn-foot-hint{margin-left:auto;font-family:var(--sans);font-size:9px;color:var(--ink-3);letter-spacing:.02em}
-#fusOut{padding:0 15px;background:var(--bg-soft);font-family:var(--mono);font-size:10px;color:#0E9F6E;border-top:1px solid transparent}
-#fusOut.show{padding-bottom:9px;border-top-color:var(--line-2)}
+#fusOut,#cdn2Out{padding:0 15px;background:var(--bg-soft);font-family:var(--mono);font-size:10px;color:#0E9F6E;border-top:1px solid transparent}
+#fusOut.show,#cdn2Out.show{padding-bottom:9px;border-top-color:var(--line-2)}
 @media (max-width:1000px){
   .fus-grid{grid-template-columns:1fr;gap:40px}
   .cdndash .claw-center{padding:14px}
@@ -753,23 +795,130 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
     <h2 class="title" data-i18n="cdn2.title">融合 CDN 1.1.2——Cloudflare 渠道全面接入，日志架构换代。</h2>
     <p class="sec-sub" data-i18n="cdn2.sub">本次版本带来 5 项新增能力、5 项体验优化与 4 项问题修复：Cloudflare 渠道全面支持，创建域名可指定回源协议与回源端口，HTTPS 支持 TLS 1.3，全新日志架构上线，注册审核结果通过站内信与邮件通知。</p>
   </div>
-  <div class="feat-split">
-    <div class="console" style="max-width:100%">
-      <div class="console-bar">
+  <div class="fus-grid">
+    <div class="claw cdndash cdnver" id="cdnVer" aria-label="Racore 融合 CDN 1.1.2 版本控制台演示">
+      <div class="claw-titlebar">
         <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-        <span class="console-title">racore — fusion cdn v1.1.2</span>
+        <span class="claw-wtitle">Racore CDN <em>v1.1.2 release console</em></span>
+        <span class="claw-wright"><i></i><i></i><i></i></span>
       </div>
-      <div class="console-body">
-        <div class="p" data-i18n="cdn2.c0"># 版本通道 · 1.1.2 已上线</div>
-        <div class="kv"><span data-i18n="cdn2.c1">版本</span><b class="mono">v1.1.2</b></div>
-        <div class="kv"><span data-i18n="cdn2.c2">加速渠道</span><b class="m">CloudFront · Cloudflare</b></div>
-        <div class="kv"><span data-i18n="cdn2.c3">回源</span><b class="m" data-i18n="cdn2.v3">HTTP / HTTPS · 自定义端口</b></div>
-        <div class="kv"><span data-i18n="cdn2.c4">传输安全</span><b class="mono">TLS 1.3</b></div>
-        <div class="kv"><span data-i18n="cdn2.c5">日志架构</span><b class="m" data-i18n="cdn2.v5">全新架构 · 统一采集查询</b></div>
-        <div class="kv"><span data-i18n="cdn2.c6">证书状态</span><b class="m" data-i18n="cdn2.v6">自动更新 · 过期可识别</b></div>
-        <div class="cmd" id="cdn2Cmd" role="button" tabindex="0"><span class="p">$</span> racore cdn channel enable --vendor cloudflare <span class="cursor-blink"></span></div>
-        <div class="cmd-out" id="cdn2Out" data-i18n="cdn2.out">✓ Cloudflare 渠道已接入 · 域名可按渠道切换调度</div>
+      <div class="claw-main">
+        <div class="claw-side">
+          <div class="claw-side-h" data-i18n="cv.nav.h">版本控制台</div>
+<button class="claw-navitem on" type="button" data-cdnpane="ov" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span data-i18n="cv.n1">概览</span><b class="navcnt" id="cdnNav-ov"></b></button><button class="claw-navitem" type="button" data-cdnpane="new" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg><span data-i18n="cv.n2">新增能力</span><b class="navcnt" id="cdnNav-new">5</b></button><button class="claw-navitem" type="button" data-cdnpane="opt" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9"></path><path d="M17 7h3"></path><circle cx="15" cy="7" r="2"></circle><path d="M4 17h5"></path><path d="M13 17h7"></path><circle cx="11" cy="17" r="2"></circle></svg><span data-i18n="cv.n3">体验优化</span><b class="navcnt" id="cdnNav-opt">5</b></button><button class="claw-navitem" type="button" data-cdnpane="fix" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.4 12.4l2.6 2.6 4.6-5.4"></path></svg><span data-i18n="cv.n4">问题修复</span><b class="navcnt" id="cdnNav-fix">4</b></button><button class="claw-navitem" type="button" data-cdnpane="chan" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.3A8 8 0 1 0 9.5 20H18a5 5 0 0 0 0-10z"></path></svg><span data-i18n="cv.n5">渠道</span><b class="navcnt" id="cdnNav-chan"></b></button><button class="claw-navitem" type="button" data-cdnpane="org" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span data-i18n="cv.n6">回源与 TLS</span><b class="navcnt" id="cdnNav-org"></b></button><button class="claw-navitem" type="button" data-cdnpane="ver" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6"></path><path d="M12 7.6h.01"></path></svg><span data-i18n="cv.n7">版本信息</span><b class="navcnt" id="cdnNav-ver"></b></button>
+          <div class="claw-gw"><span class="sdot ok"></span>v1.1.2 · LIVE</div>
+        </div>
+        <div class="claw-center">
+
+          <div class="cdn-pane" id="cdnver-pane-ov" data-pane="ov">
+            <div class="claw-panehead">
+              <div>
+                <h3 data-i18n="cv.ov.h">融合 CDN 1.1.2</h3>
+                <p class="mono" data-i18n="cdn2.c0"># 版本通道 · 1.1.2 已上线</p>
+              </div>
+              <div class="cdn-chans">
+                <span class="cdn-chip">v1.1.2</span>
+                <span class="cdn-chip ok" data-i18n="cv.live">已上线</span>
+              </div>
+            </div>
+            <div class="cdn-bars">
+              <div class="cdn-bar new"><span data-i18n="cv.k1">新增能力</span><i style="--w:100%"></i><b id="cdnCount-new">5</b></div>
+              <div class="cdn-bar opt"><span data-i18n="cv.k2">体验优化</span><i style="--w:100%"></i><b id="cdnCount-opt">5</b></div>
+              <div class="cdn-bar fix"><span data-i18n="cv.k3">问题修复</span><i style="--w:80%"></i><b id="cdnCount-fix">4</b></div>
+            </div>
+            <div class="cdn-chan2">
+              <div class="cdn-chan-card">
+                <div class="top"><i class="ri cf"></i><b>CloudFront</b><span class="pill pill-ok" data-i18n="cv.st.on">运行中</span></div>
+                <div class="cm" data-i18n="cv.cm1">6 域名 · 主用渠道</div>
+              </div>
+              <div class="cdn-chan-card cl" id="cdnChanCF">
+                <div class="top"><i class="ri cl"></i><b>Cloudflare</b><span class="pill pill-new" data-i18n="cv.st.new">新增</span></div>
+                <div class="cm" data-i18n="cv.cm2">同台调度 · 按域名切换</div>
+              </div>
+            </div>
+            <div class="cdn-specs">
+              <span><i data-i18n="cdn2.c1">版本</i><b class="mono">v1.1.2</b></span>
+              <span><i data-i18n="cdn2.c3">回源</i><b data-i18n="cdn2.v3">HTTP / HTTPS · 自定义端口</b></span>
+              <span><i data-i18n="cdn2.c4">传输安全</i><b class="mono">TLS 1.3</b></span>
+            </div>
+          </div>
+
+          <div class="cdn-pane" id="cdnver-pane-new" data-pane="new" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="cv.k1">新增能力</h3>
+              <p class="mono" data-i18n="cv.pnew">本次新增的能力</p>
+            </div></div>
+            <div class="cdn-list" id="cdnList-new"></div>
+          </div>
+
+          <div class="cdn-pane" id="cdnver-pane-opt" data-pane="opt" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="cv.k2">体验优化</h3>
+              <p class="mono" data-i18n="cv.popt">本次体验优化</p>
+            </div></div>
+            <div class="cdn-list" id="cdnList-opt"></div>
+          </div>
+
+          <div class="cdn-pane" id="cdnver-pane-fix" data-pane="fix" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="cv.k3">问题修复</h3>
+              <p class="mono" data-i18n="cv.pfix">本次问题修复</p>
+            </div></div>
+            <div class="cdn-list" id="cdnList-fix"></div>
+          </div>
+
+          <div class="cdn-pane" id="cdnver-pane-chan" data-pane="chan" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="cv.n5">渠道</h3>
+              <p class="mono" data-i18n="cv.pchan">CloudFront + Cloudflare 同台</p>
+            </div></div>
+            <div class="cdn-chan2">
+              <div class="cdn-chan-card">
+                <div class="top"><i class="ri cf"></i><b>CloudFront</b><span class="pill pill-ok" data-i18n="cv.st.on">运行中</span></div>
+                <div class="cm" data-i18n="cv.cm1">6 域名 · 主用渠道</div>
+              </div>
+              <div class="cdn-chan-card cl">
+                <div class="top"><i class="ri cl"></i><b>Cloudflare</b><span class="pill pill-new" data-i18n="cv.st.new">新增</span></div>
+                <div class="cm" data-i18n="cv.cm2">同台调度 · 按域名切换</div>
+              </div>
+            </div>
+            <div class="cdn-rows">
+              <div class="cdn-row"><b data-i18n="cv.x1">调度方式</b><span class="m" data-i18n="cv.x1v">两个渠道同台调度</span></div>
+              <div class="cdn-row"><b data-i18n="cv.x2">域名切换</b><span class="m" data-i18n="cv.x2v">按域名选择加速渠道</span></div>
+              <div class="cdn-row"><b data-i18n="cv.x3">控制台</b><span class="m" data-i18n="cv.x3v">一个后台管完两个渠道</span></div>
+            </div>
+          </div>
+
+          <div class="cdn-pane" id="cdnver-pane-org" data-pane="org" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="cv.n6">回源与 TLS</h3>
+              <p class="mono" data-i18n="cv.porg">创建域名时可指定回源协议与端口</p>
+            </div></div>
+            <div class="cdn-rows">
+              <div class="cdn-row"><b data-i18n="cv.y1">回源协议</b><span class="m">HTTP / HTTPS</span></div>
+              <div class="cdn-row"><b data-i18n="cv.y2">回源端口</b><span class="m" data-i18n="cv.y2v">自定义端口</span></div>
+              <div class="cdn-row"><b data-i18n="cdn2.c4">传输安全</b><span class="m">TLS 1.3</span></div>
+              <div class="cdn-row"><b data-i18n="cv.y3">证书</b><span class="m" data-i18n="cv.y3v">自动更新 · 过期可识别</span></div>
+            </div>
+          </div>
+
+          <div class="cdn-pane" id="cdnver-pane-ver" data-pane="ver" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="cv.n7">版本信息</h3>
+              <p class="mono" data-i18n="cv.pver">发布记录与文档</p>
+            </div></div>
+            <div class="cdn-rows">
+              <div class="cdn-row"><b data-i18n="cdn2.c1">版本</b><span class="m">v1.1.2</span></div>
+              <div class="cdn-row"><b data-i18n="cv.z1">发布日期</b><span class="m">2026-10-23</span></div>
+              <div class="cdn-row"><b data-i18n="cv.z2">白皮书</b><span class="m">V1.1R26C06A</span></div>
+              <div class="cdn-row"><b data-i18n="cv.z3">升级方式</b><span class="m" data-i18n="cv.z3v">控制台自动生效</span></div>
+            </div>
+          </div>
+
+        </div>
       </div>
+      <div class="cdn-foot" id="cdn2Cmd" role="button" tabindex="0"><span class="p">$</span> racore cdn channel enable --vendor cloudflare <span class="cursor-blink"></span><span class="cdn-foot-hint" data-i18n="fus.demo">示例数据</span></div>
+      <div class="cmd-out" id="cdn2Out" data-i18n="cdn2.out">✓ Cloudflare 渠道已接入 · 域名可按渠道切换调度</div>
     </div>
     <div class="feat-copy">
       <div class="ide-feats">
@@ -1332,7 +1481,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
         </div>
         <div class="claw-center">
 
-          <div class="cdn-pane" id="cdn-pane-ov">
+          <div class="cdn-pane" id="cdn-pane-ov" data-pane="ov">
             <div class="claw-panehead">
               <div>
                 <h3 data-i18n="fus.ov.h">全球 CDN 调度控制台</h3>
@@ -1393,7 +1542,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
             </div>
           </div>
 
-          <div class="cdn-pane" id="cdn-pane-dom" hidden>
+          <div class="cdn-pane" id="cdn-pane-dom" data-pane="dom" hidden>
             <div class="claw-panehead"><div>
               <h3 data-i18n="fus.nav2">域名管理</h3>
               <p class="mono" data-i18n="fus.p2s">3 个域名 · 双渠道已同步</p>
@@ -1401,7 +1550,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
             <div class="cdn-rows"><div class="cdn-row"><b>example.com</b><span class="m">CloudFront</span><span class="st ok" data-i18n="fus.st.ok">已签发</span></div><div class="cdn-row"><b>static.example.com</b><span class="m">Cloudflare</span><span class="st ok" data-i18n="fus.st.ok">已签发</span></div><div class="cdn-row"><b>img.example.com</b><span class="m">CloudFront</span><span class="st warn" data-i18n="fus.st.warn">即将过期</span></div></div>
           </div>
 
-          <div class="cdn-pane" id="cdn-pane-cache" hidden>
+          <div class="cdn-pane" id="cdn-pane-cache" data-pane="cache" hidden>
             <div class="claw-panehead"><div>
               <h3 data-i18n="fus.nav3">缓存规则</h3>
               <p class="mono" data-i18n="fus.p3s">按路径分层缓存</p>
@@ -1409,7 +1558,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
             <div class="cdn-rows"><div class="cdn-row"><b>/static/*</b><span class="m" data-i18n="fus.r.c30">缓存 30 天</span></div><div class="cdn-row"><b>/api/*</b><span class="m" data-i18n="fus.r.bypass">不缓存</span></div><div class="cdn-row"><b>/img/*</b><span class="m" data-i18n="fus.r.follow">跟随源站</span></div></div>
           </div>
 
-          <div class="cdn-pane" id="cdn-pane-rule" hidden>
+          <div class="cdn-pane" id="cdn-pane-rule" data-pane="rule" hidden>
             <div class="claw-panehead"><div>
               <h3 data-i18n="fus.nav4">分发规则</h3>
               <p class="mono" data-i18n="fus.p4s">按地域就近选择渠道</p>
@@ -1417,7 +1566,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
             <div class="cdn-rows"><div class="cdn-row"><b data-i18n="fus.r.cn">中国内地</b><span class="m">CloudFront</span></div><div class="cdn-row"><b data-i18n="fus.r.apac">亚太</b><span class="m">Cloudflare</span></div><div class="cdn-row"><b data-i18n="fus.r.other">其他</b><span class="m" data-i18n="fus.r.auto">GSLB 自动</span></div></div>
           </div>
 
-          <div class="cdn-pane" id="cdn-pane-log" hidden>
+          <div class="cdn-pane" id="cdn-pane-log" data-pane="log" hidden>
             <div class="claw-panehead"><div>
               <h3 data-i18n="fus.nav5">日志</h3>
               <p class="mono" data-i18n="fus.p5s">实时日志 · 90 天可查</p>
@@ -1428,7 +1577,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
 <span class="t">2026-10-23T11:04:13Z</span>  la-lax-02   GET /static/main.css    <b>200</b>  HIT  116 ms</div>
           </div>
 
-          <div class="cdn-pane" id="cdn-pane-gslb" hidden>
+          <div class="cdn-pane" id="cdn-pane-gslb" data-pane="gslb" hidden>
             <div class="claw-panehead"><div>
               <h3 data-i18n="fus.nav6">全球调度</h3>
               <p class="mono" data-i18n="fus.p6s">主动探测 + 被动上报</p>
@@ -1436,7 +1585,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
             <div class="cdn-rows"><div class="cdn-row"><b data-i18n="fus.r.probe">探测周期</b><span class="m">10 s</span></div><div class="cdn-row"><b data-i18n="fus.r.failover">故障切换</b><span class="m">&lt; 5 s</span></div><div class="cdn-row"><b data-i18n="fus.r.policy">调度策略</b><span class="m" data-i18n="fus.r.lat">延迟优先</span></div></div>
           </div>
 
-          <div class="cdn-pane" id="cdn-pane-set" hidden>
+          <div class="cdn-pane" id="cdn-pane-set" data-pane="set" hidden>
             <div class="claw-panehead"><div>
               <h3 data-i18n="fus.nav7">设置</h3>
               <p class="mono" data-i18n="fus.p7s">渠道、回源与账单</p>
@@ -1853,6 +2002,17 @@ const I18N = {
     "fus.r.cn":"中国内地","fus.r.apac":"亚太","fus.r.other":"其他","fus.r.auto":"GSLB 自动",
     "fus.r.probe":"探测周期","fus.r.failover":"故障切换","fus.r.policy":"调度策略","fus.r.lat":"延迟优先",
     "fus.r.origin":"回源协议","fus.r.tls":"传输安全","fus.r.alert":"告警通知","fus.r.alertv":"站内信 + 邮件",
+    "cv.nav.h":"版本控制台",
+    "cv.n1":"概览","cv.n2":"新增能力","cv.n3":"体验优化","cv.n4":"问题修复","cv.n5":"渠道","cv.n6":"回源与 TLS","cv.n7":"版本信息",
+    "cv.ov.h":"融合 CDN 1.1.2","cv.live":"已上线",
+    "cv.k1":"新增能力","cv.k2":"体验优化","cv.k3":"问题修复",
+    "cv.st.on":"运行中","cv.st.new":"新增",
+    "cv.cm1":"6 域名 · 主用渠道","cv.cm2":"同台调度 · 按域名切换",
+    "cv.pnew":"本次新增的能力","cv.popt":"本次体验优化","cv.pfix":"本次问题修复",
+    "cv.pchan":"CloudFront + Cloudflare 同台","cv.porg":"创建域名时可指定回源协议与端口","cv.pver":"发布记录与文档",
+    "cv.x1":"调度方式","cv.x1v":"两个渠道同台调度","cv.x2":"域名切换","cv.x2v":"按域名选择加速渠道","cv.x3":"控制台","cv.x3v":"一个后台管完两个渠道",
+    "cv.y1":"回源协议","cv.y2":"回源端口","cv.y2v":"自定义端口","cv.y3":"证书","cv.y3v":"自动更新 · 过期可识别",
+    "cv.z1":"发布日期","cv.z2":"白皮书","cv.z3":"升级方式","cv.z3v":"控制台自动生效",
     "cli.kicker":"近期发布 · 2026 年 9 月",
     "cli.shot.cap":"粘贴 racore-cli 配置即可接入","cli.spec.h":"CLI 规格",
     "cli.title":"Racore CDN CLI——在终端里，人和 AI 一起管 CDN。",
@@ -2031,6 +2191,17 @@ const I18N = {
     "fus.r.cn":"Mainland China","fus.r.apac":"APAC","fus.r.other":"Other regions","fus.r.auto":"GSLB auto",
     "fus.r.probe":"Probe interval","fus.r.failover":"Failover","fus.r.policy":"Policy","fus.r.lat":"Latency first",
     "fus.r.origin":"Origin protocol","fus.r.tls":"Transport security","fus.r.alert":"Alerts","fus.r.alertv":"In-app + email",
+    "cv.nav.h":"Release console",
+    "cv.n1":"Overview","cv.n2":"New","cv.n3":"Improved","cv.n4":"Fixed","cv.n5":"Channels","cv.n6":"Origin & TLS","cv.n7":"Version",
+    "cv.ov.h":"Fusion CDN 1.1.2","cv.live":"live",
+    "cv.k1":"New capabilities","cv.k2":"Improvements","cv.k3":"Fixes",
+    "cv.st.on":"active","cv.st.new":"new",
+    "cv.cm1":"6 domains · primary channel","cv.cm2":"side by side · per domain",
+    "cv.pnew":"Capabilities added in this release","cv.popt":"Experience improvements in this release","cv.pfix":"Issues fixed in this release",
+    "cv.pchan":"CloudFront + Cloudflare side by side","cv.porg":"Origin protocol and port are set per domain","cv.pver":"Release record and documents",
+    "cv.x1":"Scheduling","cv.x1v":"both channels on one switch","cv.x2":"Domain routing","cv.x2v":"pick the channel per domain","cv.x3":"Console","cv.x3v":"one back office for both vendors",
+    "cv.y1":"Origin protocol","cv.y2":"Origin port","cv.y2v":"custom port","cv.y3":"Certificates","cv.y3v":"auto-renewed · expiry flagged",
+    "cv.z1":"Release date","cv.z2":"Whitepaper","cv.z3":"Rollout","cv.z3v":"takes effect in the console",
     "cli.kicker":"Recent launch · September 2026",
     "cli.shot.cap":"Paste the racore-cli config and you are connected","cli.spec.h":"CLI spec",
     "cli.title":"Racore CDN CLI — run your CDN from the terminal, for humans and AI alike.",
@@ -2107,6 +2278,7 @@ function setLang(l){
   });
   renderConsole();
   if(window.renderClaw) window.renderClaw();
+  if(window.renderCdnVer) window.renderCdnVer();
   const label = (l === "zh") ? "EN" : "中文";
   document.getElementById("langToggle").textContent = label;
   document.getElementById("langToggle2").textContent = label;
@@ -2157,9 +2329,13 @@ document.getElementById("langToggle2").addEventListener("click", toggleLang);
 (function(){
   const cmd = document.getElementById("cdn2Cmd");
   const out = document.getElementById("cdn2Out");
+  const cf = document.getElementById("cdnChanCF");
   if(!cmd || !out) return;
   let on = false;
-  function toggle(){ on = !on; out.classList.toggle("show", on); }
+  function toggle(){
+    on = !on; out.classList.toggle("show", on);
+    if(cf) cf.classList.toggle("on", on);
+  }
   cmd.addEventListener("click", toggle);
   cmd.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); toggle(); } });
 })();
@@ -2188,22 +2364,22 @@ document.getElementById("langToggle2").addEventListener("click", toggleLang);
   });
 })();
 
-/* ---------- fusion cdn console: click-driven nav panes ---------- */
+/* ---------- cdn console windows: click-driven nav panes ---------- */
 (function(){
-  const win = document.getElementById("cdnDash");
-  if(!win) return;
-  const navs = win.querySelectorAll(".claw-navitem[data-cdnpane]");
-  const panes = win.querySelectorAll(".cdn-pane");
-  if(!navs.length || !panes.length) return;
-  function show(name){
-    panes.forEach(p => { p.hidden = (p.id !== "cdn-pane-" + name); });
-    navs.forEach(n => {
-      const on = (n.dataset.cdnpane === name);
-      n.classList.toggle("on", on);
-      n.setAttribute("aria-selected", on ? "true" : "false");
-    });
-  }
-  navs.forEach(n => n.addEventListener("click", () => show(n.dataset.cdnpane)));
+  document.querySelectorAll(".cdndash").forEach(function(win){
+    const navs = win.querySelectorAll(".claw-navitem[data-cdnpane]");
+    const panes = win.querySelectorAll(".cdn-pane");
+    if(!navs.length || !panes.length) return;
+    function show(name){
+      panes.forEach(p => { p.hidden = (p.dataset.pane !== name); });
+      navs.forEach(n => {
+        const on = (n.dataset.cdnpane === name);
+        n.classList.toggle("on", on);
+        n.setAttribute("aria-selected", on ? "true" : "false");
+      });
+    }
+    navs.forEach(n => n.addEventListener("click", () => show(n.dataset.cdnpane)));
+  });
 })();
 
 /* ---------- live IDE (agent typing code) ---------- */
@@ -2486,6 +2662,42 @@ document.getElementById("langToggle2").addEventListener("click", toggleLang);
   chips.forEach(c => c.addEventListener("click", () => { clawRun = c.dataset.run; clawRender(); }));
   window.renderClaw = clawRender;
   clawRender();
+})();
+
+/* ---------- fusion cdn 1.1.2 console: release lists rendered from data.js ---------- */
+(function(){
+  const host = document.getElementById("cdnVer");
+  if(!host) return;
+  const TAGMAP = {"新增":"new","优化":"opt","修复":"fix","New":"new","Improved":"opt","Fixed":"fix"};
+  function render(){
+    const rel = (typeof UPDATES !== "undefined" && UPDATES && UPDATES[0]) ? UPDATES[0] : null;
+    if(!rel) return;
+    const bullets = (rel.bullets && (rel.bullets[lang] || rel.bullets.zh)) || [];
+    const buckets = {"new": [], "opt": [], "fix": []};
+    bullets.forEach(s => {
+      const m = String(s).match(/^(新增|优化|修复|New|Improved|Fixed)\s*[：:]\s*(.*)$/);
+      const tag = m ? m[1] : "New";
+      const text = m ? m[2] : String(s);
+      const cls = TAGMAP[tag] || "new";
+      buckets[cls].push('<div class="cdn-row-t"><span class="tg tg-' + cls + '">' + esc(tag) +
+                        '</span><span class="tx">' + esc(text) + '</span></div>');
+    });
+    const total = bullets.length || 1;
+    const max = Math.max(buckets["new"].length, buckets["opt"].length, buckets["fix"].length, 1);
+    Object.keys(buckets).forEach(k => {
+      const list = document.getElementById("cdnList-" + k);
+      if(list) list.innerHTML = buckets[k].join("");
+      const nav = document.getElementById("cdnNav-" + k);
+      if(nav) nav.textContent = buckets[k].length;
+      const cnt = document.getElementById("cdnCount-" + k);
+      if(cnt) cnt.textContent = buckets[k].length;
+      const bar = document.querySelector(".cdn-bar." + k);
+      if(bar) bar.querySelector("i").style.setProperty("--w", Math.round(buckets[k].length / max * 100) + "%");
+    });
+    host.dataset.total = total;
+  }
+  window.renderCdnVer = render;
+  render();
 })();
 
 /* ---------- navbar shadow on scroll ---------- */
