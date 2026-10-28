@@ -417,6 +417,102 @@ h2.title{font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.18;lette
 .claw-note{font-size:11.5px;color:var(--ink-3);margin-top:14px}
 .claw-pane .claw-panehead + .claw-row:first-of-type{margin-top:6px}
 
+/* ---------- fusion cdn platform: light console dashboard (2026-10 restyle) ----------
+   Reuses the .claw window chrome (titlebar / sidebar / navitem) so this section
+   belongs to the same visual family as RacoreClaw; the world map is a dot-matrix
+   SVG generated from Natural Earth 110m land. */
+.fus-grid{display:grid;grid-template-columns:minmax(0,1.24fr) minmax(0,.76fr);gap:44px;align-items:center}
+.cdndash{min-height:0}
+.cdndash .claw-center{padding:14px 16px 15px;display:flex;flex-direction:column;gap:11px}
+.cdn-pane[hidden]{display:none}
+.cdn-pane{display:flex;flex-direction:column;gap:10px;min-width:0}
+.cdndash .claw-panehead h3{font-size:17px}
+.cdndash .claw-panehead p{margin-top:2px;font-size:10px;color:var(--ink-3);letter-spacing:.01em}
+.cdn-chans{margin-left:auto;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cdn-chanlabel{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.cdn-chip{font-family:var(--mono);font-size:9px;color:var(--brand);background:var(--brand-ghost);border:1px solid rgba(81,122,235,.28);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.cdn-chip.cl{color:#C2620B;background:rgba(246,130,31,.1);border-color:rgba(246,130,31,.32)}
+.cdn-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.cdn-kpi{border:1px solid var(--line-2);border-radius:11px;padding:8px 11px 9px;background:#fff;transition:border-color .15s,box-shadow .15s}
+.cdn-kpi:hover{border-color:rgba(81,122,235,.35);box-shadow:0 6px 18px -10px rgba(81,122,235,.5)}
+.cdn-kpi .k{font-size:9.5px;letter-spacing:.03em;color:var(--ink-3)}
+.cdn-kpi .v{font-family:var(--mono);font-size:17px;font-weight:700;letter-spacing:-.03em;line-height:1.3;color:var(--ink)}
+.cdn-kpi .v i{font-style:normal;font-size:10px;font-weight:500;color:var(--ink-3);margin-left:1px}
+.cdn-kpi .d{font-size:9.5px;font-weight:600}
+.cdn-kpi .d.up{color:#0E9F6E}
+.cdn-mapbox{border:1px solid var(--line-2);border-radius:12px;padding:8px 9px 5px;background:linear-gradient(180deg,#FAFCFF,#F2F7FE);overflow:hidden}
+.cdn-maph{display:flex;align-items:center;gap:8px;padding:0 1px 5px;font-size:9.5px;color:var(--ink-3)}
+.cdn-maph b{font-size:10px;font-weight:700;color:var(--ink);letter-spacing:.02em}
+.cdn-legend{margin-left:auto;display:inline-flex;align-items:center;gap:4px;font-family:var(--mono);font-size:8.5px;color:var(--ink-3)}
+.cdn-legend i{width:6px;height:6px;border-radius:50%;display:inline-block;margin-left:5px}
+.cdn-legend i.cf{background:var(--brand)}
+.cdn-legend i.cl{background:#F6821F}
+.cdn-map{position:relative;width:100%}
+.cdn-map svg{display:block;width:100%;height:auto}
+.cdn-dots{stroke:#A9C4EC;stroke-width:2.7;fill:none;stroke-linecap:round}
+.cdn-arc{stroke:url(#cdnArc);stroke-width:1.7;fill:none;stroke-dasharray:3 7;opacity:.45;transition:opacity .3s}
+.cdndash.go .cdn-arc{opacity:1;animation:cdnflow 1.15s linear infinite}
+@keyframes cdnflow{to{stroke-dashoffset:-20}}
+.cdn-node{fill:#fff;stroke-width:2}
+.cdn-node.cf{stroke:var(--brand)}
+.cdn-node.cl{stroke:#F6821F}
+.cdn-hub-ring{fill:rgba(81,122,235,.15)}
+.cdn-hub{fill:var(--brand);stroke:#fff;stroke-width:2.2}
+.cdn-lab{position:absolute;transform:translate(-50%,-186%);font-size:8.5px;line-height:1;color:var(--ink-2);white-space:nowrap;pointer-events:none;text-shadow:0 1px 0 #fff,0 -1px 0 #fff,1px 0 0 #fff,-1px 0 0 #fff}
+.cdn-lab.left{transform:translate(-108%,-162%)}
+.cdn-lab.right{transform:translate(6%,-162%)}
+.cdn-lab.pill{transform:translate(-50%,-215%);background:var(--brand);color:#fff;font-weight:700;font-size:8.5px;padding:2px 6px;border-radius:999px;box-shadow:0 4px 10px -3px rgba(81,122,235,.75);text-shadow:none}
+.cdn-reqs{border:1px solid var(--line-2);border-radius:12px;overflow:hidden;background:#fff}
+.cdn-reqs-h{display:flex;align-items:center;gap:7px;padding:6px 11px;background:var(--bg-soft);border-bottom:1px solid var(--line-2);font-size:9px;color:var(--ink-3)}
+.cdn-reqs-h b{font-size:10px;font-weight:700;color:var(--ink)}
+.cdn-reqs-c{margin-left:auto;display:inline-flex;gap:10px}
+.cdn-reqs-c i{font-style:normal;width:44px;text-align:right}
+.cdn-row-r{display:grid;grid-template-columns:9px minmax(0,1fr) 62px 48px 44px;align-items:center;gap:7px;padding:4.5px 11px;border-bottom:1px solid var(--line-2);font-size:10.5px}
+.cdn-row-r:last-child{border-bottom:none}
+.cdn-row-r .ri{width:6px;height:6px;border-radius:50%;background:var(--brand)}
+.cdn-row-r .ri.cl{background:#F6821F}
+.cdn-row-r b{font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cdn-row-r .rv{font-family:var(--mono);font-size:8.5px;color:var(--ink-3)}
+.cdn-row-r .rl{font-family:var(--mono);font-size:9.5px;color:var(--ink-2);text-align:right}
+.cdn-row-r .rh{font-family:var(--mono);font-size:9.5px;color:#0E9F6E;text-align:right}
+.cdn-specs{display:flex;align-items:center;gap:13px;flex-wrap:wrap;padding:0 1px;font-size:9px;color:var(--ink-3)}
+.cdn-specs>span{display:inline-flex;align-items:center;gap:5px}
+.cdn-specs i{font-style:normal}
+.cdn-specs b{font-family:var(--mono);font-size:9px;font-weight:600;color:var(--ink-2)}
+.cdn-rows{display:flex;flex-direction:column}
+.cdn-row{display:flex;align-items:center;gap:10px;padding:8px 2px;border-bottom:1px solid var(--line-2);font-size:11px}
+.cdn-row:last-child{border-bottom:none}
+.cdn-row b{font-family:var(--mono);font-size:10.5px;font-weight:600;color:var(--ink)}
+.cdn-row .m{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--ink-3)}
+.cdn-row .st{font-size:9px;font-weight:600;border-radius:999px;padding:1.5px 7px;white-space:nowrap}
+.cdn-row .st.ok{color:#0E9F6E;background:rgba(62,207,142,.16)}
+.cdn-row .st.warn{color:#C2410C;background:rgba(249,168,37,.2)}
+.cdn-log{font-family:var(--mono);font-size:9px;line-height:1.95;color:var(--ink-2);background:var(--bg-soft);border:1px solid var(--line-2);border-radius:10px;padding:8px 10px;white-space:pre;overflow:hidden;text-overflow:ellipsis}
+.cdn-log b{color:#0E9F6E;font-weight:600}
+.cdn-log .t{color:var(--ink-3)}
+.cdn-foot{display:flex;align-items:center;gap:9px;padding:9px 15px;border-top:1px solid var(--line-2);background:var(--bg-soft);font-family:var(--mono);font-size:10.5px;color:var(--ink-2);cursor:pointer;transition:background .15s}
+.cdn-foot:hover{background:#fff}
+.cdn-foot .p{color:var(--brand)}
+.cdn-foot .cursor-blink{width:6px;height:12px;background:var(--brand);vertical-align:-2px}
+.cdn-foot-hint{margin-left:auto;font-family:var(--sans);font-size:9px;color:var(--ink-3);letter-spacing:.02em}
+#fusOut{padding:0 15px;background:var(--bg-soft);font-family:var(--mono);font-size:10px;color:#0E9F6E;border-top:1px solid transparent}
+#fusOut.show{padding-bottom:9px;border-top-color:var(--line-2)}
+@media (max-width:1000px){
+  .fus-grid{grid-template-columns:1fr;gap:40px}
+  .cdndash .claw-center{padding:14px}
+}
+@media (max-width:720px){
+  .cdn-kpis{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .cdn-kpi{padding:7px 8px 8px}
+  .cdn-kpi .v{font-size:14px}
+  .cdn-row-r{grid-template-columns:9px minmax(0,1fr) 54px 44px;gap:6px;padding:5px 9px}
+  .cdn-row-r .rv{display:none}
+  .cdn-reqs-c i{width:40px}
+  .cdn-specs{gap:9px;font-size:8.5px}
+  .cdn-log{font-size:8px}
+  .cdn-chans{display:none}
+}
+
 /* ---------- real product screenshot (Racore CDN CLI section) ---------- */
 /* light chrome — tonally matched to the .claw window above (white surface,
    --bg-soft caption bar, --ink text, brand-blue tag) so the two featured
@@ -1221,22 +1317,137 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
     <h2 class="title" data-i18n="fus.title">融合 CDN 平台——一个入口，调度全球 CDN。</h2>
     <p class="sec-sub" data-i18n="fus.sub">整合 AWS CloudFront、Cloudflare 等全球主流 CDN 资源，自研智能调度引擎为每次请求选择最优节点——多云 CDN 的接入、配置、监控与账单，在一个平台完成。</p>
   </div>
-  <div class="feat-split">
-    <div class="console" style="max-width:100%">
-      <div class="console-bar">
+  <div class="fus-grid">
+    <div class="claw cdndash" id="cdnDash" aria-label="Racore 融合 CDN 控制台演示">
+      <div class="claw-titlebar">
         <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-        <span class="console-title">racore — fusion cdn console</span>
+        <span class="claw-wtitle">Racore CDN <em>fusion cdn console</em></span>
+        <span class="claw-wright"><i></i><i></i><i></i></span>
       </div>
-      <div class="console-body">
-        <div class="p" data-i18n="fus.c0"># 融合 CDN · 统一调度面板</div>
-        <div class="kv"><span data-i18n="fus.c1">加速渠道</span><b class="m">CloudFront · Cloudflare</b></div>
-        <div class="kv"><span data-i18n="fus.c2">调度引擎</span><b class="m" data-i18n="fus.v2">GSLB · 实时最优路由</b></div>
-        <div class="kv"><span data-i18n="fus.c3">缓存命中率</span><b class="mono">90–95%</b></div>
-        <div class="kv"><span data-i18n="fus.c4">服务可用性</span><b class="mono">99.9% SLA</b></div>
-        <div class="kv"><span data-i18n="fus.c5">计费模式</span><b data-i18n="fus.v5">按量付费 · 流量包</b></div>
-        <div class="cmd" id="fusCmd" role="button" tabindex="0"><span class="p">$</span> racore cdn dispatch --global <span class="cursor-blink"></span></div>
-        <div class="cmd-out" id="fusOut" data-i18n="fus.out">✓ 已路由至最优边缘节点 · 跨国延迟降低 60%</div>
+      <div class="claw-main">
+        <div class="claw-side">
+          <div class="claw-side-h" data-i18n="fus.nav.h">控制台</div>
+<button class="claw-navitem on" type="button" data-cdnpane="ov" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span data-i18n="fus.nav1">概览</span></button><button class="claw-navitem" type="button" data-cdnpane="dom" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"></path></svg><span data-i18n="fus.nav2">域名管理</span></button><button class="claw-navitem" type="button" data-cdnpane="cache" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 12l9 5 9-5"></path><path d="M3 16.5l9 5 9-5"></path></svg><span data-i18n="fus.nav3">缓存规则</span></button><button class="claw-navitem" type="button" data-cdnpane="rule" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.6"></circle><circle cx="18" cy="18" r="2.6"></circle><path d="M8.6 6H14a4 4 0 0 1 4 4v5.4"></path><path d="M6 8.6V18h9.4"></path></svg><span data-i18n="fus.nav4">分发规则</span></button><button class="claw-navitem" type="button" data-cdnpane="log" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l4 4v12H5z"></path><path d="M16 4v4h4"></path><path d="M9 13h7"></path><path d="M9 17h5"></path></svg><span data-i18n="fus.nav5">日志</span></button><button class="claw-navitem" type="button" data-cdnpane="gslb" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3.5 9h17"></path><path d="M3.5 15h17"></path><path d="M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9z"></path></svg><span data-i18n="fus.nav6">全球调度</span></button><button class="claw-navitem" type="button" data-cdnpane="set" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 7 19.4l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.7 1.7 0 0 0 3 13.9H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 7L4.5 7a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9.4A1.7 1.7 0 0 0 10.6 3V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1.2 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9v.1a1.7 1.7 0 0 0 1.6 1.1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1.1z"></path></svg><span data-i18n="fus.nav7">设置</span></button>
+          <div class="claw-gw"><span class="sdot ok"></span>GSLB · 2 channels</div>
+        </div>
+        <div class="claw-center">
+
+          <div class="cdn-pane" id="cdn-pane-ov">
+            <div class="claw-panehead">
+              <div>
+                <h3 data-i18n="fus.ov.h">全球 CDN 调度控制台</h3>
+                <p class="mono" data-i18n="fus.c0"># 融合 CDN · 统一调度面板</p>
+              </div>
+              <div class="cdn-chans">
+                <span class="cdn-chanlabel" data-i18n="fus.c1">加速渠道</span>
+                <span class="cdn-chip">CloudFront</span><span class="cdn-chip cl">Cloudflare</span>
+              </div>
+            </div>
+            <div class="cdn-kpis">
+              <div class="cdn-kpi">
+                <div class="k" data-i18n="fus.k1">接入域名</div>
+                <div class="v">6 <i>/ 6</i></div>
+                <div class="d up" data-i18n="fus.k1v">双渠道已同步</div>
+              </div>
+              <div class="cdn-kpi">
+                <div class="k" data-i18n="fus.c3">缓存命中率</div>
+                <div class="v">92.6<i>%</i></div>
+                <div class="d up" data-i18n="fus.k2d">↑ 2.3%</div>
+              </div>
+              <div class="cdn-kpi">
+                <div class="k" data-i18n="fus.k3">平均延迟</div>
+                <div class="v">89 <i>ms</i></div>
+                <div class="d up" data-i18n="fus.k3d">↓ 15 ms</div>
+              </div>
+            </div>
+            <div class="cdn-mapbox">
+              <div class="cdn-maph">
+                <b data-i18n="fus.map.h">全球调度 · 实时节点</b>
+                <span class="cdn-legend"><i class="cf"></i>CloudFront<i class="cl"></i>Cloudflare</span>
+              </div>
+              <div class="cdn-map">
+                <svg viewBox="0 0 1000 388" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="cdnArc" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#517AEB" stop-opacity=".18"></stop>
+                      <stop offset="55%" stop-color="#517AEB" stop-opacity=".85"></stop>
+                      <stop offset="100%" stop-color="#2CB6EE" stop-opacity=".95"></stop>
+                    </linearGradient>
+                  </defs>
+                  <path class="cdn-dots" d="M252 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M336 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M378 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M238 7h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M322 7h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M532 7h.01m7 0h.01m7 0h.01m7 0h.01M567 7h.01M763 7h.01m7 0h.01m7 0h.01M168 14h.01m7 0h.01M231 14h.01m7 0h.01M252 14h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 14h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M546 14h.01M784 14h.01m7 0h.01M161 21h.01M259 21h.01M343 21h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M658 21h.01M742 21h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M154 28h.01m7 0h.01M175 28h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M224 28h.01m7 0h.01M252 28h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M350 28h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M644 28h.01m7 0h.01M693 28h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M889 28h.01m7 0h.01m7 0h.01m7 0h.01M49 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M126 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M182 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M224 35h.01m7 0h.01m7 0h.01m7 0h.01M266 35h.01M294 35h.01m7 0h.01m7 0h.01M364 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M553 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M672 35h.01M693 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M980 35h.01m7 0h.01m7 0h.01M0 42h.01m7 0h.01M21 42h.01M49 42h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M301 42h.01m7 0h.01m7 0h.01m7 0h.01M357 42h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 42h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M637 42h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M56 49h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M266 49h.01m7 0h.01M287 49h.01M301 49h.01m7 0h.01m7 0h.01M357 49h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M441 49h.01m7 0h.01m7 0h.01M532 49h.01m7 0h.01m7 0h.01m7 0h.01M567 49h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M609 49h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M42 56h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M287 56h.01m7 0h.01M364 56h.01m7 0h.01m7 0h.01M518 56h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M560 56h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M56 63h.01m7 0h.01m7 0h.01M119 63h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M287 63h.01m7 0h.01m7 0h.01M322 63h.01M518 63h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M567 63h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M910 63h.01M924 63h.01M945 63h.01m7 0h.01M63 70h.01M133 70h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M294 70h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M490 70h.01M525 70h.01M539 70h.01M560 70h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M938 70h.01m7 0h.01m7 0h.01M140 77h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M280 77h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 77h.01m7 0h.01M497 77h.01M525 77h.01M546 77h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M896 77h.01M938 77h.01m7 0h.01M147 84h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M287 84h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 84h.01M490 84h.01m7 0h.01M511 84h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M938 84h.01M154 91h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M343 91h.01m7 0h.01M497 91h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M161 98h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M497 98h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M595 98h.01M609 98h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M651 98h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M896 98h.01M161 105h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M497 105h.01m7 0h.01m7 0h.01m7 0h.01M532 105h.01M546 105h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M609 105h.01m7 0h.01m7 0h.01m7 0h.01M644 105h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M896 105h.01m7 0h.01M161 112h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 112h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M525 112h.01M539 112h.01M560 112h.01m7 0h.01m7 0h.01M595 112h.01M616 112h.01m7 0h.01m7 0h.01M651 112h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M889 112h.01M161 119h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 119h.01m7 0h.01m7 0h.01m7 0h.01M546 119h.01M560 119h.01M581 119h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M651 119h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M854 119h.01M889 119h.01M168 126h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M483 126h.01M504 126h.01m7 0h.01m7 0h.01m7 0h.01M581 126h.01M595 126h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M854 126h.01M882 126h.01m7 0h.01M175 133h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M483 133h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M602 133h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M189 140h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 140h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M560 140h.01m7 0h.01m7 0h.01M602 140h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M182 147h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M273 147h.01M476 147h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M644 147h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M189 154h.01M203 154h.01m7 0h.01m7 0h.01m7 0h.01M273 154h.01M462 154h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M602 154h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M665 154h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M203 161h.01m7 0h.01m7 0h.01m7 0h.01M462 161h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M609 161h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M693 161h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M210 168h.01m7 0h.01m7 0h.01M455 168h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M700 168h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M756 168h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M217 175h.01m7 0h.01m7 0h.01M252 175h.01M301 175h.01m7 0h.01M455 175h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M616 175h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M707 175h.01m7 0h.01m7 0h.01m7 0h.01M763 175h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M805 175h.01M231 182h.01m7 0h.01m7 0h.01m7 0h.01M455 182h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M623 182h.01m7 0h.01m7 0h.01m7 0h.01M707 182h.01m7 0h.01m7 0h.01M763 182h.01M777 182h.01m7 0h.01m7 0h.01m7 0h.01M252 189h.01m7 0h.01m7 0h.01M455 189h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M714 189h.01m7 0h.01M777 189h.01m7 0h.01m7 0h.01m7 0h.01M840 189h.01M266 196h.01M294 196h.01M308 196h.01M462 196h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M637 196h.01M714 196h.01m7 0h.01M791 196h.01m7 0h.01M840 196h.01m7 0h.01M273 203h.01M287 203h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M469 203h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M714 203h.01M777 203h.01M847 203h.01M287 210h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 210h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M518 210h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M826 210h.01M847 210h.01M287 217h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M532 217h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M770 217h.01M784 217h.01M819 217h.01m7 0h.01M280 224h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M532 224h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M777 224h.01m7 0h.01M805 224h.01m7 0h.01m7 0h.01m7 0h.01M847 224h.01M280 231h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M525 231h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M784 231h.01M805 231h.01m7 0h.01m7 0h.01M833 231h.01m7 0h.01M868 231h.01M280 238h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M532 238h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M791 238h.01M819 238h.01M833 238h.01m7 0h.01M875 238h.01m7 0h.01m7 0h.01m7 0h.01M924 238h.01M280 245h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 245h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M798 245h.01M889 245h.01m7 0h.01m7 0h.01m7 0h.01M931 245h.01M287 252h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 252h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M826 252h.01M847 252h.01M896 252h.01M910 252h.01M287 259h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 259h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M868 259h.01M896 259h.01M294 266h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 266h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M637 266h.01M861 266h.01m7 0h.01m7 0h.01M896 266h.01M0 273h.01M301 273h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 273h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M630 273h.01m7 0h.01M847 273h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M896 273h.01m7 0h.01M308 280h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 280h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M623 280h.01m7 0h.01M840 280h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 287h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 287h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M623 287h.01m7 0h.01M826 287h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 294h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M546 294h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M623 294h.01m7 0h.01M819 294h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 301h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M546 301h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M819 301h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 308h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M553 308h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M826 308h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 315h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M553 315h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M826 315h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M868 315h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M301 322h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M553 322h.01m7 0h.01M826 322h.01M882 322h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M301 329h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M889 329h.01m7 0h.01m7 0h.01m7 0h.01M301 336h.01m7 0h.01m7 0h.01m7 0h.01M987 336h.01M301 343h.01m7 0h.01m7 0h.01M910 343h.01M980 343h.01M294 350h.01m7 0h.01m7 0h.01m7 0h.01M973 350h.01M294 357h.01m7 0h.01m7 0h.01M294 364h.01m7 0h.01m7 0h.01M693 364h.01M294 371h.01m7 0h.01m7 0h.01M336 371h.01M301 378h.01m7 0h.01m7 0h.01"></path>
+                  <g class="cdn-arcs"><path class="cdn-arc" d="M788 224Q838 140 888 128"></path><path class="cdn-arc" d="M788 224Q820 142 853 123"></path><path class="cdn-arc" d="M788 224Q802 177 817 165"></path><path class="cdn-arc" d="M788 224Q854 230 920 321"></path><path class="cdn-arc" d="M788 224Q644 71 500 85"></path><path class="cdn-arc" d="M788 224Q480 17 172 133"></path></g>
+                  <g class="cdn-nodes"><circle class="cdn-node cf" cx="823" cy="117" r="3.6"></circle><circle class="cdn-node cf" cx="789" cy="143" r="3.6"></circle><circle class="cdn-node cf" cx="277" cy="156" r="3.6"></circle><circle class="cdn-node cl" cx="578" cy="301" r="3.6"></circle><circle class="cdn-hub-ring" cx="788" cy="224" r="13"></circle><circle class="cdn-hub" cx="788" cy="224" r="5.4"></circle><circle class="cdn-node cf" cx="888" cy="128" r="3.6"></circle><circle class="cdn-node cf" cx="853" cy="123" r="3.6"></circle><circle class="cdn-node cf" cx="172" cy="133" r="3.6"></circle><circle class="cdn-node cf" cx="294" cy="114" r="3.6"></circle><circle class="cdn-node cl" cx="500" cy="85" r="3.6"></circle><circle class="cdn-node cf" cx="920" cy="321" r="3.6"></circle><circle class="cdn-node cl" cx="370" cy="293" r="3.6"></circle><circle class="cdn-node cl" cx="654" cy="157" r="3.6"></circle><circle class="cdn-node cl" cx="702" cy="174" r="3.6"></circle><circle class="cdn-node cl" cx="524" cy="88" r="3.6"></circle><circle class="cdn-node cf" cx="817" cy="165" r="3.6"></circle><circle class="cdn-node cl" cx="837" cy="141" r="3.6"></circle></g>
+                </svg>
+<span class="cdn-lab pill" style="left:78.80%;top:57.73%" data-i18n="fus.map.sg">新加坡</span><span class="cdn-lab up" style="left:88.80%;top:32.99%" data-i18n="fus.map.tk">东京</span><span class="cdn-lab left" style="left:17.20%;top:34.28%" data-i18n="fus.map.la">洛杉矶</span><span class="cdn-lab up" style="left:50.00%;top:21.91%" data-i18n="fus.map.ld">伦敦</span><span class="cdn-lab right" style="left:92.00%;top:82.73%" data-i18n="fus.map.syd">悉尼</span>
+              </div>
+            </div>
+            <div class="cdn-reqs">
+              <div class="cdn-reqs-h"><b data-i18n="fus.req.h">最近请求</b><span data-i18n="fus.req.s">按延迟排序</span>
+                <span class="cdn-reqs-c"><i data-i18n="fus.req.d">延迟</i><i data-i18n="fus.req.hit">命中率</i></span></div>
+<div class="cdn-row-r"><i class="ri cf"></i><b data-i18n="fus.req.c1">fus.req.c1</b><span class="rv">CloudFront</span><span class="rl">12 ms</span><span class="rh">99.4%</span></div><div class="cdn-row-r"><i class="ri cl"></i><b data-i18n="fus.req.c2">fus.req.c2</b><span class="rv">Cloudflare</span><span class="rl">43 ms</span><span class="rh">98.7%</span></div><div class="cdn-row-r"><i class="ri cf"></i><b data-i18n="fus.req.c3">fus.req.c3</b><span class="rv">CloudFront</span><span class="rl">116 ms</span><span class="rh">99.5%</span></div><div class="cdn-row-r"><i class="ri cl"></i><b data-i18n="fus.req.c4">fus.req.c4</b><span class="rv">Cloudflare</span><span class="rl">178 ms</span><span class="rh">97.2%</span></div><div class="cdn-row-r"><i class="ri cf"></i><b data-i18n="fus.req.c5">fus.req.c5</b><span class="rv">CloudFront</span><span class="rl">190 ms</span><span class="rh">99.1%</span></div>
+            </div>
+            <div class="cdn-specs">
+              <span><i data-i18n="fus.c2">调度引擎</i><b data-i18n="fus.v2">GSLB · 实时最优路由</b></span>
+              <span><i data-i18n="fus.c4">服务可用性</i><b class="mono">99.9% SLA</b></span>
+              <span><i data-i18n="fus.c5">计费模式</i><b data-i18n="fus.v5">按量付费 · 流量包</b></span>
+            </div>
+          </div>
+
+          <div class="cdn-pane" id="cdn-pane-dom" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="fus.nav2">域名管理</h3>
+              <p class="mono" data-i18n="fus.p2s">3 个域名 · 双渠道已同步</p>
+            </div></div>
+            <div class="cdn-rows"><div class="cdn-row"><b>example.com</b><span class="m">CloudFront</span><span class="st ok" data-i18n="fus.st.ok">已签发</span></div><div class="cdn-row"><b>static.example.com</b><span class="m">Cloudflare</span><span class="st ok" data-i18n="fus.st.ok">已签发</span></div><div class="cdn-row"><b>img.example.com</b><span class="m">CloudFront</span><span class="st warn" data-i18n="fus.st.warn">即将过期</span></div></div>
+          </div>
+
+          <div class="cdn-pane" id="cdn-pane-cache" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="fus.nav3">缓存规则</h3>
+              <p class="mono" data-i18n="fus.p3s">按路径分层缓存</p>
+            </div></div>
+            <div class="cdn-rows"><div class="cdn-row"><b>/static/*</b><span class="m" data-i18n="fus.r.c30">缓存 30 天</span></div><div class="cdn-row"><b>/api/*</b><span class="m" data-i18n="fus.r.bypass">不缓存</span></div><div class="cdn-row"><b>/img/*</b><span class="m" data-i18n="fus.r.follow">跟随源站</span></div></div>
+          </div>
+
+          <div class="cdn-pane" id="cdn-pane-rule" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="fus.nav4">分发规则</h3>
+              <p class="mono" data-i18n="fus.p4s">按地域就近选择渠道</p>
+            </div></div>
+            <div class="cdn-rows"><div class="cdn-row"><b data-i18n="fus.r.cn">中国内地</b><span class="m">CloudFront</span></div><div class="cdn-row"><b data-i18n="fus.r.apac">亚太</b><span class="m">Cloudflare</span></div><div class="cdn-row"><b data-i18n="fus.r.other">其他</b><span class="m" data-i18n="fus.r.auto">GSLB 自动</span></div></div>
+          </div>
+
+          <div class="cdn-pane" id="cdn-pane-log" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="fus.nav5">日志</h3>
+              <p class="mono" data-i18n="fus.p5s">实时日志 · 90 天可查</p>
+            </div></div>
+            <div class="cdn-log"><span class="t">2026-10-23T11:04:12Z</span>  sg-sin-03   GET /static/app.js      <b>200</b>  HIT   12 ms
+<span class="t">2026-10-23T11:04:12Z</span>  hk-hkg-01   GET /img/banner.webp    <b>200</b>  HIT   18 ms
+<span class="t">2026-10-23T11:04:13Z</span>  sg-sin-03   GET /api/v1/price       <b>200</b>  MISS  94 ms
+<span class="t">2026-10-23T11:04:13Z</span>  la-lax-02   GET /static/main.css    <b>200</b>  HIT  116 ms</div>
+          </div>
+
+          <div class="cdn-pane" id="cdn-pane-gslb" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="fus.nav6">全球调度</h3>
+              <p class="mono" data-i18n="fus.p6s">主动探测 + 被动上报</p>
+            </div></div>
+            <div class="cdn-rows"><div class="cdn-row"><b data-i18n="fus.r.probe">探测周期</b><span class="m">10 s</span></div><div class="cdn-row"><b data-i18n="fus.r.failover">故障切换</b><span class="m">&lt; 5 s</span></div><div class="cdn-row"><b data-i18n="fus.r.policy">调度策略</b><span class="m" data-i18n="fus.r.lat">延迟优先</span></div></div>
+          </div>
+
+          <div class="cdn-pane" id="cdn-pane-set" hidden>
+            <div class="claw-panehead"><div>
+              <h3 data-i18n="fus.nav7">设置</h3>
+              <p class="mono" data-i18n="fus.p7s">渠道、回源与账单</p>
+            </div></div>
+            <div class="cdn-rows"><div class="cdn-row"><b data-i18n="fus.r.origin">回源协议</b><span class="m">HTTP / HTTPS</span></div><div class="cdn-row"><b data-i18n="fus.r.tls">传输安全</b><span class="m">TLS 1.3</span></div><div class="cdn-row"><b data-i18n="fus.r.alert">告警通知</b><span class="m" data-i18n="fus.r.alertv">站内信 + 邮件</span></div></div>
+          </div>
+
+        </div>
       </div>
+      <div class="cdn-foot" id="fusCmd" role="button" tabindex="0"><span class="p">$</span> racore cdn dispatch --global <span class="cursor-blink"></span><span class="cdn-foot-hint" data-i18n="fus.demo">示例数据</span></div>
+      <div class="cmd-out" id="fusOut" data-i18n="fus.out">✓ 已路由至最优边缘节点 · 跨国延迟降低 60%</div>
     </div>
     <div class="feat-copy">
       <div class="ide-feats">
@@ -1628,6 +1839,20 @@ const I18N = {
     "fus.f3p":"全链路账单体系覆盖拉取、出账、告警校验与审核发布；流量包相比按量付费最高可省 30%。",
     "fus.cta":"进入平台",
     "fus.note":"全球 <b>3000+</b> 边缘节点 · <b>300+</b> 城市覆盖",
+    "fus.ov.h":"全球 CDN 调度控制台",
+    "fus.nav.h":"控制台",
+    "fus.nav1":"概览","fus.nav2":"域名管理","fus.nav3":"缓存规则","fus.nav4":"分发规则","fus.nav5":"日志","fus.nav6":"全球调度","fus.nav7":"设置",
+    "fus.k1":"接入域名","fus.k1v":"双渠道已同步","fus.k2d":"↑ 2.3%","fus.k3":"平均延迟","fus.k3d":"↓ 15 ms",
+    "fus.map.h":"全球调度 · 实时节点","fus.map.sg":"新加坡","fus.map.tk":"东京","fus.map.la":"洛杉矶","fus.map.ld":"伦敦","fus.map.syd":"悉尼",
+    "fus.req.h":"最近请求","fus.req.s":"按延迟排序","fus.req.d":"延迟","fus.req.hit":"命中率",
+    "fus.req.c1":"新加坡","fus.req.c2":"东京","fus.req.c3":"洛杉矶","fus.req.c4":"法兰克福","fus.req.c5":"悉尼",
+    "fus.demo":"示例数据",
+    "fus.p2s":"3 个域名 · 双渠道已同步","fus.p3s":"按路径分层缓存","fus.p4s":"按地域就近选择渠道","fus.p5s":"实时日志 · 90 天可查","fus.p6s":"主动探测 + 被动上报","fus.p7s":"渠道、回源与账单",
+    "fus.st.ok":"已签发","fus.st.warn":"即将过期",
+    "fus.r.c30":"缓存 30 天","fus.r.bypass":"不缓存","fus.r.follow":"跟随源站",
+    "fus.r.cn":"中国内地","fus.r.apac":"亚太","fus.r.other":"其他","fus.r.auto":"GSLB 自动",
+    "fus.r.probe":"探测周期","fus.r.failover":"故障切换","fus.r.policy":"调度策略","fus.r.lat":"延迟优先",
+    "fus.r.origin":"回源协议","fus.r.tls":"传输安全","fus.r.alert":"告警通知","fus.r.alertv":"站内信 + 邮件",
     "cli.kicker":"近期发布 · 2026 年 9 月",
     "cli.shot.cap":"粘贴 racore-cli 配置即可接入","cli.spec.h":"CLI 规格",
     "cli.title":"Racore CDN CLI——在终端里，人和 AI 一起管 CDN。",
@@ -1792,6 +2017,20 @@ const I18N = {
     "fus.f3p":"An end-to-end billing pipeline: ingestion, rating, alert validation and review; traffic packages save up to 30% vs pay-as-you-go.",
     "fus.cta":"Open the platform",
     "fus.note":"<b>3000+</b> edge nodes · <b>300+</b> cities worldwide",
+    "fus.ov.h":"Global CDN routing console",
+    "fus.nav.h":"Console",
+    "fus.nav1":"Overview","fus.nav2":"Domains","fus.nav3":"Cache rules","fus.nav4":"Distribution","fus.nav5":"Logs","fus.nav6":"Global routing","fus.nav7":"Settings",
+    "fus.k1":"Domains onboarded","fus.k1v":"both channels in sync","fus.k2d":"↑ 2.3%","fus.k3":"Avg. latency","fus.k3d":"↓ 15 ms",
+    "fus.map.h":"Global routing · live nodes","fus.map.sg":"Singapore","fus.map.tk":"Tokyo","fus.map.la":"Los Angeles","fus.map.ld":"London","fus.map.syd":"Sydney",
+    "fus.req.h":"Recent requests","fus.req.s":"sorted by latency","fus.req.d":"Latency","fus.req.hit":"Hit rate",
+    "fus.req.c1":"Singapore","fus.req.c2":"Tokyo","fus.req.c3":"Los Angeles","fus.req.c4":"Frankfurt","fus.req.c5":"Sydney",
+    "fus.demo":"illustrative data",
+    "fus.p2s":"3 domains · both channels in sync","fus.p3s":"Cache layered by path","fus.p4s":"Nearest channel per region","fus.p5s":"Live logs · 90-day retention","fus.p6s":"Active probing + passive reporting","fus.p7s":"Channels, origin and billing",
+    "fus.st.ok":"Issued","fus.st.warn":"Expiring",
+    "fus.r.c30":"Cache 30 days","fus.r.bypass":"Bypass","fus.r.follow":"Follow origin",
+    "fus.r.cn":"Mainland China","fus.r.apac":"APAC","fus.r.other":"Other regions","fus.r.auto":"GSLB auto",
+    "fus.r.probe":"Probe interval","fus.r.failover":"Failover","fus.r.policy":"Policy","fus.r.lat":"Latency first",
+    "fus.r.origin":"Origin protocol","fus.r.tls":"Transport security","fus.r.alert":"Alerts","fus.r.alertv":"In-app + email",
     "cli.kicker":"Recent launch · September 2026",
     "cli.shot.cap":"Paste the racore-cli config and you are connected","cli.spec.h":"CLI spec",
     "cli.title":"Racore CDN CLI — run your CDN from the terminal, for humans and AI alike.",
@@ -1892,9 +2131,13 @@ document.getElementById("langToggle2").addEventListener("click", toggleLang);
 (function(){
   const cmd = document.getElementById("fusCmd");
   const out = document.getElementById("fusOut");
+  const dash = document.getElementById("cdnDash");
   if(!cmd || !out) return;
   let on = false;
-  function toggle(){ on = !on; out.classList.toggle("show", on); }
+  function toggle(){
+    on = !on; out.classList.toggle("show", on);
+    if(dash) dash.classList.toggle("go", on);
+  }
   cmd.addEventListener("click", toggle);
   cmd.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); toggle(); } });
 })();
@@ -1943,6 +2186,24 @@ document.getElementById("langToggle2").addEventListener("click", toggleLang);
       if(e.key === "Enter" || e.key === " "){ e.preventDefault(); show(t.dataset.api); }
     });
   });
+})();
+
+/* ---------- fusion cdn console: click-driven nav panes ---------- */
+(function(){
+  const win = document.getElementById("cdnDash");
+  if(!win) return;
+  const navs = win.querySelectorAll(".claw-navitem[data-cdnpane]");
+  const panes = win.querySelectorAll(".cdn-pane");
+  if(!navs.length || !panes.length) return;
+  function show(name){
+    panes.forEach(p => { p.hidden = (p.id !== "cdn-pane-" + name); });
+    navs.forEach(n => {
+      const on = (n.dataset.cdnpane === name);
+      n.classList.toggle("on", on);
+      n.setAttribute("aria-selected", on ? "true" : "false");
+    });
+  }
+  navs.forEach(n => n.addEventListener("click", () => show(n.dataset.cdnpane)));
 })();
 
 /* ---------- live IDE (agent typing code) ---------- */
