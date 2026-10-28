@@ -426,10 +426,10 @@ h2.title{font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.18;lette
 /* the 1.1.2 window carries less content per pane — tighten its sidebar so the
    window height is driven by the pane instead of the nav column */
 .cdnver .claw-navitem{padding:6px 18px}
+/* second copy of the map uses its own gradient id (duplicate ids are invalid) */
+.cdnver .cdn-arc{stroke:url(#cdnArc2)}
 .cdnver .claw-side-h{padding:12px 18px 5px}
 .cdnver .claw-gw{padding:10px 18px 2px}
-#cdnver-pane-ov{justify-content:space-between}
-#cdnver-pane-ov .cdn-specs{margin-top:0;padding-top:0}
 .cdndash .claw-center{padding:14px 16px 15px;display:flex;flex-direction:column;gap:11px}
 .cdn-pane[hidden]{display:none}
 .cdn-pane{display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -500,13 +500,6 @@ h2.title{font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.18;lette
 .cdn-log{font-family:var(--mono);font-size:9px;line-height:1.95;color:var(--ink-2);background:var(--bg-soft);border:1px solid var(--line-2);border-radius:10px;padding:8px 10px;white-space:pre;overflow:hidden;text-overflow:ellipsis}
 .cdn-log b{color:#0E9F6E;font-weight:600}
 .cdn-log .t{color:var(--ink-3)}
-.cdn-bars{display:flex;flex-direction:column;gap:7px;border:1px solid var(--line-2);border-radius:11px;padding:10px 12px;background:#fff}
-.cdn-bar{display:grid;grid-template-columns:58px 1fr 16px;align-items:center;gap:9px;font-size:9.5px;color:var(--ink-2)}
-.cdn-bar i{position:relative;height:6px;border-radius:99px;background:var(--line-2);overflow:hidden}
-.cdn-bar i::after{content:"";position:absolute;inset:0;width:var(--w,0);border-radius:99px;background:var(--brand)}
-.cdn-bar.opt i::after{background:#7C6AE8}
-.cdn-bar.fix i::after{background:#E8618C}
-.cdn-bar b{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink);text-align:right}
 .cdn-chan2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .cdn-chan-card{border:1px solid var(--line-2);border-radius:11px;padding:8px 10px 9px;background:#fff;transition:border-color .2s,box-shadow .2s}
 .cdn-chan-card .top{display:flex;align-items:center;gap:6px}
@@ -629,18 +622,6 @@ h2.title{font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.18;lette
 .api-code::-webkit-scrollbar-track{background:transparent}
 .api-code::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:99px}
 .api-note{margin-top:10px;font-size:12px;color:rgba(255,255,255,.45)}
-.bilstrip{
-  margin-top:56px;padding:26px 28px;background:#fff;
-  border:1px solid var(--line-2);border-radius:var(--radius-lg);
-  box-shadow:0 1px 2px rgba(29,33,41,.03),0 18px 40px -34px rgba(29,33,41,.3);
-}
-.bilstrip-h{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px}
-.bilstrip-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
-.bilstrip-item{display:flex;flex-direction:column}
-.bilstrip-item .n{display:block;font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--brand);margin-bottom:6px}
-.bilstrip-item .t{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.45}
-.bilstrip-item .d{margin-top:6px;font-size:12.5px;color:var(--ink-2);line-height:1.6}
-@media (min-width:1001px){.bilstrip-item .t{min-height:2.9em}}
 
 /* ---------- about (pastel spec cards, W style) ---------- */
 .ab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -700,7 +681,6 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
   .claw-main{grid-template-columns:160px 1fr}
-  .bilstrip-grid{grid-template-columns:repeat(2,1fr)}
   .hero-inner{grid-template-columns:1fr;gap:44px;padding:88px 20px 64px}
   .hero-visual{justify-content:center}
   .console{max-width:560px}
@@ -711,8 +691,6 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
 @media (max-width:720px){
   .claw-main{grid-template-columns:1fr}
   .claw-side{display:none}
-  .bilstrip-grid{grid-template-columns:1fr}
-  .bilstrip{padding:20px 18px}
   .api-code{font-size:10.5px}
   .nav{display:none}
   .bar-in{gap:10px;flex-wrap:wrap;height:auto;padding:12px 16px}
@@ -821,19 +799,42 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
                 <span class="cdn-chip ok" data-i18n="cv.live">已上线</span>
               </div>
             </div>
-            <div class="cdn-bars">
-              <div class="cdn-bar new"><span data-i18n="cv.k1">新增能力</span><i style="--w:100%"></i><b id="cdnCount-new">5</b></div>
-              <div class="cdn-bar opt"><span data-i18n="cv.k2">体验优化</span><i style="--w:100%"></i><b id="cdnCount-opt">5</b></div>
-              <div class="cdn-bar fix"><span data-i18n="cv.k3">问题修复</span><i style="--w:80%"></i><b id="cdnCount-fix">4</b></div>
-            </div>
-            <div class="cdn-chan2">
-              <div class="cdn-chan-card">
-                <div class="top"><i class="ri cf"></i><b>CloudFront</b><span class="pill pill-ok" data-i18n="cv.st.on">运行中</span></div>
-                <div class="cm" data-i18n="cv.cm1">6 域名 · 主用渠道</div>
+            <div class="cdn-kpis">
+              <div class="cdn-kpi">
+                <div class="k" data-i18n="cv.k1">新增能力</div>
+                <div class="v"><b id="cdnCount-new">5</b><i data-i18n="cv.unit">项</i></div>
+                <div class="d up" data-i18n="cv.k1d">Cloudflare · TLS 1.3</div>
               </div>
-              <div class="cdn-chan-card cl" id="cdnChanCF">
-                <div class="top"><i class="ri cl"></i><b>Cloudflare</b><span class="pill pill-new" data-i18n="cv.st.new">新增</span></div>
-                <div class="cm" data-i18n="cv.cm2">同台调度 · 按域名切换</div>
+              <div class="cdn-kpi">
+                <div class="k" data-i18n="cv.k2">体验优化</div>
+                <div class="v"><b id="cdnCount-opt">5</b><i data-i18n="cv.unit">项</i></div>
+                <div class="d up" data-i18n="cv.k2d">证书 · 缓存规则 · 列表</div>
+              </div>
+              <div class="cdn-kpi">
+                <div class="k" data-i18n="cv.k3">问题修复</div>
+                <div class="v"><b id="cdnCount-fix">4</b><i data-i18n="cv.unit">项</i></div>
+                <div class="d up" data-i18n="cv.k3d">均已修复并回归</div>
+              </div>
+            </div>
+            <div class="cdn-mapbox">
+              <div class="cdn-maph">
+                <b data-i18n="fus.map.h">全球调度 · 实时节点</b>
+                <span class="cdn-legend"><i class="cf"></i>CloudFront<i class="cl"></i>Cloudflare</span>
+              </div>
+              <div class="cdn-map">
+                <svg viewBox="0 0 1000 388" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="cdnArc2" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#517AEB" stop-opacity=".18"></stop>
+                      <stop offset="55%" stop-color="#517AEB" stop-opacity=".85"></stop>
+                      <stop offset="100%" stop-color="#2CB6EE" stop-opacity=".95"></stop>
+                    </linearGradient>
+                  </defs>
+                  <path class="cdn-dots" d="M252 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M336 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M378 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M238 7h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M322 7h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M532 7h.01m7 0h.01m7 0h.01m7 0h.01M567 7h.01M763 7h.01m7 0h.01m7 0h.01M168 14h.01m7 0h.01M231 14h.01m7 0h.01M252 14h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 14h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M546 14h.01M784 14h.01m7 0h.01M161 21h.01M259 21h.01M343 21h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M658 21h.01M742 21h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M154 28h.01m7 0h.01M175 28h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M224 28h.01m7 0h.01M252 28h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M350 28h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M644 28h.01m7 0h.01M693 28h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M889 28h.01m7 0h.01m7 0h.01m7 0h.01M49 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M126 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M182 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M224 35h.01m7 0h.01m7 0h.01m7 0h.01M266 35h.01M294 35h.01m7 0h.01m7 0h.01M364 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M553 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M672 35h.01M693 35h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M980 35h.01m7 0h.01m7 0h.01M0 42h.01m7 0h.01M21 42h.01M49 42h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M301 42h.01m7 0h.01m7 0h.01m7 0h.01M357 42h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 42h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M637 42h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M56 49h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M266 49h.01m7 0h.01M287 49h.01M301 49h.01m7 0h.01m7 0h.01M357 49h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M441 49h.01m7 0h.01m7 0h.01M532 49h.01m7 0h.01m7 0h.01m7 0h.01M567 49h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M609 49h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M42 56h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M287 56h.01m7 0h.01M364 56h.01m7 0h.01m7 0h.01M518 56h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M560 56h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M56 63h.01m7 0h.01m7 0h.01M119 63h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M287 63h.01m7 0h.01m7 0h.01M322 63h.01M518 63h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M567 63h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M910 63h.01M924 63h.01M945 63h.01m7 0h.01M63 70h.01M133 70h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M294 70h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M490 70h.01M525 70h.01M539 70h.01M560 70h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M938 70h.01m7 0h.01m7 0h.01M140 77h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M280 77h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 77h.01m7 0h.01M497 77h.01M525 77h.01M546 77h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M896 77h.01M938 77h.01m7 0h.01M147 84h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M287 84h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 84h.01M490 84h.01m7 0h.01M511 84h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M938 84h.01M154 91h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M343 91h.01m7 0h.01M497 91h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M161 98h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M497 98h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M595 98h.01M609 98h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M651 98h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M896 98h.01M161 105h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M497 105h.01m7 0h.01m7 0h.01m7 0h.01M532 105h.01M546 105h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M609 105h.01m7 0h.01m7 0h.01m7 0h.01M644 105h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M896 105h.01m7 0h.01M161 112h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 112h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M525 112h.01M539 112h.01M560 112h.01m7 0h.01m7 0h.01M595 112h.01M616 112h.01m7 0h.01m7 0h.01M651 112h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M889 112h.01M161 119h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 119h.01m7 0h.01m7 0h.01m7 0h.01M546 119h.01M560 119h.01M581 119h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M651 119h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M854 119h.01M889 119h.01M168 126h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M483 126h.01M504 126h.01m7 0h.01m7 0h.01m7 0h.01M581 126h.01M595 126h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M854 126h.01M882 126h.01m7 0h.01M175 133h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M483 133h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M602 133h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M189 140h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 140h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M560 140h.01m7 0h.01m7 0h.01M602 140h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M182 147h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M273 147h.01M476 147h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M644 147h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M189 154h.01M203 154h.01m7 0h.01m7 0h.01m7 0h.01M273 154h.01M462 154h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M602 154h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M665 154h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M203 161h.01m7 0h.01m7 0h.01m7 0h.01M462 161h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M609 161h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M693 161h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M210 168h.01m7 0h.01m7 0h.01M455 168h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M700 168h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M756 168h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M217 175h.01m7 0h.01m7 0h.01M252 175h.01M301 175h.01m7 0h.01M455 175h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M616 175h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M707 175h.01m7 0h.01m7 0h.01m7 0h.01M763 175h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M805 175h.01M231 182h.01m7 0h.01m7 0h.01m7 0h.01M455 182h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M623 182h.01m7 0h.01m7 0h.01m7 0h.01M707 182h.01m7 0h.01m7 0h.01M763 182h.01M777 182h.01m7 0h.01m7 0h.01m7 0h.01M252 189h.01m7 0h.01m7 0h.01M455 189h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M714 189h.01m7 0h.01M777 189h.01m7 0h.01m7 0h.01m7 0h.01M840 189h.01M266 196h.01M294 196h.01M308 196h.01M462 196h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M637 196h.01M714 196h.01m7 0h.01M791 196h.01m7 0h.01M840 196h.01m7 0h.01M273 203h.01M287 203h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M469 203h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M714 203h.01M777 203h.01M847 203h.01M287 210h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M476 210h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M518 210h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M826 210h.01M847 210h.01M287 217h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M532 217h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M770 217h.01M784 217h.01M819 217h.01m7 0h.01M280 224h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M532 224h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M777 224h.01m7 0h.01M805 224h.01m7 0h.01m7 0h.01m7 0h.01M847 224h.01M280 231h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M525 231h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M784 231h.01M805 231h.01m7 0h.01m7 0h.01M833 231h.01m7 0h.01M868 231h.01M280 238h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M532 238h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M791 238h.01M819 238h.01M833 238h.01m7 0h.01M875 238h.01m7 0h.01m7 0h.01m7 0h.01M924 238h.01M280 245h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 245h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M798 245h.01M889 245h.01m7 0h.01m7 0h.01m7 0h.01M931 245h.01M287 252h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 252h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M826 252h.01M847 252h.01M896 252h.01M910 252h.01M287 259h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 259h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M868 259h.01M896 259h.01M294 266h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 266h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M637 266h.01M861 266h.01m7 0h.01m7 0h.01M896 266h.01M0 273h.01M301 273h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 273h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M630 273h.01m7 0h.01M847 273h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M896 273h.01m7 0h.01M308 280h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 280h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M623 280h.01m7 0h.01M840 280h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 287h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M539 287h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M623 287h.01m7 0h.01M826 287h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 294h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M546 294h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M623 294h.01m7 0h.01M819 294h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 301h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M546 301h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M819 301h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 308h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M553 308h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M826 308h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M308 315h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M553 315h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M826 315h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M868 315h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M301 322h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M553 322h.01m7 0h.01M826 322h.01M882 322h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M301 329h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01m7 0h.01M889 329h.01m7 0h.01m7 0h.01m7 0h.01M301 336h.01m7 0h.01m7 0h.01m7 0h.01M987 336h.01M301 343h.01m7 0h.01m7 0h.01M910 343h.01M980 343h.01M294 350h.01m7 0h.01m7 0h.01m7 0h.01M973 350h.01M294 357h.01m7 0h.01m7 0h.01M294 364h.01m7 0h.01m7 0h.01M693 364h.01M294 371h.01m7 0h.01m7 0h.01M336 371h.01M301 378h.01m7 0h.01m7 0h.01"></path>
+                  <g class="cdn-arcs"><path class="cdn-arc" d="M788 224Q838 140 888 128"></path><path class="cdn-arc" d="M788 224Q820 142 853 123"></path><path class="cdn-arc" d="M788 224Q802 177 817 165"></path><path class="cdn-arc" d="M788 224Q854 230 920 321"></path><path class="cdn-arc" d="M788 224Q644 71 500 85"></path><path class="cdn-arc" d="M788 224Q480 17 172 133"></path></g>
+                  <g class="cdn-nodes"><circle class="cdn-node cf" cx="823" cy="117" r="3.6"></circle><circle class="cdn-node cf" cx="789" cy="143" r="3.6"></circle><circle class="cdn-node cf" cx="277" cy="156" r="3.6"></circle><circle class="cdn-node cl" cx="578" cy="301" r="3.6"></circle><circle class="cdn-hub-ring" cx="788" cy="224" r="13"></circle><circle class="cdn-hub" cx="788" cy="224" r="5.4"></circle><circle class="cdn-node cf" cx="888" cy="128" r="3.6"></circle><circle class="cdn-node cf" cx="853" cy="123" r="3.6"></circle><circle class="cdn-node cf" cx="172" cy="133" r="3.6"></circle><circle class="cdn-node cf" cx="294" cy="114" r="3.6"></circle><circle class="cdn-node cl" cx="500" cy="85" r="3.6"></circle><circle class="cdn-node cf" cx="920" cy="321" r="3.6"></circle><circle class="cdn-node cl" cx="370" cy="293" r="3.6"></circle><circle class="cdn-node cl" cx="654" cy="157" r="3.6"></circle><circle class="cdn-node cl" cx="702" cy="174" r="3.6"></circle><circle class="cdn-node cl" cx="524" cy="88" r="3.6"></circle><circle class="cdn-node cf" cx="817" cy="165" r="3.6"></circle><circle class="cdn-node cl" cx="837" cy="141" r="3.6"></circle></g>
+                </svg>
+<span class="cdn-lab pill" style="left:78.80%;top:57.73%" data-i18n="fus.map.sg">新加坡</span><span class="cdn-lab up" style="left:88.80%;top:32.99%" data-i18n="fus.map.tk">东京</span><span class="cdn-lab left" style="left:17.20%;top:34.28%" data-i18n="fus.map.la">洛杉矶</span><span class="cdn-lab up" style="left:50.00%;top:21.91%" data-i18n="fus.map.ld">伦敦</span><span class="cdn-lab right" style="left:92.00%;top:82.73%" data-i18n="fus.map.syd">悉尼</span>
               </div>
             </div>
             <div class="cdn-specs">
@@ -842,7 +843,6 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
               <span><i data-i18n="cdn2.c4">传输安全</i><b class="mono">TLS 1.3</b></span>
             </div>
           </div>
-
           <div class="cdn-pane" id="cdnver-pane-new" data-pane="new" hidden>
             <div class="claw-panehead"><div>
               <h3 data-i18n="cv.k1">新增能力</h3>
@@ -877,7 +877,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
                 <div class="top"><i class="ri cf"></i><b>CloudFront</b><span class="pill pill-ok" data-i18n="cv.st.on">运行中</span></div>
                 <div class="cm" data-i18n="cv.cm1">6 域名 · 主用渠道</div>
               </div>
-              <div class="cdn-chan-card cl">
+              <div class="cdn-chan-card cl" id="cdnChanCF">
                 <div class="top"><i class="ri cl"></i><b>Cloudflare</b><span class="pill pill-new" data-i18n="cv.st.new">新增</span></div>
                 <div class="cm" data-i18n="cv.cm2">同台调度 · 按域名切换</div>
               </div>
@@ -951,37 +951,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
       </div>
     </div>
   </div>
-  <div class="bilstrip">
-    <div class="bilstrip-h" data-i18n="cdn2.opt.h">本次同时上线 · 5 项体验优化</div>
-    <div class="bilstrip-grid">
-      <div class="bilstrip-item">
-        <span class="n">01</span>
-        <div class="t" data-i18n="cdn2.opt1.t">证书状态自动更新</div>
-        <div class="d" data-i18n="cdn2.opt1.d">即将过期、已过期可识别，即将过期的证书仍可正常使用</div>
-      </div>
-      <div class="bilstrip-item">
-        <span class="n">02</span>
-        <div class="t" data-i18n="cdn2.opt2.t">证书访问权限收紧</div>
-        <div class="d" data-i18n="cdn2.opt2.d">加强证书访问权限控制，进一步保障账户数据安全</div>
-      </div>
-      <div class="bilstrip-item">
-        <span class="n">03</span>
-        <div class="t" data-i18n="cdn2.opt3.t">缓存规则批量设置</div>
-        <div class="d" data-i18n="cdn2.opt3.d">规则可批量设置；设置不可修改的请求头/响应头时增加提示</div>
-      </div>
-      <div class="bilstrip-item">
-        <span class="n">04</span>
-        <div class="t" data-i18n="cdn2.opt4.t">域名、证书列表页优化</div>
-        <div class="d" data-i18n="cdn2.opt4.d">列表页体验优化，导出域名时支持附带标签</div>
-      </div>
-      <div class="bilstrip-item">
-        <span class="n">05</span>
-        <div class="t" data-i18n="cdn2.opt5.t">命中率按流量加权</div>
-        <div class="d" data-i18n="cdn2.opt5.d">平均流量命中率改为按实际流量加权，更准确反映缓存效果</div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 <!-- ============ RECENT LAUNCH: RACORE BILLING ============ -->
 <section class="section" id="billing">
@@ -1175,37 +1145,7 @@ footer{background:var(--page-bg);border-top:1px solid var(--line);padding:60px 2
       </div>
     </div>
   </div>
-  <div class="bilstrip">
-    <div class="bilstrip-h" data-i18n="bil.opt.h">本次同时上线 · 5 项体验优化</div>
-    <div class="bilstrip-grid">
-      <div class="bilstrip-item">
-        <span class="n">01</span>
-        <div class="t" data-i18n="bil.opt1.t">微软账单明细支持订阅 ID 查询</div>
-        <div class="d" data-i18n="bil.opt1.d">按订阅 ID 直接检索账单明细，查账少绕一步</div>
-      </div>
-      <div class="bilstrip-item">
-        <span class="n">02</span>
-        <div class="t" data-i18n="bil.opt2.t">管理租户账单详情页新增归档标识</div>
-        <div class="d" data-i18n="bil.opt2.d">账单是否已归档，在详情页一眼看到</div>
-      </div>
-      <div class="bilstrip-item">
-        <span class="n">03</span>
-        <div class="t" data-i18n="bil.opt3.t">Usage 配置详情页返回逻辑优化</div>
-        <div class="d" data-i18n="bil.opt3.d">从哪个入口进来就回哪个页面，不用重新找</div>
-      </div>
-      <div class="bilstrip-item">
-        <span class="n">04</span>
-        <div class="t" data-i18n="bil.opt4.t">Usage 配置页兼容历史还原数据</div>
-        <div class="d" data-i18n="bil.opt4.d">旧还原配置的展示与保存更顺，历史数据可查可改</div>
-      </div>
-      <div class="bilstrip-item">
-        <span class="n">05</span>
-        <div class="t" data-i18n="bil.opt5.t">消费检测告警新增产品维度成本汇总</div>
-        <div class="d" data-i18n="bil.opt5.d">告警邮件带按产品的成本汇总，快速定位异常来源</div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 <!-- ============ FEATURED LAUNCH: RACORECLAW ============ -->
 <section class="section" id="claw">
@@ -1893,12 +1833,6 @@ const I18N = {
     "cdn2.f3p":"全新日志架构统一采集与查询；证书状态自动更新，即将过期与已过期可识别，创建域名时只展示可用证书。",
     "cdn2.cta":"进入平台","cdn2.cta2":"下载产品白皮书",
     "cdn2.note":"版本 <b>1.1.2</b> · 白皮书 V1.1R26C06A · 另有 4 项问题修复，详见更新日志",
-    "cdn2.opt.h":"本次同时上线 · 5 项体验优化",
-    "cdn2.opt1.t":"证书状态自动更新","cdn2.opt1.d":"即将过期、已过期可识别，即将过期的证书仍可正常使用",
-    "cdn2.opt2.t":"证书访问权限收紧","cdn2.opt2.d":"加强证书访问权限控制，进一步保障账户数据安全",
-    "cdn2.opt3.t":"缓存规则批量设置","cdn2.opt3.d":"规则可批量设置；设置不可修改的请求头/响应头时增加提示",
-    "cdn2.opt4.t":"域名、证书列表页优化","cdn2.opt4.d":"列表页体验优化，导出域名时支持附带标签",
-    "cdn2.opt5.t":"命中率按流量加权","cdn2.opt5.d":"平均流量命中率改为按实际流量加权，更准确反映缓存效果",
     "bil.kicker":"近期发布 · 2026 年 10 月",
     "bil.title":"账单系统——通用出账标准接口 v0.1，对外开放。",
     "bil.sub":"一套 REST 接口打通客户、绑定、用量、折扣、账单与告警：第三方平台按 /api/v1/platform/{platformCode} 接入，就能跑完从用量上传到归档推送的全链路。本次同时上线 5 项体验优化。",
@@ -1915,12 +1849,6 @@ const I18N = {
     "bil.note":"金额主单位两位小数 · 默认 USD · 账期 billcycle = yyyyMM",
     "bil.apinote":"统一响应 { code, message, data, requestId } · 成功 code = 0",
     "bil.cta":"查看更新日志",
-    "bil.opt.h":"本次同时上线 · 5 项体验优化",
-    "bil.opt1.t":"微软账单明细支持订阅 ID 查询","bil.opt1.d":"按订阅 ID 直接检索账单明细，查账少绕一步",
-    "bil.opt2.t":"管理租户账单详情页新增归档标识","bil.opt2.d":"账单是否已归档，在详情页一眼看到",
-    "bil.opt3.t":"Usage 配置详情页返回逻辑优化","bil.opt3.d":"从哪个入口进来就回哪个页面，不用重新找",
-    "bil.opt4.t":"Usage 配置页兼容历史还原数据","bil.opt4.d":"旧还原配置的展示与保存更顺，历史数据可查可改",
-    "bil.opt5.t":"消费检测告警新增产品维度成本汇总","bil.opt5.d":"告警邮件带按产品的成本汇总，快速定位异常来源",
     "claw.kicker":"近期发布 · 2026 年 9 月",
     "claw.title":"RacoreClaw——接上 MCP，用一个对话框管好云上的一切。",
     "claw.sub":"Racore 桌面智能体客户端：本地 stdio 与远程 Streamable HTTP / SSE 的 MCP 服务统一纳管，导入 JSON 即可添加，保存后热重载。查域名、创建加速、看流量账单、收邮件、操作飞书——一句话下达，工具调用与结果全程可见。",
@@ -2004,7 +1932,7 @@ const I18N = {
     "fus.r.origin":"回源协议","fus.r.tls":"传输安全","fus.r.alert":"告警通知","fus.r.alertv":"站内信 + 邮件",
     "cv.nav.h":"版本控制台",
     "cv.n1":"概览","cv.n2":"新增能力","cv.n3":"体验优化","cv.n4":"问题修复","cv.n5":"渠道","cv.n6":"回源与 TLS","cv.n7":"版本信息",
-    "cv.ov.h":"融合 CDN 1.1.2","cv.live":"已上线",
+    "cv.ov.h":"融合 CDN 1.1.2","cv.live":"已上线","cv.unit":"项",
     "cv.k1":"新增能力","cv.k2":"体验优化","cv.k3":"问题修复",
     "cv.st.on":"运行中","cv.st.new":"新增",
     "cv.cm1":"6 域名 · 主用渠道","cv.cm2":"同台调度 · 按域名切换",
@@ -2013,6 +1941,7 @@ const I18N = {
     "cv.x1":"调度方式","cv.x1v":"两个渠道同台调度","cv.x2":"域名切换","cv.x2v":"按域名选择加速渠道","cv.x3":"控制台","cv.x3v":"一个后台管完两个渠道",
     "cv.y1":"回源协议","cv.y2":"回源端口","cv.y2v":"自定义端口","cv.y3":"证书","cv.y3v":"自动更新 · 过期可识别",
     "cv.z1":"发布日期","cv.z2":"白皮书","cv.z3":"升级方式","cv.z3v":"控制台自动生效",
+    "cv.k1d":"Cloudflare · TLS 1.3","cv.k2d":"证书 · 缓存规则 · 列表","cv.k3d":"均已修复并回归",
     "cli.kicker":"近期发布 · 2026 年 9 月",
     "cli.shot.cap":"粘贴 racore-cli 配置即可接入","cli.spec.h":"CLI 规格",
     "cli.title":"Racore CDN CLI——在终端里，人和 AI 一起管 CDN。",
@@ -2082,12 +2011,6 @@ const I18N = {
     "cdn2.f3p":"The rebuilt logging architecture unifies collection and querying; certificate status updates automatically, expiring and expired certs are recognised, and only usable certificates are offered at domain creation.",
     "cdn2.cta":"Open the platform","cdn2.cta2":"Download the whitepaper",
     "cdn2.note":"Version <b>1.1.2</b> · whitepaper V1.1R26C06A · plus 4 bug fixes, detailed in the changelog",
-    "cdn2.opt.h":"Shipping in the same release · 5 improvements",
-    "cdn2.opt1.t":"Certificate status updates itself","cdn2.opt1.d":"Expiring and expired are recognised; a cert nearing expiry still serves traffic",
-    "cdn2.opt2.t":"Tighter certificate access control","cdn2.opt2.d":"Certificate access is further restricted to protect account data",
-    "cdn2.opt3.t":"Bulk cache-rule editing","cdn2.opt3.d":"Rules can be set in bulk, with a hint when a header cannot be modified",
-    "cdn2.opt4.t":"Better domain and certificate lists","cdn2.opt4.d":"Cleaner list pages, and domain export can include tags",
-    "cdn2.opt5.t":"Traffic-weighted cache hit ratio","cdn2.opt5.d":"Average hit ratio is now weighted by real traffic, a truer picture of cache efficiency",
     "bil.kicker":"Recent launch · October 2026",
     "bil.title":"The Billing System — the Universal Billing Standard API v0.1 is open.",
     "bil.sub":"One set of REST endpoints connects customers, bindings, usage, discounts, bills and alerts: a third-party platform integrates under /api/v1/platform/{platformCode} and runs the whole chain, from usage upload to archive and push. Five experience improvements ship alongside.",
@@ -2104,12 +2027,6 @@ const I18N = {
     "bil.note":"Amounts in major units, two decimals · USD by default · billcycle = yyyyMM",
     "bil.apinote":"Uniform envelope { code, message, data, requestId } · code = 0 on success",
     "bil.cta":"View the changelog",
-    "bil.opt.h":"Also shipping · 5 experience improvements",
-    "bil.opt1.t":"Bill lines searchable by subscription ID","bil.opt1.d":"Look up bill lines directly by subscription ID — one step less per reconciliation",
-    "bil.opt2.t":"Archived flag on the managed-tenant bill page","bil.opt2.d":"See at a glance whether a bill has been archived",
-    "bil.opt3.t":"Better back navigation from Usage config details","bil.opt3.d":"Return to the page you came from, without hunting for it again",
-    "bil.opt4.t":"Usage config page handles restored historical data","bil.opt4.d":"Older restored configurations display and save cleanly; historical data stays viewable and editable",
-    "bil.opt5.t":"Product-level cost breakdown in spend alerts","bil.opt5.d":"Alert emails now carry a per-product cost summary, so anomalies are quick to trace",
     "claw.kicker":"Recent launch · September 2026",
     "claw.title":"RacoreClaw — plug in MCP, run your cloud from one dialogue.",
     "claw.sub":"Racore's desktop agent client: local stdio and remote Streamable HTTP / SSE MCP servers managed in one place — import JSON to add one, hot-reload on save. Query domains, create acceleration, read traffic and billing, fetch email, operate Lark — one sentence in, tool calls and results in plain sight.",
@@ -2193,7 +2110,7 @@ const I18N = {
     "fus.r.origin":"Origin protocol","fus.r.tls":"Transport security","fus.r.alert":"Alerts","fus.r.alertv":"In-app + email",
     "cv.nav.h":"Release console",
     "cv.n1":"Overview","cv.n2":"New","cv.n3":"Improved","cv.n4":"Fixed","cv.n5":"Channels","cv.n6":"Origin & TLS","cv.n7":"Version",
-    "cv.ov.h":"Fusion CDN 1.1.2","cv.live":"live",
+    "cv.ov.h":"Fusion CDN 1.1.2","cv.live":"live","cv.unit":" items",
     "cv.k1":"New capabilities","cv.k2":"Improvements","cv.k3":"Fixes",
     "cv.st.on":"active","cv.st.new":"new",
     "cv.cm1":"6 domains · primary channel","cv.cm2":"side by side · per domain",
@@ -2202,6 +2119,7 @@ const I18N = {
     "cv.x1":"Scheduling","cv.x1v":"both channels on one switch","cv.x2":"Domain routing","cv.x2v":"pick the channel per domain","cv.x3":"Console","cv.x3v":"one back office for both vendors",
     "cv.y1":"Origin protocol","cv.y2":"Origin port","cv.y2v":"custom port","cv.y3":"Certificates","cv.y3v":"auto-renewed · expiry flagged",
     "cv.z1":"Release date","cv.z2":"Whitepaper","cv.z3":"Rollout","cv.z3v":"takes effect in the console",
+    "cv.k1d":"Cloudflare · TLS 1.3","cv.k2d":"certs · cache rules · lists","cv.k3d":"all fixed and re-verified",
     "cli.kicker":"Recent launch · September 2026",
     "cli.shot.cap":"Paste the racore-cli config and you are connected","cli.spec.h":"CLI spec",
     "cli.title":"Racore CDN CLI — run your CDN from the terminal, for humans and AI alike.",
@@ -2330,11 +2248,13 @@ document.getElementById("langToggle2").addEventListener("click", toggleLang);
   const cmd = document.getElementById("cdn2Cmd");
   const out = document.getElementById("cdn2Out");
   const cf = document.getElementById("cdnChanCF");
+  const dash = document.getElementById("cdnVer");
   if(!cmd || !out) return;
   let on = false;
   function toggle(){
     on = !on; out.classList.toggle("show", on);
     if(cf) cf.classList.toggle("on", on);
+    if(dash) dash.classList.toggle("go", on);
   }
   cmd.addEventListener("click", toggle);
   cmd.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); toggle(); } });
@@ -2683,7 +2603,6 @@ document.getElementById("langToggle2").addEventListener("click", toggleLang);
                         '</span><span class="tx">' + esc(text) + '</span></div>');
     });
     const total = bullets.length || 1;
-    const max = Math.max(buckets["new"].length, buckets["opt"].length, buckets["fix"].length, 1);
     Object.keys(buckets).forEach(k => {
       const list = document.getElementById("cdnList-" + k);
       if(list) list.innerHTML = buckets[k].join("");
@@ -2691,8 +2610,6 @@ document.getElementById("langToggle2").addEventListener("click", toggleLang);
       if(nav) nav.textContent = buckets[k].length;
       const cnt = document.getElementById("cdnCount-" + k);
       if(cnt) cnt.textContent = buckets[k].length;
-      const bar = document.querySelector(".cdn-bar." + k);
-      if(bar) bar.querySelector("i").style.setProperty("--w", Math.round(buckets[k].length / max * 100) + "%");
     });
     host.dataset.total = total;
   }
