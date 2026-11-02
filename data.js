@@ -169,7 +169,7 @@ const UPDATES = [
         "Enterprise security: SSL/TLS + HSTS, Referer/IP/UA/geo access control, hotlink protection, HLS/AES encryption"
       ]
     },
-    link: { href: "https://www.racorecloud.com/", zh: "进入平台", en: "Open the platform" }
+    link: { href: "https://portal.racorecloud.com/", zh: "进入平台", en: "Open the platform" }
   },
   {
     date: "2026-09",
