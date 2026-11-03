@@ -5,10 +5,13 @@
    字段说明:
      date     "YYYY-MM" 或 "YYYY-MM-DD"，同时用作条目锚点 id
      type     "LAUNCH"(新产品发布) | "UPDATE"(能力更新) | "SOON"(预告)
+     feature  可选；带值的条目在 changelog 里渲染为主推发布（大标题 + 三个标签页
+              + 内嵌版本控制台窗口）。目前 "fusion-cdn-1.1.2" 对应 #cdnVerHost
+     kicker   可选 {zh, en}；条目顶部的灰色标签行（默认是「时间: <date>」）
      product  产品名（不翻译的保留英文）
      title    {zh, en}  条目标题
      body     {zh:[段落…], en:[段落…]}  支持简单 HTML（<code> <strong>）
-     bullets  {zh:[…], en:[…]}  可选，要点列表
+     bullets  {zh:[…], en:[…]}  可选，要点列表（主推发布里渲染进控制台三个面板）
      link     {href, zh, en}  可选，"查看详情"链接
    页面联动: 首页 Hero 控制台 / 眉标日期 / 日志页 meta 自动读取最新的非 SOON 条目
    ============================================================ */
@@ -16,8 +19,10 @@ const UPDATES = [
   {
     date: "2026-10-23",
     type: "UPDATE",
+    feature: "fusion-cdn-1.1.2",
     product: "Fusion CDN",
-    title: { zh: "融合 CDN 1.1.2 版本发布：Cloudflare 渠道全面接入", en: "Fusion CDN 1.1.2: Cloudflare channel support, TLS 1.3 and a new logging stack" },
+    kicker: { zh: "版本发布 — 2026 年 10 月 23 日", en: "Release — October 23, 2026" },
+    title: { zh: "融合 CDN 1.1.2——Cloudflare 渠道全面接入，日志架构换代。", en: "Fusion CDN 1.1.2 — the Cloudflare channel lands, and the logging stack is rebuilt." },
     body: {
       zh: [
         "<strong>融合 CDN 1.1.2</strong> 正式发布：新增 Cloudflare 渠道支持，创建域名时可指定回源协议（HTTP / HTTPS）与回源端口，HTTPS 支持 TLS 1.3；注册审核通过后通过站内信与邮件通知，日志架构全面换代。",
