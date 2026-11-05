@@ -1,0 +1,116 @@
+/* Responsive layouts: reflow complex demos instead of squeezing desktop columns. */
+@media(max-width:900px){
+ body #fusioncdn #cdnDash .claw-main{display:flex;flex-direction:column;min-height:0}
+ body #fusioncdn #cdnDash .claw-center{width:100%;min-width:0;box-sizing:border-box;padding:18px 16px 0;flex:none}
+ body #fusioncdn #cdnDash .claw-side{display:flex;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;max-width:100%;width:100%;box-sizing:border-box;border-right:0;border-bottom:1px solid #E7EDF6;padding:4px 0}
+ body #fusioncdn #cdnDash .claw-side :is(.claw-side-h,.claw-gw){display:none}
+ body #fusioncdn #cdnDash .claw-navitem{flex:0 0 auto;width:auto;margin:0;padding:10px 12px;min-height:40px;white-space:nowrap}
+ body #fusioncdn #cdnDash .claw-navitem.on{width:auto;padding-left:12px;box-shadow:inset 0 -2px #165DFF}
+ body #fusioncdn #cdn-pane-ov:not([hidden]){display:flex;flex-direction:column;gap:16px;width:100%;min-width:0}
+ body #fusioncdn #cdn-pane-ov>.cdn-kpis{grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:8px}
+ body #fusioncdn #cdnDash .cdn-kpi{padding:10px 8px}
+ body #fusioncdn #cdnDash .cdn-kpi .k{font-size:10px;white-space:nowrap}
+ body #fusioncdn #cdnDash .cdn-kpi .v{font-size:22px;white-space:nowrap}
+ body #fusioncdn #cdnDash .cdn-kpi .d{font-size:9px;white-space:normal}
+ body #fusioncdn #cdn-pane-ov>.cdn-mapbox,body #fusioncdn #cdn-pane-ov>.cdn-reqs{width:100%;box-sizing:border-box;min-width:0;flex:none}
+ body #fusioncdn #cdnDash .cdn-maph{flex-wrap:wrap;line-height:1.5}
+ body #fusioncdn #cdnDash .cdn-map{min-height:150px;flex:none;aspect-ratio:2/1}
+ body #fusioncdn #cdnDash .cdn-specs{display:flex;flex-wrap:wrap}
+ body #fusioncdn #cdnDash .cdn-foot{padding:12px 16px;font-size:10px;white-space:normal;overflow-wrap:anywhere}
+ body #fusioncdn #cdnDash .claw-panehead h3{font-size:20px;line-height:1.4}
+ body #fusioncdn #cdnDash .claw-panehead p{font-size:12px;line-height:1.6}
+}
+@media(max-width:700px){
+ body :is(#cdnVer,#clawApp) .claw-main{display:flex;flex-direction:column;min-height:0}
+ body :is(#cdnVer,#clawApp) .claw-center{box-sizing:border-box;width:100%;min-width:0;flex:none;padding:18px 14px}
+ body :is(#cdnVer,#clawApp) .claw-side{display:flex;flex-direction:row;flex-wrap:nowrap;width:100%;max-width:100%;box-sizing:border-box;overflow-x:auto;border-right:0;border-bottom:1px solid #E7EDF6;padding:4px 0}
+ body :is(#cdnVer,#clawApp) .claw-side :is(.claw-side-h,.claw-space,.claw-gw){display:none}
+ body :is(#cdnVer,#clawApp) .claw-navitem,body #clawApp .claw-new{flex:0 0 auto;width:auto;min-height:40px;padding:8px 12px;margin:0;white-space:nowrap}
+ body :is(#cdnVer,#clawApp) .claw-navitem.on{width:auto;margin:0;padding-left:12px;box-shadow:inset 0 -2px #165DFF}
+ body :is(#cdnVer,#clawApp,#cdnDash) .claw-titlebar{flex-wrap:wrap;gap:6px;padding:12px}
+ body :is(#cdnVer,#clawApp,#cdnDash) .claw-wtitle{margin-left:6px;font-size:12px}
+ body :is(#cdnVer,#clawApp,#cdnDash) .claw-wtitle em{font-size:9px}
+ body :is(#cdnVer,#clawApp) .claw-panehead{flex-wrap:wrap;gap:10px}
+ body #clawApp .claw-panehead>div{min-width:0}
+ body #clawApp .claw-srv{min-width:0;gap:8px;padding-inline:0}
+ body #clawApp .claw-srv-info{min-width:0;flex:1}
+ body #clawApp .claw-srv-name{flex-wrap:wrap;overflow-wrap:anywhere}
+ body #clawApp .claw-sw{flex-shrink:0}
+ body #cdnVer .release-overview-channels{grid-template-columns:minmax(0,1fr)}
+ body #cdnVer .release-overview-meta{margin-top:20px}
+ body #cdnVer .cdn-foot{white-space:normal;overflow-wrap:anywhere;min-height:34px;height:auto}
+ body #apiWin .api-tabs{overflow-x:auto;flex-wrap:nowrap;max-width:100%}
+ body #apiWin .api-tab{flex-shrink:0;white-space:nowrap}
+ body #apiWin :is(.api-req,.api-code){max-width:100%;overflow-x:auto;min-width:0}
+ body .spec-row{gap:12px;min-width:0}
+ body .spec-row>span,body .two-specs dd{overflow-wrap:anywhere;min-width:0}
+ body .hp-status-command{font-size:11px;white-space:normal}
+ body .footer-service-strip{flex-wrap:wrap;gap:16px;padding-block:24px}
+ body .footer-contacts small{overflow-wrap:anywhere}
+ body .log-body code{white-space:normal}
+ body .bar-in{min-width:0}
+}
+@media(max-width:700px){
+ body #featured #cdnVer .claw-main{display:flex;flex-direction:column;min-height:0}
+ body #featured #cdnVer .claw-center{width:100%;min-width:0;flex:none;box-sizing:border-box;padding:18px 14px}
+ body #featured #cdnVer .claw-side{display:flex;flex-direction:row;flex:0 0 auto;width:100%;max-width:100%;overflow-x:auto;box-sizing:border-box;border-right:0;border-bottom:1px solid #E7EDF6;padding:4px 0}
+ body #featured #cdnVer .claw-side :is(.claw-side-h,.claw-gw){display:none}
+ body #featured #cdnVer .claw-navitem,body #featured #cdnVer .claw-navitem.on{flex:0 0 auto;width:auto;min-height:40px;margin:0;padding:8px 12px;white-space:nowrap}
+}
+
+/* Shared compact provider markers and expanded navigation on both pages. */
+body #featured #cdnVer .release-provider{width:8px;height:8px;flex:0 0 8px}
+@media(max-width:1100px){
+ body .bar:has(.menu-toggle[aria-expanded=true]) .nav{padding:16px 32px 80px!important;gap:0!important;align-items:flex-start!important}
+ body .bar:has(.menu-toggle[aria-expanded=true]) .nav a{box-sizing:border-box;min-height:40px;padding:10px 3px!important;line-height:20px!important;align-self:flex-start;width:fit-content}
+ body .bar:has(.menu-toggle[aria-expanded=true]) .bar-right{position:absolute;top:calc(100% + 152px)!important;left:32px!important;right:32px!important;display:flex;align-items:center;justify-content:flex-start!important;gap:10px!important;margin:0!important;padding:0!important;background:transparent!important;box-shadow:none!important;border:0;flex-wrap:nowrap;z-index:2}
+}
+@media(max-width:600px){
+ body .bar:has(.menu-toggle[aria-expanded=true]) .nav{padding-left:20px!important;padding-right:20px!important}
+ body .bar:has(.menu-toggle[aria-expanded=true]) .bar-right{left:20px!important;right:20px!important}
+}
+@media(max-width:360px){
+ body .bar:has(.menu-toggle[aria-expanded=true]) .bar-right .btn.btn-ghost{padding:0 12px!important}
+ body .bar:has(.menu-toggle[aria-expanded=true]) .bar-right .btn.btn-ghost>span{font-size:12px!important}
+}
+
+/* Platform heading: accessible contextual explanation. */
+body #cdnDash .cdn-heading-help{display:flex;align-items:center;gap:8px;margin-bottom:20px}
+body #cdnDash .cdn-heading-help h3{margin:0}
+.cdn-help{position:relative;display:inline-flex;flex-shrink:0}
+.cdn-help-trigger{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;padding:0;border:1px solid #86909C;border-radius:50%;background:transparent;color:#86909C;font:600 12px var(--racore-ui-font);cursor:pointer}
+.cdn-help-trigger:is(:hover,:focus-visible){border-color:#165DFF;color:#165DFF;outline:2px solid #E8F3FF;outline-offset:2px}
+.cdn-help-tip{position:absolute;z-index:30;top:calc(100% + 10px);right:0;width:320px;max-width:calc(100vw - 64px);box-sizing:border-box;padding:12px 16px;border:1px solid #E7EDF6;border-radius:10px;background:#fff;box-shadow:0 6px 24px #1d21291a;color:#4E5969;font:400 13px/1.8 var(--racore-ui-font);white-space:normal;visibility:hidden;opacity:0;transition:opacity .15s}
+.cdn-help:is(:hover,:focus-within) .cdn-help-tip,.cdn-help:has([aria-expanded=true]) .cdn-help-tip{visibility:visible;opacity:1}
+@media(max-width:600px){body #cdnDash .cdn-heading-help{gap:6px;margin-bottom:16px}.cdn-help-trigger{width:22px;height:22px}.cdn-help-tip{width:260px}}
+
+/* Anchor the explanation to the heading's left edge. */
+body #cdnDash .cdn-heading-help{position:relative}
+body #cdnDash .cdn-help{position:static}
+body #cdnDash .cdn-help-trigger{width:16px;height:16px;font-size:10px;box-sizing:border-box}
+body #cdnDash .cdn-help-tip{top:calc(100% + 8px);left:0;right:auto;max-width:min(320px,100%);text-align:left}
+@media(max-width:600px){body #cdnDash .cdn-help-trigger{width:16px;height:16px}body #cdnDash .cdn-help-tip{width:260px}}
+
+/* Wider help bubble, with the same explanation retained beneath the heading. */
+body #cdnDash .cdn-help-tip{width:480px;max-width:min(480px,100%)}
+body #cdnDash .cdn-heading-help{margin-bottom:8px}
+body #cdnDash .cdn-platform-description{margin:0 0 20px;color:#4E5969;font:400 12px/1.8 var(--racore-ui-font);white-space:normal}
+@media(max-width:600px){body #cdnDash .cdn-help-tip{width:100%;max-width:100%}body #cdnDash .cdn-platform-description{margin-bottom:16px}}
+
+/* Compact permanent platform description; no duplicate help popup. */
+body #cdnDash .cdn-platform-description{margin:0 0 12px!important}
+body #cdnDash .claw-panehead:has(.cdn-platform-description){margin-bottom:0!important;padding-bottom:0!important}
+
+/* Billing endpoint navigation matches the CDN console tabs. */
+body #billing #apiWin .api-tabs{display:flex;flex-wrap:nowrap;align-items:stretch;gap:0!important;padding:0!important;min-height:48px;height:auto;margin:0;border-bottom:1px solid #E7EDF6;background:#F7F9FF;overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+body #billing #apiWin .api-tab{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;min-height:48px;padding:0 16px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#4E5969!important;font:400 13px/1.4 var(--racore-ui-font);white-space:nowrap;cursor:pointer}
+body #billing #apiWin .api-tab.on{background:#fff!important;color:#165DFF!important;font-weight:600}
+body #billing #apiWin .api-tab.on::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#165DFF}
+body #billing #apiWin .api-tab:hover{background:#E8F3FF!important;color:#165DFF!important}
+body #billing #apiWin .api-tab:focus-visible{outline:2px solid #165DFF;outline-offset:-3px}
+.billing-tab-icon{width:18px;height:18px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:600px){body #billing #apiWin .api-tab{font-size:12px;gap:6px;padding:0 12px!important;min-height:44px}.billing-tab-icon{width:16px;height:16px}}
+
+/* Full-width billing navigation, with a white active tab. */
+body #billing #apiWin>.api-tabs{width:100%;max-width:100%;box-sizing:border-box;margin:0;flex-shrink:0}
+body #billing #apiWin .api-tab.on:hover{background:#fff!important}

@@ -1,0 +1,15 @@
+/* Full-width backdrops with content aligned to the navigation container. */
+#featured,#billing,#fusioncdn{
+  width:100%;max-width:none;box-sizing:border-box;
+  padding-left:max(var(--racore-content-gutter),calc((100% - var(--racore-content-width))/2));
+  padding-right:max(var(--racore-content-gutter),calc((100% - var(--racore-content-width))/2));
+}
+#featured .feat-head,#billing .feat-head,#fusioncdn .feat-head,
+#featured .fus-grid,#billing .feat-split,#fusioncdn .fus-grid{width:100%;max-width:none;min-width:0;box-sizing:border-box}
+#featured .feat-head>*,#billing .feat-head>*,#fusioncdn .feat-head>*,
+#featured .fus-grid>*,#billing .feat-split>*,#fusioncdn .fus-grid>*{min-width:0;max-width:100%}
+#featured .sec-sub,#billing .sec-sub,#fusioncdn .sec-sub,
+#featured .ide-feat p,#billing .ide-feat p,#fusioncdn .ide-feat p{overflow-wrap:anywhere}
+/* Apply the same navigation boundaries to the homepage hero and releases. */
+.replacement-home .hp-container{width:calc(100% - var(--racore-content-gutter) * 2);max-width:var(--racore-content-width);margin-left:auto;margin-right:auto;box-sizing:border-box}
+.replacement-home .hp-hero-inner{width:calc(100% - var(--racore-content-gutter) * 2);max-width:var(--racore-content-width)}

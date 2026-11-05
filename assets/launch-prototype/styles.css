@@ -1,0 +1,140 @@
+@font-face{font-family:Inter;src:url('../fonts/inter-400.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url('../fonts/inter-500.woff2') format('woff2');font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url('../fonts/inter-600.woff2') format('woff2');font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:Inter;src:url('../fonts/inter-700.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+:root{font-family:Inter,'Microsoft YaHei','PingFang SC',sans-serif;color:#020b32;background:#f3f8ff;font-synthesis:none;--scale:1}
+*{box-sizing:border-box}body{margin:0;min-width:320px}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}h1,h2,p,dl,dd{margin:0}button:focus-visible,a:focus-visible{outline:3px solid #1780ff;outline-offset:5px}svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.skip-link{position:fixed;left:20px;top:-80px;z-index:10;padding:12px 18px;background:white}.skip-link:focus{top:12px}
+.viewport{width:100%;height:calc(825px * var(--scale));overflow:hidden}.page{width:1905px;height:825px;position:relative;transform:scale(var(--scale));transform-origin:top left;overflow:hidden;background:radial-gradient(ellipse at 85% 24%,#dcecff77,transparent 65%),linear-gradient(116deg,#fff 5%,#f9fcff 40%,#e8f3ff 100%)}
+.page:before{content:"";position:absolute;inset:80px 0 0;background:repeating-linear-gradient(90deg,transparent 0 190px,#a6c6f414 190px 191px);pointer-events:none}.page:after{content:"";position:absolute;left:0;top:490px;width:680px;height:290px;background:linear-gradient(167deg,transparent 35%,#fff9 48%,transparent 64%),radial-gradient(ellipse at 20% 100%,#d9e9ff66,transparent 75%);pointer-events:none}
+.header{position:relative;height:81px;z-index:4;border-bottom:1px solid #d9e5f4;background:linear-gradient(105deg,#ffffffed,#f1f7ffda);display:flex;align-items:center;padding:0 154px;gap:55px}.brand{width:134px;flex:none;line-height:0}.brand img{width:134px;height:31px;object-fit:fill}.navigation{display:flex;align-items:center;gap:38px;height:100%;font-size:17px;font-weight:500;white-space:nowrap;color:#425879}.navigation>a,.navigation>button{padding:0;height:100%;display:flex;align-items:center;position:relative}.navigation .active{font-weight:700;color:#1267ff;background:linear-gradient(90deg,#f45b61,#5d64dc 47%,#007bff);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}.navigation .active:after{content:"";position:absolute;height:3px;border-radius:2px;bottom:16px;left:0;right:0;background:linear-gradient(90deg,#ff685b,#586bff,#00bfe2)}.navigation>button:hover{color:#1673ff}.account{margin-left:auto;display:flex;align-items:center;gap:24px;font-size:15px;font-weight:500}.language{border:1px solid #d2dfef;color:#6c80a6;border-radius:50%;width:46px;height:38px;font-weight:400}.login{height:43px;width:117px;display:grid;place-items:center;border:1px solid transparent;border-radius:30px;background:linear-gradient(#f9fcff,#f9fcff) padding-box,linear-gradient(110deg,#ff694d,#7371e2 45%,#008cff,#00c6d3) border-box;white-space:nowrap}.login.global{width:130px}.login:hover{background:linear-gradient(#e8f4ff,#e8f4ff) padding-box,linear-gradient(110deg,#ff694d,#7371e2,#00c6d3) border-box}
+/* The source artwork is clipped to the illustration only. All UI copy is HTML. */
+.artwork{position:absolute;left:610px;top:81px;width:1295px;height:674px;background:url('assets/racore-globe-hd.png') -610px -81px / 1905px 825px no-repeat;mask-image:linear-gradient(90deg,transparent,#000 90px),linear-gradient(#000 0 620px,transparent 674px);mask-composite:intersect;pointer-events:none}
+.hero-copy{position:absolute;z-index:2;left:154px;top:156px;width:490px}.eyebrow{height:42px;width:max-content;display:flex;align-items:center;gap:10px;padding:0 21px;border:1px solid #d4e9ff;border-radius:30px;background:linear-gradient(100deg,#e8f6ff,#dce7ff);font-size:17px;font-weight:500;color:#0876ff}.eyebrow>span:first-child{width:10px;height:10px;border-radius:50%;background:#0589ff;flex:none}h1{margin-top:26px;font-size:82px;line-height:1.23;font-weight:700;letter-spacing:-3px;white-space:nowrap}h1>span{display:block}.gradient{width:max-content;background:linear-gradient(105deg,#6a4aff 0%,#236aff 40%,#008df6 65%,#00bfd1 100%);background-clip:text;-webkit-background-clip:text;color:transparent}.description{margin-top:22px;font-size:22px;font-weight:500;line-height:1.6;color:#5b6e8d;white-space:nowrap;letter-spacing:-.25px}.hero-actions{display:flex;gap:20px;margin-top:34px}.button{height:61px;display:inline-flex;align-items:center;justify-content:center;border-radius:36px;font-size:19px;font-weight:500;white-space:nowrap;transition:box-shadow .18s,filter .18s}.primary{width:221px;gap:24px;background:linear-gradient(110deg,#0053dd,#008fff);color:white;box-shadow:0 6px 8px #287fed1c}.primary svg{width:24px;height:24px}.secondary{width:199px;border:1.5px solid #075aff;color:#172d59;background:#ffffff3b}.button:hover{filter:brightness(1.04);box-shadow:0 7px 20px #1681ff26}
+.release-card{position:absolute;left:1207px;top:237px;width:423px;height:408px;z-index:3;isolation:isolate;scroll-margin-top:100px;outline:none}.card-face{position:absolute;inset:0;background:linear-gradient(116deg,#f6faff 4%,#f0f7ff 43%,#e3f1ff 100%);clip-path:path('M 23 16 L 398 0 Q 423 0 423 25 L 423 382 Q 423 408 399 408 L 23 404 Q 0 404 0 380 L 0 40 Q 0 17 23 16 Z');border-radius:23px;filter:drop-shadow(0 1px 0 white)}.release-content{position:relative;padding:45px 31px 25px}.card-heading{display:flex;align-items:center;justify-content:space-between;font-size:14px;letter-spacing:1.2px;font-weight:500;color:#8ca0bf}.live{display:flex;align-items:center;gap:10px;color:#03b341;font-size:19px;letter-spacing:0;font-weight:500;transform:translateY(-8px)}.live i{width:9px;height:9px;border-radius:50%;background:#0bc14e;box-shadow:0 0 0 5px #bdeedc99}.release-card h2{font-size:40px;letter-spacing:-1.5px;font-weight:700;margin-top:27px;line-height:1.15}.release-tag{display:inline-flex;align-items:center;margin-top:12px;height:32px;padding:0 15px;border-radius:20px;background:#ddebff;color:#0879fb;font-size:15px;font-weight:600}.release-info{margin-top:25px;font-size:17px}.release-info>div{height:60px;border-top:1px solid #dce8f7;display:flex;align-items:center;justify-content:space-between}.release-info dt{color:#7d91ae;font-size:16px}.release-info dd{font-weight:500}.release-info button{display:flex;align-items:center;gap:11px;padding:0;font-size:16px;font-weight:600}.release-info button svg{width:15px;height:17px}.command{height:48px;margin-top:12px;width:100%;padding:0 13px;display:flex;align-items:center;justify-content:space-between;border:1px solid #d6e7fe;border-radius:11px;background:linear-gradient(115deg,#e5efff,#dfecff);color:#3b5781}.command code{font-family:Consolas,'Courier New',monospace;font-size:14px;font-weight:700;white-space:nowrap}.command code span{color:#0068ff;margin-right:4px}.command svg{width:17px;height:18px;color:#657da4}.command:hover{background:#dbeaff}.release-card:target .card-face{filter:drop-shadow(0 0 8px #3b99ff66)}
+footer{position:absolute;left:154px;right:154px;top:763px;display:flex;gap:23px;align-items:center;color:#687d9d;font-size:15px;z-index:2;height:22px}.index{font-size:19px;color:#091a3e}.slash{font-size:17px;color:#557396}.footer-rule{height:1px;flex:1;margin-left:0;background:#bdcfe6}
+dialog{border:1px solid #d8e8fb;border-radius:24px;padding:36px;width:min(480px,calc(100% - 32px));color:#0a1739;box-shadow:0 20px 80px #294d7b2e;background:linear-gradient(125deg,#fff,#edf6ff)}dialog::backdrop{background:#11284a55;backdrop-filter:blur(6px)}.dialog-close{position:absolute;right:16px;top:10px;font-size:29px;color:#6681a2}.dialog-kicker{color:#157fff;font-size:12px;letter-spacing:2px}dialog h2{margin:15px 0;font-size:27px}#dialog-body{font-size:15px;line-height:1.9;color:#566c88}#dialog-body p+p{margin-top:10px}.dialog-done{margin-top:24px;background:#087bff;color:#fff;border-radius:24px;padding:10px 24px}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,12px);padding:12px 20px;border:1px solid #dae7f8;border-radius:12px;background:#fff;color:#224b80;box-shadow:0 8px 30px #1b528d20;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20}.toast.visible{opacity:1;transform:translate(-50%,0)}
+html[lang=en] h1{font-size:72px;letter-spacing:-3px;line-height:1.4}html[lang=en] .description{font-size:19px}html[lang=en] .button{font-size:17px}html[lang=en] .eyebrow{font-size:15px}
+@media(max-width:700px){.viewport{height:auto;overflow:hidden}.page{width:100%;height:auto;min-height:1050px;transform:none;padding-bottom:65px;background:linear-gradient(135deg,#fff,#edf6ff)}.header{height:73px;padding:0 22px;gap:0;flex-wrap:wrap}.brand,.brand img{width:110px;height:auto}.navigation{position:absolute;top:73px;left:22px;right:22px;height:48px;gap:27px;font-size:14px}.navigation .active:after{bottom:3px}.account{gap:11px;font-size:11px}.language{height:30px;width:32px;font-size:12px}.login{height:32px;width:86px}.login.global{width:96px}.account .login:not(.global){display:none}.hero-copy{position:relative;left:auto;top:auto;width:auto;margin:83px 24px 0}.eyebrow{font-size:12px;height:31px;padding:0 13px;gap:8px}.eyebrow>span:first-child{height:7px;width:7px}h1{margin-top:20px;font-size:clamp(44px,12vw,70px);line-height:1.18;letter-spacing:-2px}.description{font-size:14px;line-height:1.8;margin-top:21px;letter-spacing:-.35px}.hero-actions{gap:12px;margin-top:24px}.button{height:45px;font-size:13px}.primary{width:165px;gap:14px}.secondary{width:145px}.primary svg{width:20px}.artwork{left:0;top:570px;width:100%;height:455px;background-size:1143px 495px;background-position:-450px -50px;mask-image:linear-gradient(180deg,transparent,#000 9%,#000 89%,transparent);mask-composite:add}.release-card{left:auto;right:7%;top:678px;transform:scale(.65);transform-origin:right top}.page:after{display:none}footer{left:24px;right:24px;top:auto;bottom:26px;font-size:12px;gap:15px}.index{font-size:16px}.footer-rule{margin-left:0}html[lang=en] h1{font-size:50px;line-height:1.2}html[lang=en] .description{font-size:13px}html[lang=en] .button{font-size:12px}html[lang=en] .eyebrow{font-size:11px}}
+/* Final optical alignment against the supplied 1905 × 825 reference. */
+@media(min-width:701px){h1{margin-top:20px;line-height:101px}h1 .gradient{font-size:88px;letter-spacing:0}.description{margin-top:18px}html[lang=en] h1 .gradient{font-size:72px;letter-spacing:-3px}}
+.release-card h2{margin-top:20px}.release-tag{margin-top:10px}.release-info{margin-top:24px}
+@media(max-width:700px){.release-card{top:640px}.artwork{width:93%;clip-path:polygon(0 0,100% 0,100% 88px,270px 88px,270px 344px,100% 344px,100% 100%,0 100%)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.card-heading>span:first-child{font-family:Consolas,'Courier New',monospace;font-size:15px;letter-spacing:0}.status-caption{margin-top:16px;font-size:14px;line-height:20px;color:#8294ad;white-space:nowrap}.release-card h2{margin-top:11px}.release-content{padding-top:39px}.release-info{margin-top:16px}.release-info>div{height:55px}.command{margin-top:10px}.command:hover{background:linear-gradient(115deg,#e5efff,#dfecff)}
+/* Terminal-style status card, aligned with the supplied reference. */
+.release-content{padding:0;height:100%}.terminal-heading{height:73px;padding:12px 25px 0;display:flex;align-items:center;gap:17px;border-bottom:1px solid #ffffffb3;font-family:Consolas,'Courier New',monospace;font-size:14px;color:#7c8ba3;white-space:nowrap}.window-dots{display:flex;gap:9px}.window-dots i{height:10px;width:10px;border-radius:50%;background:#ff605b}.window-dots i:nth-child(2){background:#ffbd2e}.window-dots i:nth-child(3){background:#28c840}.terminal-body{padding:0 25px}.status-caption{margin:24px 0 16px;font-size:14px;line-height:20px;color:#8b99aa;white-space:nowrap}.status-rows{margin:0}.status-rows>div{height:49px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffffce;font-size:15px}.status-rows dt{color:#8a97a8}.status-rows dd{color:#182c49;font-weight:500}.status-rows h2{margin:0;font-size:16px;line-height:1.3;letter-spacing:0;font-weight:500;color:#2468ff}.status-rows .live{transform:none;font-size:16px;color:#13946b;gap:8px}.status-rows .live i{width:9px;height:9px}.command{margin:17px 0 0;padding:0;height:30px;border:0;border-radius:0;background:none;justify-content:flex-start}.command:hover{background:none}.command code{font-size:14px;color:#4e617e}.card-face{background:linear-gradient(115deg,#f0f8ff,#deefff 70%,#d5edff)}
+
+.terminal-heading{height:65px}.status-caption{margin:18px 0 13px}.featured-release h2{font-size:37px;font-weight:700;line-height:1.15;letter-spacing:-1.3px;margin:0;color:#020b32}.featured-release .release-tag{margin-top:10px;height:28px;padding:0 14px;font-size:14px}.status-rows{margin-top:16px}.status-rows>div{height:44px}.command{margin-top:12px}
+
+/* Match the supplied pale blue card and fine blue dividers. */
+.card-face{background:linear-gradient(116deg,#f6faff 4%,#f0f7ff 43%,#e3f1ff 100%)}.terminal-heading{border-bottom:1px solid #dce8f7}.status-rows>div{border-bottom:1px solid #dce8f7}.status-rows>div:first-child{border-top:1px solid #dce8f7}.status-rows>div:last-child{border-bottom:0}.command{height:44px;margin-top:10px;padding:0 13px;border:1px solid #d6e7fe;border-radius:11px;background:linear-gradient(115deg,#e5efff,#dfecff)}.command:hover{background:linear-gradient(115deg,#e5efff,#dfecff)}
+
+
+.status-intro{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 0 17px}.status-intro .status-caption{margin:0;font-size:12.5px;letter-spacing:-.2px}.status-intro .release-tag{margin:0;flex:none;font-size:12px;font-weight:400;height:25px;padding:0 10px}.featured-release{padding-bottom:30px}.status-rows{margin-top:16px}html[lang=en] .status-intro{gap:6px}html[lang=en] .status-intro .status-caption{font-size:10px}html[lang=en] .status-intro .release-tag{font-size:10px;padding:0 8px}
+
+
+/* Tighten the gap between the product title and status details. */
+.featured-release{padding-bottom:10px}.status-rows{margin-top:12px}
+
+
+/* Keep the window bar parallel to the slanted upper edge. */
+.terminal-heading{height:49px;margin-bottom:16px;transform:translateY(16px) skewY(-2.17deg);transform-origin:top left;padding-top:0}.terminal-heading>span{position:relative;top:0}.card-face{filter:drop-shadow(0 1px 0 #ffffffcc)}
+
+
+/* Brand-color Singapore origin with a bright core and uppercase label. */
+.network-origin{position:absolute;left:438px;top:377px;width:0;height:0;isolation:isolate}.origin-halo{position:absolute;left:-29px;top:-29px;width:58px;height:58px;border-radius:50%;background:conic-gradient(#ff6656,#b461d8,#3976ff,#00cbd6,#ff6656);filter:blur(10px);opacity:.92}.origin-core{position:absolute;left:-6px;top:-6px;width:12px;height:12px;border:2px solid #fff;border-radius:50%;background:linear-gradient(120deg,#ff8068,#b17bff 45%,#2d9bff 70%,#00d5dd);box-shadow:0 0 8px 3px #ffffffdc,0 0 18px 5px #76caff88}.origin-name{position:absolute;left:54px;top:-36px;width:105px;height:29px;display:flex;align-items:center;justify-content:center;color:#fff;font:500 13px Inter,sans-serif;letter-spacing:1px;background:linear-gradient(100deg,#2089e9,#1683e3 70%,#1683e3);border-radius:4px;text-shadow:0 1px 5px #195bb85c}.origin-name:after{content:'';position:absolute;left:4px;right:4px;bottom:0;height:1px;background:#b8eeffb0}@media(max-width:700px){.network-origin{left:179px;top:225px;transform:scale(.6);transform-origin:0 0}}
+
+
+/* Remove the navigation band and close the space above the hero. */
+.viewport{height:calc(744px * var(--scale))}.page{height:744px}.page main{position:absolute;left:0;right:0;top:-81px;height:825px}.page:before{top:0}.terminal-heading{height:45px;margin-bottom:20px;transform:translateY(20px) skewY(-2.7deg)}.origin-halo{background:conic-gradient(from 10deg,#ff8767,#f5769a,#7975f5,#37d1e9,#ff8767);filter:blur(9px);opacity:.85}.origin-core{left:-4px;top:-4px;width:8px;height:8px;border:1.5px solid #fff;background:linear-gradient(130deg,#ff8d8f,#b26fe5 50%,#40c9ed);box-shadow:0 0 5px 1px #ffffffbd,0 0 12px 4px #c3a3ee66}@media(max-width:700px){.viewport{height:auto}.page{height:auto;min-height:960px}.page main{position:relative;top:0;height:auto}.hero-copy{margin-top:35px}.artwork{top:489px}.release-card{top:559px}}
+
+
+@media(min-width:701px){.page{transform:scale(var(--scale),var(--yscale));}.viewport{height:100vh}}
+@media(max-width:700px){.artwork{clip-path:polygon(0 0,100% 0,100% 88px,270px 88px,270px 344px,100% 344px,100% 100%,0 100%)}}
+:root{font-family:'PingFang SC','Microsoft YaHei',Inter,Arial,sans-serif}
+
+@media(max-width:700px){.artwork{clip-path:none}}
+/* Transparent location label and a brighter cyan-white network origin. */
+.network-origin .origin-name{background:transparent;border:0;border-radius:0;text-shadow:0 1px 5px #006fa780}
+.network-origin .origin-name:after{display:none}
+.network-origin .origin-halo{background:radial-gradient(circle,#E8FFFF 0%,#9EFFF7 22%,#20E5F3 48%,#48BDFF00 74%);filter:blur(7px);opacity:.95}
+.network-origin .origin-core{background:#EFFFFF;border-color:#FFFFFF;box-shadow:0 0 6px 3px #FFFFFF,0 0 16px 7px #72FFF2CC,0 0 30px 12px #16D9EC66}
+/* Bright white network convergence and a translucent rear card. */
+.network-origin .origin-name{display:none}
+.network-origin .origin-halo{background:radial-gradient(circle,#FFFFFF 0%,#DFFFFF 22%,#79F5FF99 44%,transparent 72%);filter:blur(5px);opacity:1}
+.network-origin .origin-core{left:-5px;top:-5px;width:10px;height:10px;border:0;background:#FFF;box-shadow:0 0 7px 5px #FFF,0 0 20px 10px #C8FFFFE6,0 0 33px 15px #30DFFF66}
+.release-card::before{content:"";position:absolute;inset:-12px -24px 0 18px;z-index:-1;border:1px solid #D5EAFF;border-radius:24px;background:linear-gradient(125deg,#EDF7FF99,#9ED8F970);transform:skewY(-2.7deg);box-shadow:0 8px 28px #258AD91A;pointer-events:none}
+/* Apply one consistent perspective to the entire card. */
+.release-card{transform:skewY(-2deg);transform-origin:center}
+.release-card .card-face{clip-path:none;border-radius:23px}
+.release-card .terminal-heading{transform:none;height:65px;margin-bottom:0;padding-top:12px}
+.release-card::before{transform:none;inset:-14px -22px 9px 18px}
+@media(max-width:700px){.release-card{transform:scale(.65) skewY(-2deg);transform-origin:right top}}
+/* Feather the illustration into the surrounding hero surface. */
+.artwork{mask-image:linear-gradient(90deg,transparent,#000 170px),linear-gradient(#000 0 560px,transparent 674px);mask-composite:intersect}
+@media(max-width:700px){.artwork{mask-image:linear-gradient(180deg,transparent,#000 9%,#000 80%,transparent);mask-composite:add}}
+/* Reference-style blue glass backing and Singapore location label. */
+.release-card::before{inset:-16px -28px 5px 18px;border:1px solid #DBF2FFB3;background:linear-gradient(112deg,#DFF7FF70 0%,#B5E0FC99 66%,#75C7F7A6 100%);box-shadow:inset -2px 0 0 #74C8F5A6,inset 0 1px 0 #FFFFFF99,6px 6px 20px #40A6E51F;border-radius:25px}
+.network-origin .origin-name{display:flex;background:transparent;border:0;border-radius:0;text-shadow:0 1px 5px #006FA780}
+.network-origin .origin-name::after{content:"";display:block;position:absolute;left:4px;right:4px;bottom:0;height:1px;background:#B8EEFFDD}
+/* Slanted shell with level body text, matching the reference card. */
+.release-card{transform:none}
+.release-card .card-face{clip-path:path('M 23 16 L 398 0 Q 423 0 423 25 L 423 382 Q 423 408 399 408 L 23 404 Q 0 404 0 380 L 0 40 Q 0 17 23 16 Z');border-radius:23px;background:linear-gradient(116deg,#F6FAFF 4%,#F0F7FF 43%,#E3F1FF 100%)}
+.release-card .terminal-heading{height:45px;margin-bottom:20px;padding-top:0;transform:translateY(20px) skewY(-2.7deg);transform-origin:top left}
+.release-card::before{inset:-10px -27px 1px 18px;transform:skewY(-2.4deg);border-radius:25px;border:1px solid #DDF4FFAA;background:linear-gradient(110deg,#E6F7FF66,#BAE0FB88 60%,#85C9F2A6);box-shadow:inset -2px 0 1px #4EADF1B3,inset 0 1px 0 #FFFFFF99,3px 5px 12px #2794D51A}
+@media(max-width:700px){.release-card{transform:scale(.65);transform-origin:right top}}
+/* Strengthen the location label and connect its rule to the origin. */
+.network-origin .origin-name{left:54px;top:-36px;width:118px;height:29px;font-size:15px;font-weight:700;letter-spacing:.7px;justify-content:center}
+.network-origin .origin-name::after{left:0;right:0;bottom:0;height:1px;background:#D9FFFF;box-shadow:0 0 3px #78EFFF80}
+.network-origin::after{content:"";position:absolute;left:0;top:0;width:55px;height:1px;background:#D9FFFF;transform:rotate(-7.4deg);transform-origin:left center;box-shadow:0 0 3px #78EFFF80}
+/* Console-style command prompt and gently angled status caption. */
+.release-card .command{height:44px;padding:0;border:0;border-radius:0;background:transparent;justify-content:flex-start}
+.release-card .command:hover{background:transparent}
+.release-card .command code{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#4E5969}
+.release-card .command code>span{font-size:23px;font-weight:400;color:#165DFF;margin-right:3px}
+.release-card .command code::after{content:"";display:inline-block;width:5px;height:15px;margin-left:2px;background:#165DFF;animation:launch-cursor-blink 1s steps(1,end) infinite}
+.release-card .status-caption{transform:skewY(-2deg);transform-origin:left center}
+@keyframes launch-cursor-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.release-card .command code::after{animation:none}}
+/* Carry the window perspective through the lower information block. */
+.release-card .status-rows,.release-card .command{transform:skewY(-2.7deg);transform-origin:left center}
+/* Keep lower card details almost level for comfortable reading. */
+.release-card .status-rows,.release-card .command{transform:skewY(-1deg);transform-origin:left center}
+/* Give the status intro breathing room below the window divider. */
+.release-card .status-intro{margin-top:23px}
+.release-card .status-intro .release-tag{transform:skewY(-1deg);transform-origin:center}
+
+/* Join the label underline to its geographic origin. */
+.network-origin .origin-name{left:36px;top:-36px}
+.network-origin::after{width:37px;transform:rotate(-10.72deg)}
+.artwork{image-rendering:auto}
+
+/* Align launch label with the product title. */
+.release-card .status-intro{margin-top:31px;margin-bottom:9px}.release-card .featured-release{display:flex;align-items:center;gap:14px}.release-card .featured-release .release-tag{margin:0;flex:none;height:25px;padding:0 10px;font-size:12px;font-weight:400;white-space:nowrap;transform:skewY(-1deg)}
+
+/* Slight downward tilt toward the right end of the command. */
+.release-card .command{transform:skewY(1deg);transform-origin:left center}
+/* Quieter artwork and level status card. */
+@media(min-width:701px){
+.artwork{transform:translate(145px,-12px) scale(.84);transform-origin:center center;opacity:.88}
+.release-card{left:1270px;top:232px;transform:scale(.88);transform-origin:top left}
+}
+.release-card .card-face{clip-path:none;border-radius:20px;background:linear-gradient(120deg,#fbfdff,#edf5ff);filter:none;border:1px solid #fff;box-shadow:0 12px 32px #36699b12}
+.release-card::before{inset:-5px -9px 5px 9px;transform:none;border-radius:20px;box-shadow:none;background:#cce6fa66}
+.release-card .terminal-heading{transform:translateY(20px)}
+.release-card .status-caption,.release-card .status-rows,.release-card .command{transform:none}
+.network-origin .origin-halo{opacity:.55}
+@media(max-width:700px){.artwork{top:0;height:300px;transform:scale(.84);transform-origin:center center;opacity:.85}.release-card{left:auto;right:8%;top:30px;transform:scale(.58);transform-origin:right top}.page{min-height:300px}.network-origin .origin-name{display:none}}
+/* Preserve geometry when the parent banner changes aspect ratio. */
+@media(min-width:701px){.page{margin-left:var(--art-left,0px);margin-top:var(--art-top,0px);transform:scale(var(--scale));transform-origin:top left}.viewport{height:100vh;background:#f3f8ff}}
+/* The host owns the full-width background; avoid scaled rectangular edges. */
+html,body,.viewport,.page{background:transparent!important}
+.page::before,.page::after{display:none!important}
+.artwork{mask-image:linear-gradient(90deg,transparent 0%,#000 17%,#000 85%,transparent 100%),linear-gradient(180deg,transparent 0%,#000 12%,#000 77%,transparent 100%);mask-composite:intersect}
+/* Illustration is now composed by the host instead of a scaled image rectangle. */
+.artwork{display:none!important}
+@media(min-width:701px){.release-card{left:1330px;top:252px;transform:scale(.78);transform-origin:top left}}
+.release-card::before{display:none}
+.release-card .card-face{background:linear-gradient(125deg,#ffffffed,#f3f8ffeb);border:1px solid #ffffff;box-shadow:0 14px 40px #325d8d16}
+@media(max-width:700px){.release-card{right:8%;top:45px;transform:scale(.52)}}

@@ -1,0 +1,9 @@
+/* 1920px design canvas: 1440px content with 160px gutters. */
+:root{--racore-content-width:1440px;--racore-content-gutter:clamp(24px,8.333333vw,160px)}
+body .bar-in,body .foot-in,body .two-shell,body .replacement-home .hp-container,body .replacement-home .hp-hero-inner,body .section:not(#featured):not(#billing):not(#fusioncdn){box-sizing:border-box;width:calc(100% - var(--racore-content-gutter)*2);max-width:1440px;margin-left:auto;margin-right:auto;padding-left:0;padding-right:0}
+body :is(#featured,#billing,#fusioncdn){width:100%;max-width:none;padding-left:max(var(--racore-content-gutter),calc((100% - 1440px)/2));padding-right:max(var(--racore-content-gutter),calc((100% - 1440px)/2))}
+@media(max-width:1100px){:root{--racore-content-gutter:32px}}
+@media(max-width:600px){:root{--racore-content-gutter:20px}}
+body footer:has(>.foot-in){padding-left:0;padding-right:0}
+body #next-release{padding-left:0;padding-right:0}
+body #next-release .release-panel{box-sizing:border-box;width:calc(100% - var(--racore-content-gutter)*2);max-width:1440px;margin-left:auto;margin-right:auto}

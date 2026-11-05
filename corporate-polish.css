@@ -1,0 +1,157 @@
+/* Shared editorial detail, following the corporate site's typography and spacing. */
+body .section .kicker,body :is(#featured,#billing,#fusioncdn) .kicker{display:block;width:fit-content;border:0;border-radius:0;background:none;box-shadow:none;padding:0;margin-bottom:20px;font-size:11px;line-height:1.5;font-weight:500;letter-spacing:.2em;color:#86909C}
+body .section .title,body :is(#featured,#billing,#fusioncdn) .title{font-size:clamp(30px,2.65vw,44px);font-weight:600;line-height:1.3;letter-spacing:-.035em;text-wrap:balance;margin-top:0}
+body .section .sec-sub,body :is(#featured,#billing,#fusioncdn) .sec-sub{font-size:16px;font-weight:400;line-height:1.8;color:#4E5969;letter-spacing:0;text-wrap:pretty}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .feat-head{align-items:end;gap:6%;margin-bottom:40px}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .ide-feats{gap:26px}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .ide-feat{border:0;border-radius:0;background:transparent;box-shadow:none;padding:0;gap:18px}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .ide-feat h4{font-size:19px;font-weight:600;line-height:1.5;letter-spacing:-.02em;margin:0 0 8px;color:#1D2129}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .ide-feat p{font-size:14px;line-height:1.85;letter-spacing:0;color:#4E5969}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .ide-feat-ic{width:52px;height:52px;border-radius:16px;box-shadow:inset 0 0 0 1px #ffffffa0;flex-shrink:0}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .ide-feat-ic svg{width:26px;height:26px}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .spec{margin-top:28px;border:1px solid #e2e9f3;border-radius:16px;padding:2px 20px;background:#ffffffa8}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .spec-row{padding-block:10px;border-color:#e7edf5}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .feat-cta-row{margin-top:28px;gap:16px}
+body .replacement-home .hp-eyebrow{padding:0;margin-bottom:24px;border:0;border-radius:0;box-shadow:none;background:none;color:#4E5969;font-size:11px;letter-spacing:.18em;font-weight:500}
+body .replacement-home .hp-eyebrow i{display:none}
+body .replacement-home .hp-hero h1{font-size:clamp(38px,4.2vw,68px);line-height:1.22;letter-spacing:-.045em}
+body .replacement-home .hp-hero-copy>p{font-size:clamp(15px,1.15vw,18px);line-height:1.8;margin-top:24px;max-width:610px}
+body .replacement-home .two-actions{margin-top:28px;gap:16px}
+body .replacement-home .hp-section-heading{margin-bottom:24px}
+body .replacement-home .hp-section-heading h2{font-size:30px;font-weight:600;letter-spacing:-.035em;color:#1D2129}
+body .replacement-home .hp-featured,body .replacement-home .hp-recent{border-radius:20px}
+@media(max-width:1100px){body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .feat-head{gap:24px;margin-bottom:30px}body .section .sec-sub,body :is(#featured,#billing,#fusioncdn) .sec-sub{font-size:14px}body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .ide-feat h4{font-size:18px}}
+@media(max-width:600px){body .replacement-home .hp-eyebrow{font-size:10px;letter-spacing:.12em}body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .ide-feat h4{font-size:17px}body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .ide-feat p{font-size:13px}body .section .kicker{margin-bottom:16px}body .replacement-home .hp-section-heading h2{font-size:26px}}
+@media(min-width:1101px){
+ body #claw .feat-head,body #claw .feat-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:40px;width:100%;max-width:none}
+ body #claw .feat-head{row-gap:18px;align-items:end}
+ body #claw .feat-head>.kicker{grid-column:1;grid-row:1;margin:0}
+ body #claw .feat-head>.title{grid-column:1;grid-row:2;max-width:none;margin:0}
+ body #claw .feat-head>.sec-sub{grid-column:2;grid-row:2;width:100%;max-width:none;margin:0;padding:0}
+ body #claw .feat-split{align-items:start}
+ body #claw .feat-split>*{min-width:0;width:100%;max-width:none;box-sizing:border-box}
+ body #claw .feat-copy{padding:0;margin:0}
+}
+/* Equal CLI columns and a more compact launch-status panel. */
+@media(min-width:1101px){
+ body #cdncli .two-section-head,body #cdncli .two-product-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:40px;width:100%;max-width:none}
+ body #cdncli .two-section-head{row-gap:18px;align-items:end}
+ body #cdncli .two-section-head>span{grid-column:1;grid-row:1}
+ body #cdncli .two-section-head>h2{grid-column:1;grid-row:2;max-width:none;margin:0}
+ body #cdncli .two-section-head>p{grid-column:2;grid-row:2;max-width:none;width:100%;margin:0;padding:0}
+ body #cdncli .two-product-grid{align-items:start}
+ body #cdncli .two-product-grid>*{width:100%;min-width:0;max-width:100%;box-sizing:border-box}
+ body #cdncli .two-feature-stack{padding:0;margin:0;align-self:start}
+}
+body .replacement-home .hp-launch-status{width:100%;max-width:480px;justify-self:end}
+@media(min-width:1101px){body .replacement-home .hp-hero-inner{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:48px}}
+@media(max-width:760px){body .replacement-home .hp-launch-status{max-width:480px;justify-self:center}}
+/* One shared visual-to-copy ratio across product floors. */
+@media(min-width:1101px){
+ body :is(#featured,#billing,#claw,#fusioncdn,#racoder) .feat-head,
+ body :is(#featured,#fusioncdn) .fus-grid,
+ body :is(#billing,#claw,#racoder) .feat-split,
+ body #cdncli .two-section-head,body #cdncli .two-product-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);column-gap:40px;width:100%;max-width:none;box-sizing:border-box}
+ body :is(#featured,#billing,#claw,#fusioncdn,#racoder) .feat-head{row-gap:18px;align-items:end}
+ body :is(#featured,#billing,#claw,#fusioncdn,#racoder) .feat-head>.kicker{grid-column:1;grid-row:1;margin:0}
+ body :is(#featured,#billing,#claw,#fusioncdn,#racoder) .feat-head>.title{grid-column:1;grid-row:2;margin:0;max-width:none}
+ body :is(#featured,#billing,#claw,#fusioncdn,#racoder) .feat-head>.sec-sub{grid-column:2;grid-row:2;width:100%;max-width:none;padding:0;margin:0}
+ body :is(#featured,#billing,#claw,#fusioncdn,#racoder) :is(.fus-grid,.feat-split){align-items:start}
+ body :is(#featured,#billing,#claw,#fusioncdn,#racoder) :is(.fus-grid,.feat-split)>*{min-width:0;max-width:100%;width:100%;box-sizing:border-box}
+ body :is(#featured,#billing,#claw,#fusioncdn,#racoder) .feat-copy{padding:0;margin:0}
+}
+html,body{overflow-x:clip}
+/* CLI content, presented with the same visual hierarchy as the CDN release. */
+body #cdncli{background:#fff}
+body #cdncli .two-section-head>span{display:block;background:none;padding:0;border:0;font-size:11px;font-weight:500;letter-spacing:.2em;color:#86909C}
+body #cdncli .two-section-head>h2{font-size:clamp(30px,2.65vw,44px);font-weight:600;line-height:1.3;letter-spacing:-.035em;color:#1D2129;text-wrap:balance}
+body #cdncli .two-section-head>p{font-size:16px;font-weight:400;line-height:1.8;color:#4E5969;letter-spacing:0}
+body #cdncli .two-feature-stack{gap:26px}
+body #cdncli .two-feature-stack>article{display:flex;align-items:flex-start;gap:18px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+body #cdncli .two-feature-stack>article>i{display:grid;place-items:center;width:52px;height:52px;flex:0 0 52px;border-radius:16px;background:#eaf4ff;color:#165DFF;font-size:25px;font-style:normal}
+body #cdncli .two-feature-stack>article:nth-child(2)>i{background:#efe8ff;color:#853dff}
+body #cdncli .two-feature-stack>article:nth-child(3)>i{background:#fff0f0;color:#ff405e}
+body #cdncli .two-feature-stack h3{font-size:19px;font-weight:600;line-height:1.5;letter-spacing:-.02em;color:#1D2129;margin:0 0 8px}
+body #cdncli .two-feature-stack p{font-size:14px;font-weight:400;line-height:1.85;letter-spacing:0;color:#4E5969;margin:0}
+body #cdncli .two-specs{border:1px solid #e2e9f3;background:#f7f9ff;border-radius:16px;padding:18px 20px;font-size:12px;line-height:1.7}
+body #cdncli .two-specs span{color:#86909C}body #cdncli .two-specs b{color:#4E5969}
+body #cdncli .two-mcp-import{border-radius:20px;box-shadow:0 16px 44px #314f8410}
+@media(max-width:1100px){body #cdncli .two-section-head>p{font-size:14px}body #cdncli .two-feature-stack h3{font-size:18px}}
+@media(max-width:600px){body #cdncli .two-feature-stack h3{font-size:17px}body #cdncli .two-feature-stack p{font-size:13px}}
+/* Content-led desktop ratio: detailed demos receive 60%, supporting copy 40%. */
+@media(min-width:1101px){
+ body :is(#featured,#billing,#claw,#fusioncdn,#racoder) .feat-head,
+ body :is(#featured,#fusioncdn) .fus-grid,
+ body :is(#billing,#claw,#racoder) .feat-split,
+ body #cdncli .two-section-head,body #cdncli .two-product-grid{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+}
+body #cdncli .two-mcp-import{background:transparent!important;box-shadow:none;border-radius:0}
+body #clawApp .claw-space{background:transparent;border-color:transparent}
+body #cdnDash .cdn-reqs .cdn-row-r:nth-of-type(1) .ri{background:#165DFF}
+body #cdnDash .cdn-reqs .cdn-row-r:nth-of-type(2) .ri{background:#FF7D00}
+body #cdnDash .cdn-reqs .cdn-row-r:nth-of-type(3) .ri{background:#722ED1}
+body #cdnDash .cdn-reqs .cdn-row-r:nth-of-type(4) .ri{background:#00B42A}
+body #cdnDash .cdn-reqs .cdn-row-r:nth-of-type(5) .ri{background:#F5319D}
+body #cdnDash .cdn-reqs .cdn-row-r:nth-last-child(5) .ri{background:#165DFF}
+body #cdnDash .cdn-reqs .cdn-row-r:nth-last-child(4) .ri{background:#FF7D00}
+body #cdnDash .cdn-reqs .cdn-row-r:nth-last-child(3) .ri{background:#722ED1}
+body #cdnDash .cdn-reqs .cdn-row-r:nth-last-child(2) .ri{background:#00B42A}
+body #cdnDash .cdn-reqs .cdn-row-r:last-child .ri{background:#F5319D}
+body #featured #cdnVer .navcnt,body #cdnDash .navcnt{display:inline-flex;align-items:center;justify-content:center;text-align:center;vertical-align:middle;box-sizing:border-box;width:22px;height:22px;min-width:22px;line-height:1;padding:0;flex-shrink:0}
+@media(min-width:1101px){body .replacement-home .hp-release-grid{grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:40px}body .replacement-home .hp-release-grid>*{min-width:0;width:100%;box-sizing:border-box}}
+body .replacement-home .hp-eyebrow,body .replacement-home .hp-eyebrow span{background:transparent!important;box-shadow:none!important;border:0!important}
+body #featured #cdnVer .navcnt:empty{display:none!important}
+body #featured #cdnVer .claw-wright{font-family:var(--racore-ui-font);font-size:10px;font-weight:400;color:#86909C;letter-spacing:.03em;white-space:nowrap}
+/* Centre the shorter release narrative against the taller console. */
+@media(min-width:1101px){body #featured .fus-grid{align-items:center}body #featured .fus-grid>.feat-copy{align-self:center;padding-top:0;padding-bottom:0}}
+/* One separator per row; avoid adjacent top/bottom borders doubling up. */
+body #billing .spec-row{border:0;border-top:1px solid #E2EBFA;box-shadow:none;background-image:none}
+body #billing .spec-row:last-child{border-bottom:0}
+/* Centre every supporting-copy column against its product demo. */
+@media(min-width:1101px){
+ body :is(#featured,#fusioncdn) .fus-grid,
+ body :is(#billing,#claw,#racoder) .feat-split,
+ body #cdncli .two-product-grid{align-items:center}
+ body :is(#featured,#billing,#claw,#fusioncdn,#racoder) .feat-copy,
+ body #cdncli .two-feature-stack{align-self:center;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0}
+}
+body #fusioncdn #cdnDash .cdn-foot{padding-left:calc(18% + 22px)}
+@media(max-width:620px){body #fusioncdn #cdnDash .cdn-foot{padding-left:104px;flex-wrap:wrap}}
+@media(min-width:761px){body .replacement-home .hp-release-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}}
+body #featured #cdnVer .cdn-foot{min-height:34px;height:34px;box-sizing:border-box;padding-top:5px;padding-bottom:5px;border-radius:10px}
+@keyframes racore-cursor-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+body .hp-status-command>i,body .cursor-blink{display:inline-block;width:5px!important;min-width:5px;height:15px;background:#165DFF;animation:racore-cursor-blink 1s steps(1,end) infinite!important}
+body #featured #cdnVer .cdn-foot .cursor-blink{display:inline-block}
+body .hp-status-command>i{width:24px!important;min-width:24px}
+body .hp-status-list .hp-status-live{color:#00B42A}.hp-status-live i{background:#00B42A!important;box-shadow:0 0 0 5px #00b42a12!important}
+body .hp-status-command>i{width:5px!important;min-width:5px;height:15px;animation:racore-cursor-blink 1s steps(1,end) infinite!important}
+/* Match the two card headings and keep release status next to its version. */
+body .replacement-home .hp-featured .hp-kicker,body .replacement-home .hp-recent>h3{font-size:17px;font-weight:600;line-height:1.5;letter-spacing:0;color:#1D2129}
+body .replacement-home .hp-featured .hp-card-top{padding-bottom:16px;border-bottom:1px solid #E2E9F4}
+body .replacement-home .hp-product-title .hp-status{font-size:12px;font-weight:400;line-height:1.5;padding:5px 10px;gap:6px;background:#E8FFEA;color:#00B42A;white-space:nowrap}
+body .replacement-home .hp-product-title .hp-status i{width:6px;height:6px;flex:none;background:#00B42A}
+/* Status remains subordinate to the product/version and wraps cleanly. */
+body .replacement-home .hp-product-title{flex-wrap:wrap;column-gap:10px;row-gap:8px;align-items:center}
+body .replacement-home .hp-product-title .hp-status{font-size:11px;line-height:1.5;padding:4px 9px;border-radius:999px;flex:none}
+body .replacement-home .hp-product-title .hp-status i{width:5px;height:5px}
+@media(max-width:600px){body .replacement-home .hp-product-title h3{flex:0 0 100%;min-width:0;margin-bottom:2px}body .replacement-home .hp-product-title .hp-version,body .replacement-home .hp-product-title .hp-status{flex:none}}
+/* Compact version chip alongside the lighter release status. */
+body .replacement-home .hp-product-title .hp-version{font-size:12px;line-height:1.5;padding:5px 10px;border-radius:999px;font-weight:500}
+/* Shared semantic palette for release and CDN console badges. */
+body :is(#cdnVer,#cdnDash) .cdn-chip{color:#165DFF;background:#E8F3FF;border-color:#BEDAFF}
+body :is(#cdnVer,#cdnDash) :is(.cdn-chip.ok,.release-channel-status,.pill-ok,.cdn-row .st.ok){color:#00B42A;background:#E8FFEA;border-color:#AFF0B5}
+body :is(#cdnVer,#cdnDash) :is(.release-channel-status.is-new,.pill-new,.cdn-row .st.warn){color:#FF7D00;background:#FFF7E8;border-color:#FDDEB5}
+body #featured #cdnVer .release-provider.cloudfront{background:#165DFF}
+body #featured #cdnVer .release-provider.cloudflare{background:#FF7D00}
+body #featured #cdnVer .release-overview-channel h4{color:#1D2129}
+body #featured #cdnVer .release-overview-channel p{color:#4E5969}
+body .replacement-home .hp-status{color:#00B42A;background:#E8FFEA}
+body .replacement-home .hp-status i{background:#00B42A}
+/* Equal compact heights for the release card's version and status. */
+body .replacement-home .hp-product-title :is(.hp-version,.hp-status){box-sizing:border-box;height:24px;min-height:24px;display:inline-flex;align-items:center;justify-content:center;padding:0 10px;line-height:1}
+/* Console version/status chips match the release card chips. */
+body #featured #cdnVer .claw-panehead .cdn-chip{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:24px;min-height:24px;padding:0 10px;border:0;border-radius:999px;background:#E8F3FF;color:#165DFF;font:500 12px/1 "PingFang SC",Inter,"Microsoft YaHei",Arial,sans-serif}
+body #featured #cdnVer .claw-panehead .cdn-chip.ok{background:#E8FFEA;color:#00B42A;font-size:11px;font-weight:400}
+body #featured #cdnVer .claw-panehead .cdn-chip.ok::before{content:"";display:block;width:5px;height:5px;flex:none;border-radius:50%;background:currentColor}
+/* Brand-blue shell prompt in the launch status card. */
+body .replacement-home .hp-status-command>span{color:#165DFF}

@@ -1,0 +1,21 @@
+#cdnVer .release-overview-channels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 15px}
+#cdnVer .release-overview-channel{padding:20px 16px;border:1px solid #e0eaff;border-radius:13px;background:#fff;min-width:0}
+#cdnVer .release-overview-channel>div{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#cdnVer .release-overview-channel h4{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;margin:0;color:#17243e}
+#cdnVer .release-provider{display:inline-block;width:14px;height:14px;border-radius:50%;background:#337cff;flex-shrink:0}
+#cdnVer .release-provider.cloudflare{background:#ff8b29}
+#cdnVer .release-channel-status{font-size:9px;color:#14a879;background:#e8fbf3;padding:4px 8px;border-radius:20px;white-space:nowrap}
+#cdnVer .release-channel-status.is-new{color:#3280ff;background:#edf5ff}
+#cdnVer .release-overview-channel p{margin:12px 0 0;font-size:11px;color:#8192ae;line-height:1.7}
+#cdnVer .release-overview-statistics{padding:22px 18px;border:1px solid #e2ebfa;border-radius:13px;background:#fff;display:grid;gap:21px}
+#cdnVer .release-overview-statistics>div{display:flex;gap:15px;align-items:center;font-size:11px;color:#788ba8}
+#cdnVer .release-overview-statistics>div>span{min-width:52px}
+#cdnVer .release-overview-statistics strong{min-width:10px;color:#425671;font-size:13px;font-weight:600}
+#cdnVer .release-track{height:9px;background:#eff4fc;border-radius:20px;overflow:hidden;flex:1;display:block}
+#cdnVer .release-bar{height:100%;display:block;border-radius:20px;width:83.33%}
+#cdnVer .release-blue{background:linear-gradient(90deg,#2196ff,#00bce8)}
+#cdnVer .release-purple{background:linear-gradient(90deg,#9b65fa,#7278ff)}
+#cdnVer .release-pink{width:66.67%;background:linear-gradient(90deg,#f46e98,#b979f5)}
+#cdnVer .release-overview-meta{margin-top:25px;display:flex;flex-wrap:wrap;gap:7px 14px;color:#8b9bb3;font-size:9px;line-height:1.8}
+#cdnVer .release-overview-meta b{font:500 9px ui-monospace,Consolas,monospace;color:#586a86}
+@media(max-width:600px){#cdnVer .release-overview-channels{grid-template-columns:1fr;gap:8px;margin-top:13px}#cdnVer .release-overview-channel{padding:12px}#cdnVer .release-overview-channel h4{font-size:11px}#cdnVer .release-overview-channel p{font-size:9px;margin-top:8px}#cdnVer .release-overview-statistics{padding:15px 12px;gap:15px}#cdnVer .release-overview-statistics>div{font-size:9px;gap:8px}#cdnVer .release-overview-statistics>div>span{min-width:40px}#cdnVer .release-overview-meta{margin-top:18px}}

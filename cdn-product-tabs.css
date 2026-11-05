@@ -1,0 +1,44 @@
+.cdn-products{padding-top:48px;scroll-margin-top:96px;background:#fff}
+.cdn-product-tabbar{display:flex;gap:6px;width:calc(100% - 40px);max-width:760px;margin:0 auto 20px;padding:6px;box-sizing:border-box;border:1px solid transparent;border-radius:999px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(105deg,#FF592B,#3774F3 52%,#00CDD5) border-box}
+.cdn-product-tabbar button{flex:1;min-width:0;min-height:44px;padding:10px 16px;border:0;border-radius:999px;background:transparent;color:#4E5969;font:500 15px/1.4 var(--racore-ui-font);cursor:pointer;transition:background .18s,color .18s}
+.cdn-product-tabbar button[aria-selected=true]{background:linear-gradient(105deg,#FF592B,#3774F3 52%,#00CDD5);color:#fff}
+.cdn-product-tabbar button:hover:not([aria-selected=true]){background:#E8F3FF;color:#165DFF}
+.cdn-product-tabbar button:focus-visible{outline:2px solid #165DFF;outline-offset:2px}
+body #cdn-products>section[hidden]{display:none!important}
+body #cdn-products>section{padding-top:32px}
+@media(max-width:600px){.cdn-products{padding-top:28px;scroll-margin-top:84px}.cdn-product-tabbar{gap:2px;padding:4px;margin-bottom:12px}.cdn-product-tabbar button{font-size:12px;min-height:40px;padding:8px 5px}body #cdn-products>section{padding-top:24px}}
+@media(prefers-reduced-motion:reduce){.cdn-product-tabbar button{transition:none}}
+
+body #cdn-products>#fusioncdn{background:#fff!important;background-image:none!important}
+/* Compact tabs align with the shared 1440px content boundary. */
+body .cdn-product-tabbar{height:44px;max-width:760px;width:calc(100% - var(--racore-content-gutter)*2);margin-left:max(var(--racore-content-gutter),calc((100% - 1440px)/2));margin-right:0;padding:4px;gap:4px}
+body .cdn-product-tabbar button{height:34px;min-height:34px;box-sizing:border-box;padding:5px 14px;font-size:14px}
+@media(max-width:600px){body .cdn-product-tabbar{height:44px;width:calc(100% - var(--racore-content-gutter)*2);padding:4px;gap:2px}body .cdn-product-tabbar button{height:34px;min-height:34px;padding:5px;font-size:12px}}
+/* Place navigation in the former summary column, beside the active title. */
+body #cdn-products{padding-top:0}
+body #cdn-products>section{padding-top:64px}
+body #cdn-products .cdn-product-tabbar{grid-area:description;align-self:center;justify-self:start;width:100%;max-width:760px;height:48px;margin:0;padding:4px;gap:4px}
+body #cdn-products .cdn-product-tabbar button{height:38px;min-height:38px;padding:6px 10px;font-size:14px;white-space:nowrap}
+@media(max-width:1100px){body #cdn-products .feat-head,body #cdn-products .two-section-head{grid-template-columns:minmax(0,1fr);grid-template-areas:"eyebrow" "heading" "description";row-gap:18px}body #cdn-products .cdn-product-tabbar{max-width:760px}}
+@media(max-width:600px){body #cdn-products>section{padding-top:32px}body #cdn-products .cdn-product-tabbar{height:48px;gap:2px}body #cdn-products .cdn-product-tabbar button{height:38px;min-height:38px;font-size:12px;padding:6px 3px}}
+/* Hover uses a gradient label and outline, leaving the selected fill intact. */
+body #cdn-products .cdn-product-tabbar button{position:relative;isolation:isolate}
+body #cdn-products .cdn-product-tabbar button:is(:hover,:focus-visible):not([aria-selected=true]){background:transparent;color:#4E5969}
+body #cdn-products .cdn-product-tabbar button:is(:hover,:focus-visible):not([aria-selected=true]) span{background:linear-gradient(105deg,#FF592B,#3774F3 52%,#00CDD5);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+body #cdn-products .cdn-product-tabbar button:is(:hover,:focus-visible):not([aria-selected=true])::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(105deg,#FF592B,#3774F3 52%,#00CDD5);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+/* Hover: light blue surface with gradient lettering, no inner outline. */
+body #cdn-products .cdn-product-tabbar button:is(:hover,:focus-visible):not([aria-selected=true]){background:#E8F3FF}
+body #cdn-products .cdn-product-tabbar button:is(:hover,:focus-visible):not([aria-selected=true])::before{display:none;content:none}
+/* Hover uses the gradient outline again, with no blue surface. */
+body #cdn-products .cdn-product-tabbar button:is(:hover,:focus-visible):not([aria-selected=true]){background:transparent}
+body #cdn-products .cdn-product-tabbar button:is(:hover,:focus-visible):not([aria-selected=true])::before{display:block;content:""}
+/* Match the billing section spacing across all three CDN panels. */
+body #cdn-products :is(.feat-head,.two-section-head){row-gap:18px!important;align-items:center;margin-top:0!important;margin-bottom:40px!important;min-height:0!important}
+body #cdn-products :is(.feat-head,.two-section-head)>:is(.kicker,span){margin:0!important;padding:0!important;font-size:12px!important;line-height:1.6!important;font-weight:600;letter-spacing:.16em;color:#86909C}
+body #cdn-products :is(.feat-head,.two-section-head)>h2{margin:0!important;padding:0!important;font-size:clamp(30px,3.15vw,46px)!important;line-height:1.25!important;font-weight:700;letter-spacing:-.045em}
+@media(max-width:1100px){
+ body #cdn-products :is(.feat-head,.two-section-head){grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"eyebrow" "heading" "description"!important;row-gap:24px!important;margin-bottom:30px!important}
+ body #cdn-products :is(.feat-head,.two-section-head)>:is(.kicker,span){margin-bottom:20px!important}
+ body #cdn-products .cdn-product-tabbar{margin-top:0!important}
+}
+

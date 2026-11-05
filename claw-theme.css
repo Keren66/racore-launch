@@ -1,0 +1,32 @@
+/* Match the CDN console palette without changing RacoreClaw's content or controls. */
+#clawApp{--ink:#1D2129;--ink-2:#4E5969;--ink-3:#4E5969;--brand:#165DFF;--brand-ghost:#e8f1ff;--bg-soft:#f7f9ff;--line:#dfe8f7;--line-2:#e8eef8;--pastel-sky:#eaf4ff;--pastel-lav:#f0ebff;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(125deg,#dd8aff,#7194ff 31%,#02d0e9 64%,#b877ff) border-box;border:1px solid transparent;border-radius:20px;box-shadow:0 18px 42px #328cce19;overflow:hidden;color:#1D2129}
+#clawApp .claw-titlebar{background:#f7f9ff;border-bottom:1px solid #e8eefb;padding-inline:23px;gap:8px;justify-content:flex-start}
+#clawApp .claw-wtitle{color:#1D2129;display:flex;align-items:center;gap:12px;flex:1;margin-left:24px;margin-right:0;text-align:left;font-weight:600}
+#clawApp .claw-wtitle em{background:#fff;border:1px solid #dfe8f7;color:#4E5969;border-radius:20px;padding:3px 9px;font-weight:400}
+#clawApp .claw-wright i{border-color:#dce6fa;background:transparent}
+#clawApp .claw-side{background:#f7f9ff;border-right:1px solid #e8eef8}
+#clawApp .claw-center{background:#fff}
+#clawApp .claw-new{background:#fff;border-color:#dfe8f7;color:#1D2129}
+#clawApp .claw-new:hover{border-color:#165DFF;color:#165DFF}
+#clawApp .claw-navitem{color:#1D2129;background:transparent}
+#clawApp .claw-navitem svg{color:#717780;opacity:1}
+#clawApp .claw-navitem:hover{background:#edf4ff;color:#165DFF}
+#clawApp .claw-navitem.on{background:#eaf2ff;color:#165DFF;box-shadow:inset 3px 0 0 #527aff}
+#clawApp .claw-navitem.on svg{color:#165DFF}
+#clawApp .claw-side-h,#clawApp .claw-gw,#clawApp .claw-space{color:#4E5969}
+#clawApp .claw-space{background:#fff;box-shadow:none}
+#clawApp .claw-gw{border-top-color:#fff}
+#clawApp .claw-panehead h3,#clawApp .claw-srv-t b,#clawApp .claw-row .tx b,#clawApp .claw-tab{color:#1D2129}
+#clawApp .claw-panehead p,#clawApp .claw-srv-tools,#clawApp .claw-note,#clawApp .claw-row .tx span,#clawApp .claw-row .rt{color:#4E5969}
+#clawApp .claw-btn-line{background:#fff;color:#4E5969;border:1px solid #dfe8f7}
+#clawApp .claw-btn-grad{background:#165DFF;color:#fff;border-color:#165DFF}
+#clawApp .claw-tabrow,#clawApp .claw-srv,#clawApp .claw-row{border-color:#e8eef8}
+#clawApp .claw-tab{border-bottom-color:#165DFF}
+#clawApp .claw-srv-ic{background:#eaf4ff;color:#165DFF}
+#clawApp .claw-badge{background:#f7f9ff;border-color:#dfe8f7;color:#4E5969}
+#clawApp .claw-ok{background:#e7faf2;color:#0e9f6e}
+#clawApp .claw-sw{background:#165DFF}
+#clawApp .claw-sw.off{background:#c9cdd4}
+#clawApp .claw-trace,#clawApp .claw-ans th{background:#f7f9ff}
+#clawApp .claw-composer{background:#f7f9ff;border-color:#dfe8f7;color:#4E5969}
+@media(max-width:600px){#clawApp .claw-titlebar{padding-inline:12px;gap:5px}#clawApp .claw-wtitle{margin-left:9px;gap:7px}#clawApp .claw-wtitle em{padding:2px 6px}}

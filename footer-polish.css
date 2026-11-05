@@ -1,0 +1,6 @@
+.foot-brand{background:none!important}
+.foot-brand img{display:block;width:114px;height:auto;max-width:100%}
+.site-back-top{position:fixed;right:28px;bottom:28px;z-index:90;width:44px;height:44px;display:grid;place-items:center;border:1px solid #dfe6f0;border-radius:50%;background:#fff;color:#4E5969;box-shadow:0 4px 16px #243d6510;cursor:pointer;transition:color .18s,border-color .18s,box-shadow .18s}
+.site-back-top:hover{color:#165DFF;border-color:#bed0ff;box-shadow:0 5px 20px #165dff16}
+.site-back-top:focus-visible{outline:2px solid #165DFF;outline-offset:3px}
+.site-back-top svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}

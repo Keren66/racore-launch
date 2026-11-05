@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Import MCP configuration</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1D2129;
+      --muted: #4E5969;
+      --line: #dbe3ef;
+      --surface: #ffffff;
+      --canvas: #f4f7fb;
+      --purple: #165DFF;
+      --purple-2: #4080FF;
+      --green: #078548;
+      --green-soft: #effaf4;
+      --red: #d63f3f;
+      --red-soft: #fff3f3;
+      --radius: 18px;
+      font-family:var(--racore-ui-font);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 50% 35%, #ffffff 0, #f8faff 42%, transparent 70%),
+        var(--canvas);
+    }
+
+    button, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    .page-shell { width: min(1180px, 100%); }
+
+    .modal {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid #cfd9e7;
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(35, 55, 90, .12);
+      padding: 32px;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 72px 1fr auto;
+      gap: 22px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      color: var(--purple);
+      background: #efeaff;
+      font: 700 35px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    h1 { margin: 0 0 6px; font-size: clamp(25px, 3vw, 34px); letter-spacing: -.025em; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 18px; line-height: 1.5; }
+
+    .header-actions { display: flex; align-items: center; gap: 24px; align-self: start; }
+    .link-button, .icon-button, .tool-button {
+      border: 0;
+      background: none;
+      color: var(--purple);
+      font-weight: 650;
+      padding: 8px;
+    }
+    .icon-button { color: #536078; font-size: 28px; line-height: 1; }
+
+    .editor-shell {
+      overflow: hidden;
+      border: 2px solid var(--purple-2);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(103, 55, 244, .06);
+    }
+
+    .editor-toolbar {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 0 24px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcff;
+    }
+
+    .language {
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      padding: 0;
+      color: var(--ink);
+      background: transparent;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .language svg {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      stroke-width: 2.25;
+    }
+    .divider { width: 1px; height: 30px; margin: 0 2px; background: var(--line); }
+    .live-state { min-height: 38px; display: inline-flex; align-items: center; gap: 10px; color: var(--green); font-weight: 650; line-height: 1; }
+    .live-state.invalid { color: var(--red); }
+    .check { width: 24px; height: 24px; display: grid; place-items: center; flex: 0 0 24px; border-radius: 50%; color: #fff; background: var(--green); }
+    .check::after { content: "✓"; color: white; font-size: 15px; font-weight: 800; line-height: 1; }
+    .invalid .check { background: var(--red); }
+    .invalid .check::after { content: "!"; }
+    .tool-button { margin-left: auto; color: #536078; }
+
+    .editor-wrap { position: relative; min-height: 330px; }
+    .line-numbers {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 58px;
+      padding: 16px 14px;
+      color: #8792a8;
+      text-align: right;
+      white-space: pre;
+      line-height: 1.65;
+      background: #fbfcff;
+      border-right: 1px solid #eef2f7;
+      font: 15px/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 330px;
+      resize: vertical;
+      border: 0;
+      outline: 0;
+      padding: 16px 22px 16px 80px;
+      color: #152039;
+      background: transparent;
+      tab-size: 2;
+      line-height: 1.65;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 15px;
+    }
+
+    .status-row {
+      margin-top: 14px;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 18px;
+      border: 1px solid #d7eddf;
+      border-radius: 13px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-weight: 650;
+    }
+    .status-row.invalid { border-color: #f1cccc; background: var(--red-soft); color: var(--red); }
+    .status-main, .security { display: inline-flex; align-items: center; gap: 10px; }
+    .security { color: var(--muted); font-weight: 500; }
+
+    .connection-guide {
+      margin-top: 12px;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 13px 20px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .guide-copy { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .guide-product { color: var(--ink); font-weight: 750; }
+    .guide-separator, .guide-label, .guide-instruction { color: var(--muted); }
+    .transport-badge { padding: 6px 13px; border: 1px solid #70b9dc; border-radius: 999px; color: #087eae; background: #f5fbfe; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .agent { white-space: nowrap; color: #344158; font-weight: 600; }
+    .dot { display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 50%; background: #0aa55b; box-shadow: 0 0 0 4px rgba(10, 165, 91, .09); }
+
+    .command-card {
+      width: 100%;
+      margin-top: 16px;
+      padding: 20px 28px;
+      border: 1px solid #d5dde9;
+      border-radius: 16px;
+      color: #536078;
+      background: #fff;
+      box-shadow: 0 12px 35px rgba(35, 55, 90, .06);
+      font: 17px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .prompt { margin-right: 14px; color: #5b63ff; font-weight: 750; }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .shortcut { color: var(--muted); }
+    kbd { padding: 5px 8px; border: 1px solid var(--line); border-radius: 7px; background: #f7f9fc; box-shadow: 0 1px 0 #d8dfeb; font-family: inherit; }
+    .buttons { display: flex; gap: 12px; }
+    .button { min-height: 46px; padding: 0 24px; border-radius: 10px; border: 1px solid #ccd6e4; background: white; color: var(--ink); font-weight: 650; }
+    .button.primary { min-width: 128px; border-color: var(--purple); color: white; background: linear-gradient(135deg, var(--purple-2), #5931ea); box-shadow: 0 8px 18px rgba(103, 55, 244, .2); }
+    .button:disabled { cursor: not-allowed; opacity: .48; box-shadow: none; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translate(-50%, 20px);
+      padding: 11px 16px;
+      border-radius: 10px;
+      color: white;
+      background: #18243a;
+      opacity: 0;
+      pointer-events: none;
+      transition: .2s ease;
+      box-shadow: 0 10px 30px rgba(20, 33, 58, .2);
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    @media (max-width: 760px) {
+      body { padding: 14px; align-items: start; }
+      .modal { padding: 20px; border-radius: 17px; }
+      .header { grid-template-columns: 54px 1fr auto; gap: 12px; }
+      .app-icon { width: 54px; height: 54px; font-size: 26px; }
+      .header-actions .link-button { display: none; }
+      .subtitle { font-size: 15px; }
+      .status-row, .connection-guide, .footer { align-items: flex-start; flex-direction: column; }
+      .security { align-self: flex-start; }
+      .buttons { width: 100%; }
+      .button { flex: 1; padding-inline: 14px; }
+      .button.primary { min-width: 0; }
+      .shortcut { display: none; }
+    }
+  </style>
+<style>
+body { display:block; min-height:0; padding:0; background:transparent; }
+.page-shell { width:100%; }
+.modal { box-shadow:none; }
+@media(max-width:760px) { body { padding:0; } }
+</style>
+<style>html{background:transparent;color-scheme:normal}body,.page-shell{background:transparent}.modal,.command-card{background:#fff}</style><style>.buttons .button{height:48px;min-height:48px;border-radius:999px;position:relative;background:#fff;border:1px solid transparent;box-shadow:none;color:#1D2129}.buttons .button:not(.primary)::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(105deg,#ff592b 0%,#9270a0 27%,#3774f3 52%,#00cdd5 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}.buttons .button.primary{background:linear-gradient(105deg,#ff592b 0%,#9270a0 27%,#3774f3 52%,#00cdd5 100%);border-color:transparent;color:#fff;box-shadow:none}.buttons .button:hover{filter:brightness(1.03)}.buttons .button:active{filter:brightness(.96)}</style><style>:root{font-family:var(--racore-ui-font)}h1{font-family:inherit;font-size:24px;font-weight:600;line-height:1.3;letter-spacing:-.02em;color:#1D2129}.subtitle{font-family:inherit;font-size:16px;font-weight:400;line-height:1.65;color:#4E5969}.header{align-items:center}.footer{position:static;isolation:isolate;flex-wrap:wrap;gap:16px;background:transparent}.buttons{position:static;display:flex;gap:12px;margin-left:auto;flex-shrink:0}.buttons .button{font-size:14px;font-weight:500;line-height:1.4;padding:0 24px;isolation:isolate;overflow:hidden}.buttons .button:not(.primary){border:1px solid #C9CDD4;background:#fff;color:#1D2129}.buttons .button:not(.primary)::before,.buttons .button.primary::before,.buttons .button::after{display:none!important;content:none!important}.buttons .button.primary{background:#165DFF;border:1px solid #165DFF;color:#fff;box-shadow:none}.buttons .button.primary:hover{background:#4080FF;filter:none}.buttons .button.primary:active{background:#0E42D2;filter:none}.buttons .button:not(.primary):hover{background:#F7F8FA;filter:none}@media(max-width:600px){h1{font-size:21px}.subtitle{font-size:14px}.header{column-gap:14px}}</style><style>.app-icon{background:#E8F3FF;color:#165DFF}</style><style>.modal{border:1px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(125deg,#dd8aff,#7194ff 31%,#02d0e9 64%,#b877ff) border-box}</style><style>.buttons .button{height:40px;min-height:40px;max-height:40px;padding:0 22px}</style><style>body,h1,.subtitle,.button{font-family:var(--racore-ui-font)}.prompt{color:#165DFF}.transport-badge{color:#165DFF;background:#E8F3FF;border-color:#BEDAFF}</style><style>:root{--racore-ui-font:"PingFang SC","苹方",Inter,"Microsoft YaHei",Arial,sans-serif}body,.button,h1,.subtitle{font-family:var(--racore-ui-font)}</style><style> .modal{padding-bottom:0;overflow:hidden}.modal .command-card{display:flex;align-items:center;gap:10px;width:calc(100% + 64px);margin:24px -32px 0;padding:16px 24px;min-height:48px;border:0;border-top:1px solid #e5ebf5;border-radius:0 0 21px 21px;background:#f7f8ff;box-shadow:none;font-size:12px;line-height:1.5}.command-card .prompt{margin-right:0;font-weight:500}.command-cursor{width:6px;height:14px;background:#165DFF;animation:command-cursor-blink 1s step-end infinite}@keyframes command-cursor-blink{0%,100%{opacity:1}50%{opacity:0}}.command-hint{margin-left:auto;color:#86909C;font:11px/1.5 var(--racore-ui-font);white-space:nowrap}@media(max-width:760px){.modal .command-card{width:calc(100% + 40px);margin-left:-20px;margin-right:-20px;padding:14px 20px;border-radius:0 0 16px 16px}}</style><style>button,.buttons .button{font-weight:400!important}</style><style>@media(max-width:700px){.command-card{overflow-x:auto}.command-card code{font-size:12px;white-space:nowrap}.command-hint{display:none}.buttons{flex-wrap:wrap}.buttons .button{min-height:44px}}</style></head>
+<body>
+  <div class="page-shell">
+  <main class="modal" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+    <header class="header">
+      <div class="app-icon" aria-hidden="true">&lt;/&gt;</div>
+      <div>
+        <h1 id="dialog-title">Paste JSON config</h1>
+        <p class="subtitle">Paste a standard MCP server config to populate the form</p>
+      </div>
+      <div class="header-actions">
+        <button class="link-button" id="exampleButton" type="button">▧&nbsp; View example</button>
+        <button class="icon-button" id="closeButton" type="button" aria-label="Close">×</button>
+      </div>
+    </header>
+
+    <section class="editor-shell" aria-label="JSON editor">
+      <div class="editor-toolbar">
+        <span class="language" aria-label="JSON format">
+          <span>JSON</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m7 10 5 5 5-5"></path>
+          </svg>
+        </span>
+        <span class="divider" aria-hidden="true"></span>
+        <span class="live-state" id="liveState"><span class="check"></span><span id="liveStateText">Valid JSON</span></span>
+        <button class="tool-button" id="formatButton" type="button">✦&nbsp; Format JSON</button>
+      </div>
+      <div class="editor-wrap">
+        <div class="line-numbers" id="lineNumbers" aria-hidden="true"></div>
+        <textarea id="editor" aria-label="MCP JSON configuration" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <div class="connection-guide" aria-label="MCP connection instructions">
+      <div class="guide-copy">
+        <span class="guide-product">Amazon Quick Desktop</span>
+        <span class="guide-separator">·</span>
+        <span class="guide-label">Add MCP</span>
+        <span class="transport-badge">stdio</span>
+        <span class="guide-instruction">粘贴 racore-cli 配置即可接入</span>
+      </div>
+      <span class="agent"><span class="dot"></span>Agent connected</span>
+    </div>
+
+    <footer class="footer">
+      <span class="shortcut"><kbd id="shortcutModifier">Ctrl</kbd> <kbd>Enter</kbd>&nbsp; to apply</span>
+      <div class="buttons">
+        <button class="button" id="cancelButton" type="button">Cancel</button>
+        <button class="button primary" id="importButton" type="button">Apply</button>
+      </div>
+    </footer>
+  <div class="command-card" aria-label="CLI command">
+    <span class="prompt">$</span><span>racore-cli serve</span><span class="command-cursor" aria-hidden="true"></span><span class="command-hint">示例数据</span>
+  </div>
+  </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const sample = {
+      mcpServers: {
+        "racore-cdn": {
+          command: "racore-cli",
+          args: ["serve"],
+          env: {
+            RACORE_ACCESS_KEY: "••••••••••••",
+            RACORE_SECRET_KEY: "••••••••••••"
+          }
+        }
+      }
+    };
+
+    const editor = document.querySelector('#editor');
+    const lineNumbers = document.querySelector('#lineNumbers');
+
+
+    const liveState = document.querySelector('#liveState');
+    const liveStateText = document.querySelector('#liveStateText');
+    const importButton = document.querySelector('#importButton');
+    const toast = document.querySelector('#toast');
+    document.querySelector('#shortcutModifier').textContent = /Mac|iPhone|iPad/.test(navigator.platform) ? '⌘' : 'Ctrl';
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      window.clearTimeout(showToast.timer);
+      showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 1800);
+    }
+
+    function updateLines() {
+      const count = Math.max(1, editor.value.split('\n').length);
+      lineNumbers.textContent = Array.from({ length: count }, (_, index) => index + 1).join('\n');
+    }
+
+    function validate() {
+      let valid = false;
+      let validJSON = false;
+      let count = 0;
+      try {
+        const parsed = JSON.parse(editor.value);
+        validJSON = true;
+        valid = Boolean(parsed && parsed.mcpServers && typeof parsed.mcpServers === 'object' && !Array.isArray(parsed.mcpServers));
+        count = valid ? Object.keys(parsed.mcpServers).length : 0;
+      } catch (_) {}
+
+
+      liveState.classList.toggle('invalid', !validJSON);
+      liveStateText.textContent = validJSON ? 'Valid JSON' : 'Invalid JSON';
+
+      importButton.disabled = !valid;
+      updateLines();
+      return valid;
+    }
+
+    function loadExample() {
+      editor.value = JSON.stringify(sample, null, 2);
+      validate();
+    }
+
+    editor.addEventListener('input', validate);
+    editor.addEventListener('scroll', () => { lineNumbers.scrollTop = editor.scrollTop; });
+    document.querySelector('#exampleButton').addEventListener('click', loadExample);
+    document.querySelector('#formatButton').addEventListener('click', () => {
+      try {
+        editor.value = JSON.stringify(JSON.parse(editor.value), null, 2);
+        validate();
+        showToast('JSON formatted');
+      } catch (_) {
+        showToast('Fix invalid JSON before formatting');
+      }
+    });
+    document.querySelector('#cancelButton').addEventListener('click', () => showToast('Import cancelled'));
+    document.querySelector('#closeButton').addEventListener('click', () => showToast('Dialog closed'));
+    importButton.addEventListener('click', () => {
+      if (validate()) showToast('Preview only · Apply requires connection to the app');
+    });
+    document.addEventListener('keydown', (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key === 'Enter' && !importButton.disabled) {
+        event.preventDefault();
+        importButton.click();
+      }
+    });
+
+    loadExample();
+  </script>
+<script>
+(function () {
+  function reportHeight() { parent.postMessage({type:'mcp-import-height',height:document.body.getBoundingClientRect().height}, '*'); }
+  new ResizeObserver(reportHeight).observe(document.body);
+  window.addEventListener('load', reportHeight);
+  reportHeight();
+})();
+</script>
+</body>
+</html>
+

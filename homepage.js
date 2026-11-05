@@ -1,0 +1,1 @@
+(()=>{const sync=()=>{const en=document.documentElement.lang.startsWith('en');document.querySelectorAll('.replacement-home [data-zh]').forEach(el=>el.textContent=el.dataset[en?'en':'zh']);};new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});sync();})();

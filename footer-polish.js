@@ -1,0 +1,1 @@
+(()=>{const button=document.querySelector('.site-back-top');if(button)button.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}))})();

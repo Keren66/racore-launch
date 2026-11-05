@@ -1,0 +1,20 @@
+/* Corporate-site rhythm: white content floors alternating with cool blue. */
+body .replacement-home{background:#fff}
+body .replacement-home .hp-releases{padding-top:48px;padding-bottom:64px;background:#fff}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder,#about){position:relative;isolation:isolate;padding-top:88px;padding-bottom:88px;border:0;background-image:none;background-color:#fff}
+body :is(#cdncli,#billing,#fusioncdn,#about){background:radial-gradient(ellipse at 92% 12%,#e9f1ff80,transparent 46%),#f5f8ff}
+body :is(#featured,#claw,#racoder){background:#fff}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder,#about)::before,body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder,#about)::after{display:none}
+body #featured .release-art,body #billing .billing-art{display:none}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) .feat-head{margin-bottom:34px}
+body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder) :is(.console,.claw,.ide){box-shadow:0 16px 44px #314f8410}
+body :is(#cdncli,#billing,#fusioncdn) .spec{background:#ffffffa6;border-color:#e0e8f5}
+body :is(.release-improvements,.bilstrip){margin-top:38px;padding-top:28px;border-top:1px solid #dfe7f4;background:transparent;box-shadow:none}
+body .replacement-home :is(.hp-featured,.hp-recent){background:#fff;border-color:#e5eaf3;box-shadow:0 8px 28px #314f8407}
+body #about .ab-card{background:#fff!important;border:1px solid #e7edf6!important;box-shadow:0 8px 24px #314f8406}
+@media(max-width:1100px){body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder,#about){padding-top:64px;padding-bottom:64px}}
+@media(max-width:600px){body .replacement-home .hp-releases{padding-top:32px;padding-bottom:40px}body :is(#cdncli,#featured,#billing,#claw,#fusioncdn,#racoder,#about){padding-top:48px;padding-bottom:48px}}
+/* Let constrained content sections paint their floor to both viewport edges. */
+body :is(#claw,#racoder,#about){overflow:visible}
+body :is(#claw,#racoder,#about)::before{content:"";display:block;position:absolute;inset:0 auto 0 50%;width:100vw;height:auto;max-width:none;border-radius:0;transform:translateX(-50%);filter:none;opacity:1;background:#fff;pointer-events:none;z-index:-1}
+body #about::before{background:#f5f8ff}

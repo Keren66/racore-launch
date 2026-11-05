@@ -1,0 +1,14 @@
+:root{--nav-brand:linear-gradient(105deg,#ff592b 0%,#9270a0 27%,#3774f3 52%,#00cdd5 100%)}
+.bar .nav a{position:relative;color:#1D2129;background:transparent;line-height:1.4;transition:color .18s;font-weight:400}
+.bar .nav a:is(:hover,:focus-visible,:active,.on,[aria-current]){background:var(--nav-brand);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.bar .nav a:is(.on,[aria-current]){font-weight:600}
+.bar .nav a:is(.on,[aria-current])::after{content:"";position:absolute;left:3px;right:3px;bottom:1px;height:2px;border-radius:2px;background:var(--nav-brand)}
+.bar .bar-right .btn-ghost{background:transparent;box-shadow:none;transform:none}
+.bar .bar-right .btn-ghost span{background:none;color:#1D2129;-webkit-text-fill-color:currentColor}
+.bar .bar-right .btn-ghost:is(:hover,:focus-visible,:active) span{background:var(--nav-brand);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.bar .bar-right .btn-ghost:active{background-color:#ffffff40}
+.replacement-home .hp-status-list .hp-status-product{color:#165DFF}
+.replacement-home .hp-status-command>i{background:#165DFF}
+body .bar .bar-right .btn-ghost>span:not(.arrow):not([aria-hidden]){background:none!important;color:#1D2129!important;-webkit-text-fill-color:currentColor!important}
+body .bar .bar-right .btn-ghost:is(:hover,:focus-visible,:active)>span:not(.arrow):not([aria-hidden]){background:var(--nav-brand)!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important}
+@media(max-width:1100px){.bar .nav a:is(.on,[aria-current])::after{right:auto;width:4em}}
