@@ -5,13 +5,10 @@
    字段说明:
      date     "YYYY-MM" 或 "YYYY-MM-DD"，同时用作条目锚点 id
      type     "LAUNCH"(新产品发布) | "UPDATE"(能力更新) | "SOON"(预告)
-     feature  可选；带值的条目在 changelog 里渲染为主推发布（大标题 + 三个标签页
-              + 内嵌版本控制台窗口）。目前 "fusion-cdn-1.1.2" 对应 #cdnVerHost
-     kicker   可选 {zh, en}；条目顶部的灰色标签行（默认是「时间: <date>」）
      product  产品名（不翻译的保留英文）
      title    {zh, en}  条目标题
      body     {zh:[段落…], en:[段落…]}  支持简单 HTML（<code> <strong>）
-     bullets  {zh:[…], en:[…]}  可选，要点列表（主推发布里渲染进控制台三个面板）
+     bullets  {zh:[…], en:[…]}  可选，要点列表
      link     {href, zh, en}  可选，"查看详情"链接
    页面联动: 首页 Hero 控制台 / 眉标日期 / 日志页 meta 自动读取最新的非 SOON 条目
    ============================================================ */
@@ -19,17 +16,15 @@ const UPDATES = [
   {
     date: "2026-10-23",
     type: "UPDATE",
-    feature: "fusion-cdn-1.1.2",
     product: "Fusion CDN",
-    kicker: { zh: "版本发布 — 2026 年 10 月 23 日", en: "Release — October 23, 2026" },
-    title: { zh: "融合 CDN 1.1.2——Cloudflare 渠道全面接入，日志架构换代。", en: "Fusion CDN 1.1.2 — the Cloudflare channel lands, and the logging stack is rebuilt." },
+    title: { zh: "融合 CDN 1.1.2 版本发布：Cloudflare 渠道全面接入", en: "Fusion CDN 1.1.2: Cloudflare channel support, TLS 1.3 and a new logging stack" },
     body: {
       zh: [
-        "<strong>融合 CDN 1.1.2</strong> 正式发布：新增 Cloudflare 渠道支持，创建域名时可指定回源协议（HTTP / HTTPS）与回源端口，HTTPS 支持 TLS 1.3；注册审核通过后通过站内信与邮件通知，日志架构全面换代。",
-        "同时上线 5 项体验优化与 4 项问题修复：证书状态自动更新并识别即将过期/已过期，证书访问权限收紧，缓存规则支持批量设置，域名与证书列表页优化（导出可附带标签），平均流量命中率改为按实际流量加权。"
+        "<strong class=\"log-lead\">融合 CDN 1.1.2 正式发布</strong>新增 Cloudflare 渠道支持，创建域名时可指定回源协议（HTTP / HTTPS）与回源端口，HTTPS 支持 TLS 1.3；注册审核通过后通过站内信与邮件通知，日志架构全面换代。",
+        "<strong class=\"log-lead\">同时上线 5 项体验优化与 4 项问题修复</strong>证书状态自动更新并识别即将过期/已过期，证书访问权限收紧，缓存规则支持批量设置，域名与证书列表页优化（导出可附带标签），平均流量命中率改为按实际流量加权。"
       ],
       en: [
-        "<strong>Fusion CDN 1.1.2</strong> is out: full Cloudflare channel support, a configurable origin protocol (HTTP / HTTPS) and origin port at domain creation, TLS 1.3 over HTTPS, signup-review results delivered by in-app message and email, and a completely rebuilt logging architecture.",
+        "<strong class=\"log-lead\">Fusion CDN 1.1.2 is out</strong>full Cloudflare channel support, a configurable origin protocol (HTTP / HTTPS) and origin port at domain creation, TLS 1.3 over HTTPS, signup-review results delivered by in-app message and email, and a completely rebuilt logging architecture.",
         "Five experience improvements and four fixes ship with it: certificate status updates automatically with expiring/expired detection, certificate access control is tightened, cache rules can be set in bulk, the domain and certificate lists are cleaner (domain export can carry tags), and the average cache hit ratio is now weighted by real traffic."
       ]
     },
@@ -76,11 +71,11 @@ const UPDATES = [
     title: { zh: "账单系统：通用出账标准接口 v0.1 对外开放", en: "Billing System: the Universal Billing Standard API v0.1 is open" },
     body: {
       zh: [
-        "<strong>账单系统</strong>本次对外开放<strong>通用出账标准接口 v0.1</strong>：客户同步、对象绑定、用量上传、折扣配置、账单查询与导出、归档推送、金额告警——整套出账能力收敛到一组 REST 接口，第三方平台按 <code>/api/v1/platform/{platformCode}</code> 接入即可跑完从用量到账单的全链路。",
-        "同时上线 5 项体验优化：微软账单明细列表支持订阅 ID 查询、管理租户账单详情页新增归档标识、Usage 配置详情页返回逻辑优化、Usage 配置页面兼容历史还原数据、账单日消费检测告警新增产品维度成本汇总。"
+        "<strong class=\"log-lead\">通用出账标准接口 v0.1 对外开放</strong>客户同步、对象绑定、用量上传、折扣配置、账单查询与导出、归档推送、金额告警——整套出账能力收敛到一组 REST 接口，第三方平台按 <code>/api/v1/platform/{platformCode}</code> 接入即可跑完从用量到账单的全链路。",
+        "<strong class=\"log-lead\">同时上线 5 项体验优化</strong>微软账单明细列表支持订阅 ID 查询、管理租户账单详情页新增归档标识、Usage 配置详情页返回逻辑优化、Usage 配置页面兼容历史还原数据、账单日消费检测告警新增产品维度成本汇总。"
       ],
       en: [
-        "<strong>The Billing System</strong> now opens the <strong>Universal Billing Standard API v0.1</strong>: customer sync, resource binding, usage upload, discount configuration, bill query and PDF export, archive and push, amount alerts — the whole billing capability behind one set of REST endpoints, so a third-party platform integrates under <code>/api/v1/platform/{platformCode}</code> and runs the entire usage-to-invoice chain.",
+        "<strong class=\"log-lead\">The Billing System now opens the Universal Billing Standard API v0.1</strong>customer sync, resource binding, usage upload, discount configuration, bill query and PDF export, archive and push, amount alerts — the whole billing capability behind one set of REST endpoints, so a third-party platform integrates under <code>/api/v1/platform/{platformCode}</code> and runs the entire usage-to-invoice chain.",
         "Five experience improvements ship with it: bill lines searchable by subscription ID for Microsoft bills, an archived flag on the managed-tenant bill detail page, better back navigation from the Usage configuration detail, restored historical data supported on the Usage configuration page, and a product-level cost breakdown in daily-spend alert emails."
       ]
     },
@@ -113,11 +108,11 @@ const UPDATES = [
     title: { zh: "RacoreClaw 桌面智能体客户端发布", en: "RacoreClaw, the agentic desktop client, is live" },
     body: {
       zh: [
-        "<strong>RacoreClaw</strong> 是 Racore 的桌面智能体客户端：把本地与远程的 MCP（Model Context Protocol）服务器统一纳管，用一个对话框完成 CDN、账单、邮件与飞书的日常操作。",
+        "<strong class=\"log-lead\">RacoreClaw 桌面智能体客户端</strong>把本地与远程的 MCP（Model Context Protocol）服务器统一纳管，用一个对话框完成 CDN、账单、邮件与飞书的日常操作。",
         "支持 stdio、Streamable HTTP 与 SSE 三种传输——导入 JSON 即可添加 MCP 服务，保存后热重载、无需重启；工具调用与结果全程可见。"
       ],
       en: [
-        "<strong>RacoreClaw</strong> is Racore's agentic desktop client: local and remote MCP (Model Context Protocol) servers managed in one place, so CDN, billing, email and Lark work happens from a single dialogue.",
+        "<strong class=\"log-lead\">RacoreClaw is Racore's agentic desktop client</strong>local and remote MCP (Model Context Protocol) servers managed in one place, so CDN, billing, email and Lark work happens from a single dialogue.",
         "stdio, Streamable HTTP and SSE transports are all supported — import JSON to add a server, hot-reload on save, no restart; every tool call and result stays in plain sight."
       ]
     },
@@ -148,11 +143,11 @@ const UPDATES = [
     title: { zh: "融合 CDN 平台正式发布", en: "Fusion CDN Platform is live" },
     body: {
       zh: [
-        "<strong>Racore 融合 CDN 平台</strong>正式上线——一站式全球融合内容分发网络管理系统。平台整合 AWS CloudFront、Cloudflare 等全球主流 CDN 厂商资源，结合自研智能调度引擎，为海外业务提供快速、稳定、安全的内容加速，帮助企业规避单一厂商锁定风险。",
+        "<strong class=\"log-lead\">Racore 融合 CDN 平台正式上线</strong>一站式全球融合内容分发网络管理系统。平台整合 AWS CloudFront、Cloudflare 等全球主流 CDN 厂商资源，结合自研智能调度引擎，为海外业务提供快速、稳定、安全的内容加速，帮助企业规避单一厂商锁定风险。",
         "双轨定价：按量付费 + 流量包（流量包最高可省 30%）。SLA 服务可用性承诺 99.9%，依托全球 3000+ 边缘节点、300+ 城市覆盖。"
       ],
       en: [
-        "<strong>Racore Fusion CDN Platform</strong> is live — a one-stop global content delivery management system. It unifies resources from leading CDN providers such as AWS CloudFront and Cloudflare behind a proprietary intelligent scheduling engine, giving overseas businesses fast, stable and secure acceleration while removing single-vendor lock-in.",
+        "<strong class=\"log-lead\">Racore Fusion CDN Platform is live</strong>a one-stop global content delivery management system. It unifies resources from leading CDN providers such as AWS CloudFront and Cloudflare behind a proprietary intelligent scheduling engine, giving overseas businesses fast, stable and secure acceleration while removing single-vendor lock-in.",
         "Dual-track pricing: pay-as-you-go + traffic packages (save up to 30%). 99.9% availability SLA, backed by 3000+ edge nodes across 300+ cities worldwide."
       ]
     },
@@ -174,7 +169,7 @@ const UPDATES = [
         "Enterprise security: SSL/TLS + HSTS, Referer/IP/UA/geo access control, hotlink protection, HLS/AES encryption"
       ]
     },
-    link: { href: "https://portal.racorecloud.com/", zh: "进入平台", en: "Open the platform" }
+    link: { href: "https://www.racorecloud.com/", zh: "进入平台", en: "Open the platform" }
   },
   {
     date: "2026-09",
@@ -183,11 +178,11 @@ const UPDATES = [
     title: { zh: "Racore CDN CLI 发布", en: "Racore CDN CLI is live" },
     body: {
       zh: [
-        "<strong>Racore CDN CLI</strong>（<code>racore-cli</code>）正式上线——Racore Cloud 官方命令行工具，让人类和 AI Agent 都能在终端里操作 CDN。覆盖域名、缓存、统计、证书、工单、日志六大命令组，提供 60+ 命令与 80+ AI Agent Skills。",
+        "<strong class=\"log-lead\">Racore CDN CLI 正式上线</strong>Racore Cloud 官方命令行工具（<code>racore-cli</code>），让人类和 AI Agent 都能在终端里操作 CDN。覆盖域名、缓存、统计、证书、工单、日志六大命令组，提供 60+ 命令与 80+ AI Agent Skills。",
         "原生支持 MCP（Model Context Protocol，基于 JSON-RPC 2.0）：一条 <code>racore-cli serve</code> 即启动 stdio 模式的 MCP Server，可被 Kiro、Amazon Quick Desktop、Claude Desktop 等 AI Agent 直接调用。"
       ],
       en: [
-        "<strong>Racore CDN CLI</strong> (<code>racore-cli</code>) is live — the official Racore Cloud command-line tool that lets both humans and AI agents run the CDN from a terminal. It spans six command groups (domain, cache, stats, cert, workorder, log) with 60+ commands and 80+ AI Agent Skills.",
+        "<strong class=\"log-lead\">Racore CDN CLI (<code>racore-cli</code>) is live</strong>the official Racore Cloud command-line tool that lets both humans and AI agents run the CDN from a terminal. It spans six command groups (domain, cache, stats, cert, workorder, log) with 60+ commands and 80+ AI Agent Skills.",
         "MCP (Model Context Protocol, JSON-RPC 2.0) is native: a single <code>racore-cli serve</code> starts a stdio MCP server that AI agents such as Kiro, Amazon Quick Desktop and Claude Desktop can call directly."
       ]
     },
@@ -216,11 +211,11 @@ const UPDATES = [
     title: { zh: "Racoder 智能体 IDE 发布", en: "Racoder, the Agentic IDE, is live" },
     body: {
       zh: [
-        "Racore 首款智能体开发工具 <strong>Racoder</strong> 正式上线。把任务交给自主智能体——它们在你的整个代码库中规划、编写并审查代码，你只需专注于决策。",
+        "<strong class=\"log-lead\">Racoder 智能体开发工具正式上线</strong>把任务交给自主智能体——它们在你的整个代码库中规划、编写并审查代码，你只需专注于决策。",
         "基于开源 VS Code（vscode-oss）构建，并配套自研云平台统一管理用户、套餐、模型、用量与钱包——一份订阅即可使用多家前沿模型，免费版即可开始，超出套餐额度可按需付费继续使用。"
       ],
       en: [
-        "Racore's first agentic dev tool, <strong>Racoder</strong>, is live. Delegate tasks to autonomous agents that plan, write, and review code across your whole stack — while you stay in charge of the decisions.",
+        "<strong class=\"log-lead\">Racore's first agentic dev tool, Racoder, is live</strong>Delegate tasks to autonomous agents that plan, write, and review code across your whole stack — while you stay in charge of the decisions.",
         "Built on open-source VS Code (vscode-oss) and backed by Racore's own cloud platform that unifies users, plans, models, usage and wallet — one subscription covers frontier models from multiple providers, a free plan gets you started, and pay-as-you-go keeps you going beyond your quota."
       ]
     },

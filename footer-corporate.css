@@ -1,0 +1,48 @@
+body .foot-in{color:#4E5969}body footer{background:#F7F9FF}
+.footer-service-strip{display:flex;justify-content:center;gap:64px;padding:0 0 28px;margin-bottom:32px;border-bottom:1px solid #E5E6EB;color:#1D2129;font-size:14px;font-weight:500}
+.footer-service-strip span{display:flex;align-items:center;gap:12px}.footer-service-strip svg{width:23px;height:23px;color:#165DFF}
+.footer-contacts{display:grid;gap:16px;margin-top:22px}.footer-contacts a{display:flex;align-items:center;gap:12px;text-decoration:none}
+.footer-contacts i{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--racore-brand-gradient,linear-gradient(105deg,#ff592b,#3774f3,#00cdd5));color:#fff;flex:none}.footer-contacts svg{width:19px;height:19px}
+.footer-contacts span{display:grid;gap:4px}.footer-contacts b{font-size:12px;font-weight:500;color:#1D2129}.footer-contacts small{font-size:12px;color:#86909C}
+body .foot-col h5{color:#1D2129;font-weight:500}body .foot-col a{color:#4E5969}body .foot-col a:hover{color:#165DFF}
+body #langToggle2{display:none!important}.footer-back-top{border:0;background:none;color:#86909C;font:13px var(--racore-ui-font,Arial);cursor:pointer;display:flex;gap:12px;align-items:center}.footer-back-top:hover{color:#165DFF}.footer-back-top span{font-size:20px}
+body .page-sub,body .log-body{color:#4E5969}body .log-title,body .log-date{color:#1D2129}body .log-pill.update{background:#E8F3FF;color:#165DFF}body #metaLatest{color:#165DFF}body .log-body li::marker{color:#165DFF}
+@media(max-width:600px){.footer-service-strip{gap:20px;flex-wrap:wrap;font-size:12px}}
+.footer-intro{max-width:310px;font-size:13px;line-height:1.8;color:#86909C;margin:14px 0 0}
+.footer-contacts a{cursor:copy}.footer-contacts a:hover b,.footer-contacts a:hover small,.footer-contacts a:focus-visible b,.footer-contacts a:focus-visible small{color:#165DFF}
+.footer-copy-notice{display:block;min-height:18px;margin-top:10px;font-size:12px;color:#165DFF}
+/* Corporate footer spacing and standard link interaction. */
+body footer:has(>.foot-in){padding-top:30px;padding-bottom:22px}
+.footer-service-strip{padding-bottom:26px;margin-bottom:28px;gap:64px;font-size:14px}
+body .foot-grid{grid-template-columns:1.45fr 1fr 1fr .65fr;gap:52px;padding-bottom:28px}
+body .foot-col{gap:12px}body .foot-col h5{font-size:14px;margin-bottom:6px}body .foot-col a{font-size:13px;line-height:1.6}
+.footer-intro{max-width:300px;font-size:12px;line-height:1.8;margin-top:12px}
+.footer-contacts{gap:18px;margin-top:20px}
+.footer-contacts a{cursor:pointer}.footer-contacts a:hover b,.footer-contacts a:focus-visible b{color:#1D2129}
+.footer-contacts a:hover small,.footer-contacts a:focus-visible small{color:#165DFF}
+.footer-contacts i{width:36px;height:36px;border-radius:10px}.footer-contacts b{font-size:12px}.footer-contacts small{font-size:13px;line-height:1.5}
+.footer-copy-notice{display:none}
+body .foot-bottom{padding-top:18px;font-size:12px}
+@media(max-width:800px){body .foot-grid{grid-template-columns:1.3fr 1fr;gap:30px}}
+@media(max-width:480px){body .foot-grid{grid-template-columns:1fr;gap:26px}.footer-service-strip{gap:18px}}
+.footer-intro{margin-top:14px;max-width:300px}.footer-contacts{margin-top:22px}
+/* Keep the release hub's contact details light and focused. */
+.footer-contacts{gap:14px;margin-top:18px}
+.footer-contacts i{width:22px;height:28px;border-radius:0;background:transparent;color:#165DFF}
+.footer-contacts svg{width:20px;height:20px;stroke-width:1.6}
+.footer-contacts a{gap:10px;align-items:flex-start}
+.footer-contacts span{gap:3px}.footer-contacts b{font-size:12px}.footer-contacts small{font-size:13px}
+body footer:has(>.foot-in){border-top:0;position:relative}
+body footer:has(>.foot-in)::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:calc(100% - var(--racore-content-gutter)*2);max-width:1440px;height:1px;background:#E5E6EB}
+body .log-pill{border:0;border-radius:999px;box-shadow:none;font-size:12px;font-weight:500;padding:4px 12px;line-height:1.5}
+body .log-pill.launch{background:#E8FFEA;color:#00B42A;background-image:none;box-shadow:none}
+body .log-pill.launch .status-dot{display:none}
+body .log-pill.update{background:#E8F3FF;color:#165DFF}
+body .log-pill.soon{background:#FFF7E8;color:#FF7D00}
+/* Match the two footer separators to the about-card outline. */
+body footer:has(>.foot-in)::before{background:#E7EDF6}
+.footer-service-strip{border-bottom-color:#E7EDF6}
+/* Compact outline arrow aligned optically with the footer label. */
+.footer-back-top{gap:8px;line-height:1.5;padding:6px 0}
+.footer-back-top svg{display:block;width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.footer-back-top:focus-visible{outline:2px solid #165DFF;outline-offset:4px;border-radius:4px}

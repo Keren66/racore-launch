@@ -1,0 +1,23 @@
+/* Hero actions: hover, press and keyboard focus share a consistent response. */
+body .replacement-home .hp-prototype-hero .two-actions .two-btn{
+  cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+@media(hover:hover) and (pointer:fine){
+  body .replacement-home .hp-prototype-hero .two-actions .two-btn:hover{
+    transform:translateY(-2px);filter:brightness(1.05);box-shadow:0 7px 18px rgba(40,112,210,.2);
+  }
+  body .replacement-home .hp-prototype-hero .two-actions .two-secondary:hover{
+    filter:brightness(.97);box-shadow:0 7px 18px rgba(40,112,210,.14);
+  }
+}
+body .replacement-home .hp-prototype-hero .two-actions .two-btn:active{
+  transform:translateY(1px) scale(.98);filter:brightness(.94);box-shadow:0 2px 5px rgba(40,112,210,.15);
+}
+body .replacement-home .hp-prototype-hero .two-actions .two-btn:focus-visible{
+  outline:3px solid #165DFF;outline-offset:4px;
+}
+@media(prefers-reduced-motion:reduce){
+  body .replacement-home .hp-prototype-hero .two-actions .two-btn{transition:none}
+  body .replacement-home .hp-prototype-hero .two-actions .two-btn:is(:hover,:active){transform:none}
+}

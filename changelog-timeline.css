@@ -1,0 +1,159 @@
+.bar .nav a{border-radius:0!important;background-color:transparent!important}
+.bar .nav a.on{background-color:transparent!important}
+.log-timeline{display:flex;gap:12px;overflow-x:auto;padding:18px 0 16px;margin-bottom:28px;border-bottom:1px solid #e5eaf2;scrollbar-width:thin;position:sticky;top:0;z-index:10;background:#fff;scroll-padding:12px}
+.log-timeline button{flex:0 0 145px;text-align:left;border:0;border-bottom:2px solid #e5eaf2;padding:12px 10px;background:transparent;color:#4E5969;cursor:pointer;font-family:var(--racore-ui-font);font-size:13px;line-height:1.6}
+.log-timeline button span{display:block;font-size:11px;color:#86909C;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:145px}
+.log-timeline button:hover{background:#f7f9ff;color:#165DFF}
+.log-timeline button[aria-selected=true]{border-color:#165DFF;color:#165DFF;font-weight:600;background:#eaf2ff}
+.log-timeline button:focus-visible{outline:2px solid #165DFF;outline-offset:-2px}
+#logList .log-entry[hidden]{display:none}
+#logList .log-entry{margin-top:0;padding-top:0;border-top:0}
+/* A continuous release rail, with a quiet default and a clear selected node. */
+.log-timeline{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0;overflow:visible;position:relative;top:auto;background:transparent;border:0;padding:0 0 22px;margin:0 0 26px;isolation:isolate}
+.log-timeline::before{content:"";position:absolute;left:12px;right:12px;top:36px;height:1px;background:#dfe5ee;z-index:-1}
+.log-timeline button{position:relative;min-width:0;flex:none;border:0;border-radius:0;padding:0 10px 5px;text-align:left;background:transparent!important;font-size:12px;font-weight:500;line-height:1.5;color:#86909C;transition:color .18s}
+.log-timeline button::after{content:"";position:absolute;top:32px;left:12px;width:7px;height:7px;border:2px solid #fff;border-radius:50%;background:#c9d1dc;box-shadow:0 0 0 1px #dfe5ee;transition:background .18s,box-shadow .18s}
+.log-timeline button span{display:block;white-space:normal;text-overflow:clip;overflow:visible;max-width:none;margin-top:31px;color:#4E5969;font-size:11px;line-height:1.65;font-weight:400;min-height:36px}
+.log-timeline button:hover{color:#165DFF}.log-timeline button:hover::after{background:#165DFF}
+.log-timeline button[aria-selected=true]{color:#165DFF;font-weight:600;border:0}
+.log-timeline button[aria-selected=true]::after{background:#165DFF;box-shadow:0 0 0 4px #eaf2ff}
+.log-timeline button[aria-selected=true] span{color:#1D2129;font-weight:600}
+#logList .log-entry{background:#fff;border:1px solid #e8edf5;border-radius:18px;padding:26px 30px;box-shadow:0 8px 30px #253d6405}
+@media(max-width:700px){.log-timeline{display:flex;overflow-x:auto;scrollbar-width:thin;padding-bottom:12px}.log-timeline button{flex:0 0 124px}.log-timeline::before{width:850px;right:auto}#logList .log-entry{padding:22px 18px}}
+/* Align the full changelog column with the first navigation label. */
+@media(min-width:701px){
+ .page-head-in,.log-in{box-sizing:border-box;max-width:none;margin-left:var(--log-left,18%);margin-right:var(--log-right,8%);padding-left:0;padding-right:0}
+}
+/* Dates lead the release timeline; product labels remain secondary. */
+.log-timeline button{font-size:16px;font-weight:600;color:#1D2129;line-height:1.5;padding-bottom:5px}
+.log-timeline button span{font-size:12px;font-weight:400;color:#4E5969;margin-top:32px}
+.log-timeline button[aria-selected=true]{font-weight:600;color:#165DFF}
+.log-timeline button[aria-selected=true] span{font-weight:400;color:#4E5969}
+.log-timeline::before{top:43px}
+.log-timeline button::after{top:39px}
+@media(max-width:700px){.log-timeline button{font-size:15px;flex-basis:140px}.log-timeline::before{width:965px}}
+.log-timeline button{white-space:nowrap}
+@media(max-width:1100px){.log-timeline{display:flex;overflow-x:auto;scrollbar-width:thin;padding-bottom:12px}.log-timeline button{flex:0 0 150px}.log-timeline::before{width:1035px;right:auto}}
+/* Make the release selector read as an interactive control. */
+.log-timeline{gap:10px;padding:4px 0 24px;margin-bottom:20px}
+.log-timeline::before{display:none}
+.log-timeline button{padding:16px 12px 14px;border:1px solid #E5E6EB!important;border-radius:12px;background:#fff!important;color:#1D2129;font-size:15px;font-weight:600;line-height:1.5;white-space:nowrap;transition:border-color .18s,background .18s,box-shadow .18s;min-height:122px}
+.log-timeline button::after{top:51px;left:14px;width:7px;height:7px;background:#C9CDD4;box-shadow:none;border:2px solid #fff}
+.log-timeline button span{margin-top:24px;font-size:12px;line-height:1.6;color:#4E5969;min-height:36px}
+.log-timeline button:hover{border-color:#94BFFF!important;background:#F7FAFF!important;box-shadow:0 4px 14px #165dff0a}
+.log-timeline button[aria-selected=true]{border-color:#165DFF!important;background:#EAF2FF!important;box-shadow:inset 0 0 0 1px #165DFF;color:#165DFF}
+.log-timeline button[aria-selected=true]::after{background:#165DFF;box-shadow:0 0 0 3px #D7E5FF}
+.log-timeline button[aria-selected=true]::before{content:"当前查看";position:absolute;right:10px;top:48px;font-size:9px;font-weight:500;letter-spacing:.02em;color:#165DFF}
+html[lang=en] .log-timeline button[aria-selected=true]::before{content:"VIEWING"}
+.log-timeline button[aria-selected=true] span{color:#1D2129;font-weight:600}
+@media(max-width:1100px){.log-timeline button{flex-basis:158px}}
+/* Refined rail: a clean timeline with a decisive, compact selected state. */
+.log-timeline{gap:0;padding:6px 0 12px;margin-bottom:24px}
+.log-timeline::before{display:block;left:14px;right:14px;top:52px;height:1px;background:#DFE5EE}
+.log-timeline button{border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;min-height:118px;padding:10px 14px 18px;font-size:16px;font-weight:600;color:#1D2129;position:relative}
+.log-timeline button span{font-size:12px;line-height:1.6;font-weight:400;color:#86909C;margin-top:32px;min-height:22px}
+.log-timeline button::after{top:42px;left:14px;width:9px;height:9px;border:3px solid #fff;background:#C9D2DF;box-shadow:none}
+.log-timeline button::before{content:"";position:absolute;bottom:1px;left:14px;right:28px;height:3px;border-radius:3px;background:transparent}
+.log-timeline button:hover{background:transparent!important;border:0!important;box-shadow:none;color:#165DFF}
+.log-timeline button:hover span{color:#4E5969}
+.log-timeline button[aria-selected=true]{border:0!important;background:transparent!important;box-shadow:none!important;color:#165DFF}
+.log-timeline button[aria-selected=true]::after{background:#165DFF;border-color:#fff;box-shadow:0 0 0 5px #E8F0FF}
+.log-timeline button[aria-selected=true]::before,html[lang=en] .log-timeline button[aria-selected=true]::before{content:"";position:absolute;top:auto;bottom:1px;left:14px;right:28px;height:3px;border-radius:3px;background:#165DFF}
+.log-timeline button[aria-selected=true] span{color:#165DFF;font-weight:500}
+@media(max-width:1100px){.log-timeline::before{width:1080px;right:auto}.log-timeline button{flex-basis:158px}}
+/* Selected marker above the date, with evenly spaced timeline labels. */
+.log-timeline{padding-top:12px}
+.log-timeline button{padding-top:18px;padding-bottom:16px;min-height:124px}
+.log-timeline::before{top:65px}
+.log-timeline button::after{top:46px}
+.log-timeline button span{margin-top:32px}
+.log-timeline button::before,.log-timeline button[aria-selected=true]::before,html[lang=en] .log-timeline button[aria-selected=true]::before{top:0;bottom:auto;left:14px;right:28px;height:3px}
+.log-timeline button span{margin-top:25px}
+/* Spacious date/node/label rhythm; selection sits on the section divider. */
+.page-meta #metaStatus,.page-meta #metaStatus b{color:#00B42A}
+.page-meta #metaStatus .status-dot{background:#00B42A;box-shadow:0 0 0 5px #00b42a12}
+.log-in{position:relative}
+.log-timeline{padding-top:0;margin-top:-25px;padding-bottom:16px}
+.log-timeline button{padding-top:34px;padding-bottom:20px;min-height:156px}
+.log-timeline button::after{top:76px;width:9px;height:9px}
+.log-timeline::before{top:83px}
+.log-timeline button span{margin-top:52px}
+.log-timeline button::before,.log-timeline button[aria-selected=true]::before,html[lang=en] .log-timeline button[aria-selected=true]::before{top:0;bottom:auto;height:3px}
+@media(max-width:700px){.log-timeline{margin-top:-17px}}
+.log-timeline button::before,.log-timeline button[aria-selected=true]::before,html[lang=en] .log-timeline button[aria-selected=true]::before{height:3px;border-radius:0}
+/* Constrain the heading divider to the shared 1440px content boundaries. */
+body .page-head{border-bottom:0;position:relative}
+body .page-head::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:calc(100% - var(--racore-content-gutter)*2);max-width:1440px;height:1px;background:#E5E6EB;pointer-events:none}
+/* Small status marker before the update label. */
+.log-pill.update{display:inline-flex;align-items:center;gap:6px}
+.log-pill.update::before{content:"";width:5px;height:5px;flex:none;border-radius:50%;background:currentColor}
+/* Shared semantic palette throughout the changelog. */
+:root{--brand:#165DFF;--brand-ghost:#E8F3FF;--live:#00B42A;--ink:#1D2129;--ink-2:#4E5969;--ink-3:#86909C}
+.page-head .kicker{color:#165DFF;background:#E8F3FF}
+.log-link,.log-body code{color:#165DFF}
+.log-link:hover,.log-link:focus-visible{color:#4080FF}
+.log-link:active{color:#0E42D2}
+.log-body li::marker{color:#165DFF}
+.log-pill.update{color:#165DFF;background:#E8F3FF}
+.log-pill.launch{color:#00B42A;background:#E8FFEA;box-shadow:none}
+.log-pill.soon{color:#FF7D00;background:#FFF7E8;border:0}
+.log-date{flex-wrap:wrap;gap:12px;margin-bottom:14px}
+.log-date .log-pill{font-family:var(--racore-ui-font);font-size:12px;font-weight:500;letter-spacing:0;line-height:1.5}
+.log-title{display:block}
+/* Consistent static markers for every release category. */
+.log-date .log-pill{display:inline-flex;align-items:center;gap:6px}
+.log-date .log-pill::before{content:"";display:block;width:5px;height:5px;flex:0 0 5px;border-radius:50%;background:currentColor}
+.log-date .log-pill .status-dot{display:none}
+/* Give the live marker room before its label. */
+.page-meta #metaStatus .status-dot{margin-right:12px}
+/* Scan long release notes by category without repeating prefixes. */
+.log-detail-group{margin-top:24px}
+.log-detail-group h4{display:flex;align-items:center;gap:8px;margin-bottom:10px;font:600 16px/1.5 "PingFang SC",Inter,"Microsoft YaHei",Arial,sans-serif;color:#1D2129}
+.log-detail-group h4 span{font-size:12px;font-weight:400;color:#86909C}
+.log-detail-group ul{margin-top:0}
+.timeline-swipe-hint{display:none}
+@media(max-width:1100px){.timeline-swipe-hint{display:block;font-size:12px;color:#86909C;margin:0 0 12px}.log-timeline{margin-top:0}}
+/* Product/version leads; date supports chronological scanning. */
+.log-timeline button{font-weight:400;color:#86909C}
+.log-timeline button span{font-weight:600;color:#1D2129}
+.log-timeline button:hover{color:#165DFF}
+.log-timeline button:hover span{color:#165DFF}
+.log-timeline button[aria-selected=true]{font-weight:400;color:#165DFF}
+.log-timeline button[aria-selected=true] span{font-weight:600;color:#165DFF}
+/* Let the page title lead without a repeated English eyebrow. */
+body .page-head-in{padding-top:60px}
+@media(max-width:700px){body .page-head-in{padding-top:40px}}
+/* Product first, date second: one typeface and explicit text hierarchy. */
+.log-timeline button{font-family:var(--racore-ui-font);font-size:14px;font-weight:400;line-height:1.5}
+.log-timeline button .timeline-product{display:block;margin-top:0;min-height:21px;font:600 14px/1.5 "PingFang SC","苹方",Inter,"Microsoft YaHei",Arial,sans-serif;color:#1D2129;white-space:nowrap}
+.log-timeline button .timeline-date{display:block;margin-top:52px;font:400 12px/1.5 "PingFang SC","苹方",Inter,"Microsoft YaHei",Arial,sans-serif;color:#86909C;white-space:nowrap}
+.log-timeline button:hover .timeline-product,.log-timeline button[aria-selected=true] .timeline-product,.log-timeline button[aria-selected=true] .timeline-date{color:#165DFF}
+/* Match the changelog heading and prose to the release page UI face. */
+body .page-head :is(h1,.page-sub){font-family:var(--sans)!important}
+body .log-body :is(p,li,strong),body .log-title{font-family:var(--sans)}
+/* Release summaries: short lead line, then comfortable reading paragraphs. */
+body #logList .log-title{margin-bottom:22px;line-height:1.45}
+body #logList .log-body p,body #logList .log-body li{font-family:var(--sans);font-size:15px;line-height:1.85;color:#4E5969}
+body #logList .log-body p{max-width:64em;margin-bottom:20px}
+body #logList .log-body .log-lead{display:block;margin-bottom:8px;color:#1D2129;font-size:15px;line-height:1.7;font-weight:600}
+body #logList .log-detail-group{margin-top:28px}
+body #logList .log-detail-group h4{margin-bottom:12px}
+body #logList .log-body li{margin-bottom:8px}
+@media(max-width:700px){body #logList .log-title{margin-bottom:18px}body #logList .log-body p{margin-bottom:18px}}
+/* Consecutive prose reads continuously; section leads still have breathing room. */
+body #logList .log-body p{margin-bottom:0}
+body #logList .log-body p+p{margin-top:0}
+body #logList .log-body p+p:has(>.log-lead){margin-top:20px}
+body #logList .log-body .log-link{margin-top:20px}
+@media(max-width:700px){body #logList .log-body p{margin-bottom:0}body #logList .log-body p+p:has(>.log-lead){margin-top:18px}}
+/* Date metadata uses the same UI family as the surrounding copy, not monospace. */
+body #logList .log-date,body #logList .log-date span{font-family:var(--sans)!important}
+body .page-meta,body .page-meta :is(span,b){font-family:var(--sans)!important}
+/* Balanced reading rhythm: small paragraph gaps, larger category breaks. */
+body #logList .log-body p{margin-bottom:0}
+body #logList .log-body p+p{margin-top:8px}
+body #logList .log-body p+p:has(>.log-lead){margin-top:24px}
+body #logList .log-body .log-lead{margin-bottom:8px}
+body #logList .log-detail-group{margin-top:24px}
+body #logList .log-detail-group h4{margin-bottom:8px}
+@media(max-width:700px){body #logList .log-body p+p{margin-top:8px}body #logList .log-body p+p:has(>.log-lead){margin-top:24px}}

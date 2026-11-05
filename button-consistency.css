@@ -1,0 +1,12 @@
+/* Consistent 48px pill actions across the release centre. */
+body :is(.btn,.btn-grad,.btn-ghost,.btn-white,.two-btn,.hp-button,.hp-primary,.hp-featured .hp-button,.hp-featured a.hp-primary){box-sizing:border-box;height:48px;min-height:48px;max-height:48px;border-radius:999px!important;display:inline-flex;align-items:center;justify-content:center;padding-top:0!important;padding-bottom:0!important;line-height:1.4}
+body :is(.btn,.two-btn,.hp-button)::before,body :is(.btn,.two-btn,.hp-button)::after{border-radius:inherit!important}
+body .replacement-home .two-actions .two-btn{height:48px;min-height:48px;max-height:48px;border-radius:999px!important}
+/* Featured release: persistent brand outline and compact blue action. */
+body .replacement-home .hp-featured{border:1px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(125deg,#dd8aff,#7194ff 31%,#02d0e9 64%,#b877ff) border-box!important}
+body .replacement-home .hp-featured .hp-button.hp-primary{height:32px!important;min-height:32px!important;max-height:32px!important;padding:0 18px!important;font-size:13px;font-weight:500;border-radius:999px!important;background:#165DFF!important;color:#fff!important;box-shadow:none!important}
+body .replacement-home .hp-featured .hp-button.hp-primary:hover{background:#4080FF!important}
+body .replacement-home .hp-featured .hp-button.hp-primary:active{background:#0E42D2!important}
+body .replacement-home .hp-featured .hp-button.hp-primary{height:48px!important;min-height:48px!important;max-height:48px!important;padding:0 24px!important;font-size:14px}
+body .replacement-home .hp-featured .hp-button.hp-primary{height:32px!important;min-height:32px!important;max-height:32px!important;padding:0 18px!important;font-size:13px}
+body .replacement-home .hp-featured .hp-button.hp-primary{height:40px!important;min-height:40px!important;max-height:40px!important;padding:0 22px!important;font-size:14px}

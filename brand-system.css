@@ -1,0 +1,51 @@
+/* Product release centre aligned with the Racore corporate site. */
+:root{--racore-ui-font:"PingFang SC","苹方","Microsoft YaHei",Inter,Arial,sans-serif;--racore-brand-gradient:linear-gradient(105deg,#ff592b 0%,#9270a0 27%,#3774f3 52%,#00cdd5 100%);--sans:var(--racore-ui-font);--ink:#1D2129;--ink-2:#4E5969;--ink-3:#86909C}
+html,body{font-family:var(--racore-ui-font);background:#f7f9ff;color:#1D2129}
+body :is(h1,h2,h3,h4,h5,p,a,button,input,textarea,dt,dd,.title,.sec-sub,.claw-navitem,.api-tab,.spec-h){font-family:var(--racore-ui-font)!important}
+body :is(code,pre,.mono,.api-path,.api-code,.console-title,.hp-status-caption,.hp-status-command,.hp-status-body,.claw-srv-tools,.claw-badge){font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important}
+.section{background:#f7f9ff}
+#featured,#billing,#fusioncdn{background:#f7f9ff}
+#featured .release-art,#billing .billing-art{opacity:.22}
+.section .title,#featured .title,#billing .title,#fusioncdn .title{font-size:clamp(30px,3vw,48px);font-weight:600;letter-spacing:-.045em;line-height:1.2;color:#1D2129}
+.section .sec-sub,#featured .sec-sub,#billing .sec-sub,#fusioncdn .sec-sub{font-size:16px;line-height:1.6;color:#4E5969}
+.section .kicker{font-size:11px;font-weight:500;letter-spacing:.12em;color:#86909C}
+.section .ide-feat-ic,#featured .ide-feat-ic,#billing .ide-feat-ic,#fusioncdn .ide-feat-ic{width:56px;height:56px;border-radius:16px;box-shadow:inset 0 0 0 1px #ffffffc0,0 5px 13px #8195cc0e}
+.section .ide-feat-ic svg,#featured .ide-feat-ic svg,#billing .ide-feat-ic svg,#fusioncdn .ide-feat-ic svg{width:28px;height:28px}
+.section .ide-feat h4,#featured .ide-feat h4,#billing .ide-feat h4,#fusioncdn .ide-feat h4{font-size:21px;font-weight:600;line-height:1.25;letter-spacing:-.035em;color:#1D2129;margin:3px 0 10px}
+.section .ide-feat p,#featured .ide-feat p,#billing .ide-feat p,#fusioncdn .ide-feat p{font-size:16px;line-height:1.55;letter-spacing:-.01em;color:#4E5969}
+.section .feat-note,#featured .feat-note,#billing .feat-note,#fusioncdn .feat-note,.replacement-home time,.replacement-home .hp-kicker{color:#86909C}
+#about .ab-card{background:#ffffffa6!important;border:1px solid #ffffffbd;box-shadow:0 5px 13px #8195cc0e;border-radius:18px;padding:24px}
+#about .ab-card h4{font-size:21px;font-weight:600;color:#1D2129}
+#about .ab-card p{font-size:16px;line-height:1.55;color:#4E5969}
+.replacement-home{--ink:#1D2129;--muted:#4E5969;font-family:var(--racore-ui-font)}
+.replacement-home .hp-releases{background:transparent}
+.replacement-home .hp-featured,.replacement-home .hp-recent{background-color:#ffffffb8;box-shadow:0 5px 13px #8195cc0e}
+.replacement-home .hp-update-copy>span,.replacement-home .hp-product p{color:#4E5969}
+.replacement-home .hp-status-intro,.replacement-home .hp-status-list dt{color:#86909C}
+/* Brand actions: a single gradient fill and a thin gradient outline. */
+body :is(.btn-grad,.two-primary,.hp-primary){background:var(--racore-brand-gradient)!important;background-origin:border-box!important;background-clip:border-box!important;background-repeat:no-repeat!important;border-color:transparent!important;box-shadow:none!important;color:#fff!important;isolation:isolate}
+body :is(.btn-grad,.two-primary,.hp-primary)::before{display:none!important}
+body :is(.btn-ghost,.two-secondary){position:relative;isolation:isolate;border:1px solid transparent!important;background:#ffffff4d!important;box-shadow:none!important;color:#139edc!important}
+body :is(.btn-ghost,.two-secondary)::before{content:""!important;display:block!important;position:absolute!important;inset:-1px!important;border-radius:inherit!important;padding:1.25px!important;background:var(--racore-brand-gradient)!important;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0)!important;-webkit-mask-composite:xor!important;mask-composite:exclude!important;pointer-events:none!important;opacity:1!important;transform:none!important}
+body :is(.btn-ghost,.two-secondary)>span:not(.arrow):not([aria-hidden]){background:var(--racore-brand-gradient)!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important}
+body :is(.btn-ghost,.two-secondary) :is(.arrow,b){color:#139edc!important;-webkit-text-fill-color:#139edc!important}
+body :is(.btn-grad,.btn-ghost,.two-btn){min-height:48px;font-size:14px;font-weight:500}
+/* Table header and rows use identical column widths and right edges. */
+#fusioncdn #cdnDash .cdn-reqs-h{display:grid;grid-template-columns:8px minmax(0,1fr) 45px 44px;grid-template-rows:auto auto;gap:5px 9px;padding:13px 10px;align-items:center}
+#fusioncdn #cdnDash .cdn-reqs-h>b{grid-column:1/3;grid-row:1}
+#fusioncdn #cdnDash .cdn-reqs-h>span:not(.cdn-reqs-c){grid-column:1/3;grid-row:2;font-size:8px;color:#86909C}
+#fusioncdn #cdnDash .cdn-reqs-c{display:contents}
+#fusioncdn #cdnDash .cdn-reqs-c>i{font-size:9px;font-style:normal;text-align:right;justify-self:stretch;grid-row:1/3;white-space:nowrap;color:#86909C}
+#fusioncdn #cdnDash .cdn-reqs-c>i:first-child{grid-column:3}
+#fusioncdn #cdnDash .cdn-reqs-c>i:last-child{grid-column:4}
+#fusioncdn #cdnDash .cdn-row-r{grid-template-columns:8px minmax(0,1fr) 45px 44px;column-gap:9px;padding-left:10px;padding-right:10px}
+#fusioncdn #cdnDash .cdn-row-r .rl,#fusioncdn #cdnDash .cdn-row-r .rh{text-align:right;justify-self:stretch;font-variant-numeric:tabular-nums;font-feature-settings:"tnum";white-space:nowrap}
+#fusioncdn #cdnDash .cdn-row-r .rv{color:#86909C}
+@media(max-width:1100px){.section .title,#featured .title,#billing .title,#fusioncdn .title{font-size:34px}.section .ide-feat h4,#featured .ide-feat h4,#billing .ide-feat h4,#fusioncdn .ide-feat h4{font-size:18px}.section .ide-feat p,#featured .ide-feat p,#billing .ide-feat p,#fusioncdn .ide-feat p{font-size:14px}}
+@media(max-width:600px){.section .title,#featured .title,#billing .title,#fusioncdn .title{font-size:30px}.section .sec-sub,#featured .sec-sub,#billing .sec-sub,#fusioncdn .sec-sub{font-size:14px}.section .ide-feat-ic,#featured .ide-feat-ic,#billing .ide-feat-ic,#fusioncdn .ide-feat-ic{width:48px;height:48px;border-radius:14px}.section .ide-feat-ic svg,#featured .ide-feat-ic svg,#billing .ide-feat-ic svg,#fusioncdn .ide-feat-ic svg{width:25px;height:25px}}
+#fusioncdn #cdnDash .cdn-reqs-c>i{width:auto;min-width:0;max-width:none}
+/* Remove decorative action arrows; emphasize the launch headline. */
+body .arrow,body .hp-chevron,body .lc-event-arrow,body .lc-view>b,body .lc-all>b,.replacement-home .two-actions .two-btn>b,.replacement-home .hp-button>span[aria-hidden],.replacement-home .hp-link>span[aria-hidden]{display:none!important}
+.replacement-home .hp-hero h1,.replacement-home .hp-hero h1 span,.replacement-home .hp-hero h1 em{font-weight:700!important}
+/* Use the same UI face as the section summary in version-detail text. */
+body #cdnVer .cdn-row,body #cdnVer .cdn-row *,body #cdnVer p.mono{font-family:var(--racore-ui-font)!important}

@@ -1,0 +1,185 @@
+/* Final shared UI tokens. Product demos retain code/terminal typography. */
+:root{--racore-ui-font:"PingFang SC","苹方","Microsoft YaHei",Inter,Arial,sans-serif;--sans:var(--racore-ui-font);--racore-blue:#165DFF;--racore-blue-bg:#E8F3FF;--racore-green:#00B42A;--racore-green-bg:#E8FFEA;--racore-orange:#FF7D00;--racore-orange-bg:#FFF7E8;--brand:#165DFF;--brand-ghost:#E8F3FF;--live:#00B42A;--ink:#1D2129;--ink-2:#4E5969;--ink-3:#86909C}
+body{font-family:var(--racore-ui-font)}
+body :is(h1,h2,h3,h4,h5,p,label,button,input,select,textarea,dt,dd,th,td){font-family:var(--racore-ui-font)}
+body :is(.bar,.foot-in,.log-date,.page-meta,.log-title,.log-pill,.cdn-chip,.release-channel-status,.navcnt,.pill,.st,.claw-side-h){font-family:var(--racore-ui-font)!important}
+body .claw-panehead p.mono,body .spec-h{font-family:var(--racore-ui-font)!important}
+/* Equivalent status/version labels use the same semantic colors. */
+body .replacement-home .hp-product-title .hp-version{color:var(--racore-blue);background:var(--racore-blue-bg)}
+body :is(#cdnVer,#cdnDash) .cdn-chip{color:var(--racore-blue);background:var(--racore-blue-bg)}
+body :is(#cdnVer,#cdnDash) :is(.cdn-chip.ok,.release-channel-status,.pill-ok,.st.ok){color:var(--racore-green);background:var(--racore-green-bg)}
+body :is(#cdnVer,#cdnDash) :is(.release-channel-status.is-new,.pill-new,.st.warn){color:var(--racore-orange);background:var(--racore-orange-bg)}
+body #featured #cdnVer .release-channel-status{box-sizing:border-box;height:24px;display:inline-flex;align-items:center;padding:0 10px;line-height:1;font-size:11px}
+body .page-head h1.title{font-weight:700}
+body .log-link{font-weight:500}
+/* Keep metadata and captions quiet and consistent. */
+body .feat-note,body .footer-intro{color:var(--ink-3)}
+body .footer-contacts small{color:var(--ink-3)}
+body .footer-contacts a:hover small{color:var(--racore-blue)}
+body .log-body code{font-size:13px;line-height:inherit;overflow-wrap:anywhere}
+body :is(a,button,input,textarea,select):focus-visible{outline:2px solid var(--racore-blue);outline-offset:3px}
+body .product-feedback :is(input,textarea){font-size:14px;line-height:1.6}
+body .product-feedback ::placeholder{color:var(--ink-3)}
+body .page-sub{font-size:16px;line-height:1.8}
+body .log-date,body .page-meta{font-size:13px}
+/* Match the hero terminal caret to the compact console caret. */
+body .replacement-home .hp-status-command>i{width:5px!important;min-width:5px;height:12px;margin-left:6px;vertical-align:-2px}
+/* Provider chips share the filled version-chip treatment. */
+body #fusioncdn #cdnDash .claw-titlebar .cdn-chip{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;height:24px;min-height:24px;padding:0 10px;border:0;border-radius:999px;color:#165DFF;background:#E8F3FF;font:500 12px/1 var(--racore-ui-font)}
+body #clawApp .claw-wright{font-family:var(--racore-ui-font);font-size:11px;font-weight:400;line-height:1.5;color:#86909C}
+/* Form fields own their focus treatment; avoid a second global outline. */
+body #next-release .product-feedback :is(input,textarea){outline:none;caret-color:#165DFF;transition:border-color .18s,box-shadow .18s}
+body #next-release .product-feedback textarea{resize:none}
+body #next-release .product-feedback :is(input,textarea):focus,body #next-release .product-feedback :is(input,textarea):focus-visible{outline:none;outline-offset:0;border-color:#165DFF;box-shadow:0 0 0 3px #165DFF14}
+body #next-release .feedback-select-button:focus-visible{outline:none;border-color:#165DFF;box-shadow:0 0 0 3px #165DFF14}
+/* Dropdown options use primary text; interactive states retain brand blue. */
+body #next-release .feedback-options button{color:#1D2129}
+body #next-release .feedback-options button:hover,body #next-release .feedback-options button:focus-visible,body #next-release .feedback-options button[aria-selected=true]{color:#165DFF}
+/* Billing tabs: quiet filled selection, no outline stroke. */
+body #billing #apiWin .api-tab{border-color:transparent;box-shadow:none}
+body #billing #apiWin .api-tab.on,body #billing #apiWin .api-tab[aria-selected=true]{color:#165DFF;background:#E8F3FF;border-color:transparent;box-shadow:none}
+body #billing #apiWin .api-tab:hover{color:#165DFF;background:#E8F3FF;border-color:transparent}
+/* UI fonts are shared; code, paths and terminal content retain their own mono rules. */
+body :is(a,button,input,select,textarea,label,h1,h2,h3,h4,h5){font-family:var(--racore-ui-font)!important}
+body .log-link .arrow,body .hp-section-heading .hp-link>span[aria-hidden]{display:none!important}
+body .log-link,body .hp-section-heading .hp-link{display:inline-flex;align-items:center;gap:7px;color:#165DFF;transition:color .18s}
+body .log-link .ui-link-arrow,body .hp-section-heading .hp-link .ui-link-arrow{display:block;width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:transform .18s}
+body .log-link:hover,body .hp-section-heading .hp-link:hover{color:#4080FF}
+body .log-link:hover .ui-link-arrow,body .hp-section-heading .hp-link:hover .ui-link-arrow{transform:translateX(3px)}
+body .page-sub{max-width:none}
+@media(min-width:1101px){body .page-sub{white-space:nowrap}}
+body #next-release .feedback-message-label{overflow:hidden;border-radius:18px;min-width:0;position:relative;background:#fff}
+body #next-release .product-feedback textarea{border-radius:18px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#C9CDD4 transparent;padding-bottom:24px}
+body #next-release .product-feedback textarea::-webkit-scrollbar{width:6px}
+body #next-release .product-feedback textarea::-webkit-scrollbar-track{background:transparent;margin:12px 0}
+body #next-release .product-feedback textarea::-webkit-scrollbar-thumb{background:#C9CDD4;border-radius:999px;border:1px solid #fff}
+body #next-release .product-feedback textarea::-webkit-scrollbar-button{display:none;width:0;height:0}
+body #next-release .feedback-count{position:absolute;right:16px;bottom:5px;font:11px/1.4 var(--racore-ui-font);color:#86909C;pointer-events:none;background:#fff;padding-left:4px}
+body #next-release .feedback-message-label:focus-within{box-shadow:0 0 0 3px #165DFF14}
+body #next-release .feedback-message-label textarea:focus,body #next-release .feedback-message-label textarea:focus-visible{box-shadow:none}
+@media(prefers-reduced-motion:reduce){body .ui-link-arrow{transition:none!important}}
+/* Interface captions and metadata are UI text, including inside demo panes. */
+body :is(.api-note,.cmd-out,.claw-gw,.claw-gw span,.claw-row .rt,.cdn-chan-card .cm,.cdn-specs,.cdn-specs *,.release-overview-meta,.release-overview-meta *,.spec-row .m){font-family:var(--racore-ui-font)!important}
+body :is(#cdnVer,#cdnDash) .cdn-row,body :is(#cdnVer,#cdnDash) .cdn-row *{font-family:var(--racore-ui-font)!important}
+/* Billing chrome follows the release-console caption and version chips. */
+body #billing #apiWin .console-bar{background:#F7F8FA}
+body #billing #apiWin .console-title{display:inline-flex;align-items:center;min-width:0;max-width:calc(100% - 78px);padding:4px 9px;border:1px solid #DFE8F7;border-radius:999px;background:#fff;color:#4E5969;font-size:10px;font-weight:400;line-height:1.4;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body #billing #apiWin .api-m{height:24px;box-sizing:border-box;padding:0 10px;border:0!important;border-radius:999px;background:#E8F3FF!important;color:#165DFF!important;font-size:12px;font-weight:500;line-height:24px;letter-spacing:0;box-shadow:none}
+@media(max-width:600px){body #billing #apiWin .console-title{font-size:8px;padding:3px 7px}body #billing #apiWin .api-m{font-size:10px;padding:0 8px}}
+/* Keep the brand gradient fitted to the label in expanded navigation. */
+body .bar .nav a:is(.on,[aria-current],:hover,:focus-visible){background-image:linear-gradient(105deg,#FF592B 0%,#9270A0 27%,#3774F3 52%,#00CDD5 100%);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+@media(max-width:1100px){body .bar:has(.menu-toggle[aria-expanded=true]) .nav a{align-self:flex-start;width:fit-content;max-width:100%}}
+/* Singapore hub routes remain visible before the demo command is clicked. */
+body #fusioncdn #cdnDash .cdn-map .cdn-arc{fill:none;stroke:#165DFF;stroke-width:1.6;stroke-dasharray:none;opacity:.42;animation:none}
+body #fusioncdn #cdnDash .cdn-map .cdn-route-flow{fill:none;stroke:#00B8D9;stroke-width:2.4;stroke-linecap:round;stroke-dasharray:8 42;opacity:.9;animation:cdn-route-outbound 3s linear infinite}
+body #fusioncdn #cdnDash .cdn-map .cdn-route-flow:nth-child(2n){animation-delay:-1s}
+body #fusioncdn #cdnDash .cdn-map .cdn-route-flow:nth-child(3n){animation-delay:-2s}
+@keyframes cdn-route-outbound{from{stroke-dashoffset:50}to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){body #fusioncdn #cdnDash .cdn-map .cdn-route-flow{animation:none;stroke-dasharray:none;opacity:.2}}
+/* Map geometry and HTML labels share one aspect ratio on every screen. */
+body #fusioncdn #cdnDash .cdn-map{position:relative;flex:0 0 auto;width:100%;height:auto;min-height:0!important;aspect-ratio:1000 / 388;margin-block:auto}
+body #fusioncdn #cdnDash .cdn-map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+body #fusioncdn #cdnDash .cdn-mapbox{gap:12px;padding:16px;background:linear-gradient(135deg,#F7FBFF,#EAF5FF);min-height:0}
+body #fusioncdn #cdnDash .cdn-maph{flex-wrap:wrap;justify-content:space-between;row-gap:8px;margin:0;padding:0}
+body #fusioncdn #cdnDash .cdn-maph .cdn-legend{margin-left:auto}
+body #fusioncdn #cdnDash .cdn-dots{stroke:#9BC3EF;stroke-width:3;opacity:.76}
+body #fusioncdn #cdnDash .cdn-map .cdn-arc{stroke:url(#cdnNetworkRoute);stroke-width:1.5;opacity:.65;stroke-dasharray:none}
+body #fusioncdn #cdnDash .cdn-map .cdn-route-flow{stroke:#56B5E4;stroke-width:2;stroke-dasharray:5 85;opacity:.65;animation-duration:5s}
+body #fusioncdn #cdnDash .cdn-map .cdn-node{filter:drop-shadow(0 0 5px #429AFF70)}
+body #fusioncdn #cdnDash .cdn-map .cdn-hub-ring{fill:#165DFF16;stroke:#FFFFFFB3;stroke-width:1}
+body #fusioncdn #cdnDash .cdn-map .cdn-hub{fill:#165DFF;stroke:#fff;stroke-width:3;filter:drop-shadow(0 0 5px #165DFF88)}
+body #fusioncdn #cdnDash .cdn-lab{font-family:var(--racore-ui-font)!important;font-size:10px;color:#4E5969;transform:translate(-50%,-160%)}
+body #fusioncdn #cdnDash .cdn-lab.left{transform:translate(-60%,-170%)}
+body #fusioncdn #cdnDash .cdn-lab.right{transform:translate(-30%,50%)}
+body #fusioncdn #cdnDash .cdn-lab.pill{display:inline-flex;align-items:center;gap:6px;transform:translate(-50%,45%);background:linear-gradient(100deg,#727CE6,#248DF2 52%,#24C4D8);padding:6px 10px;color:#fff;font-size:11px;letter-spacing:.03em;box-shadow:0 4px 12px #165DFF30;border:1px solid #FFFFFF80}
+body #fusioncdn #cdnDash .cdn-lab.pill::before{content:"";width:8px;height:8px;flex:none;background:#FFF3A5;border-radius:50%;box-shadow:0 0 0 4px #FFFFFF25,0 0 10px #FFF3A599}
+@media(max-width:600px){body #fusioncdn #cdnDash .cdn-mapbox{padding:12px;gap:14px}body #fusioncdn #cdnDash .cdn-map{margin-block:10px 26px}body #fusioncdn #cdnDash .cdn-maph b{font-size:11px}body #fusioncdn #cdnDash .cdn-lab{font-size:9px}body #fusioncdn #cdnDash .cdn-lab.pill{font-size:10px;padding:5px 8px;gap:5px}body #fusioncdn #cdnDash .cdn-map .cdn-arc{stroke-width:2}body #fusioncdn #cdnDash .cdn-map .cdn-route-flow{stroke-width:2.5}}
+/* Larger location markers and soft halos emphasize the global network hubs. */
+body #fusioncdn #cdnDash .cdn-location-halo{fill:#165DFF12;stroke:#165DFF35;stroke-width:1.2;transform-box:fill-box;transform-origin:center;animation:cdn-location-pulse 3s ease-out infinite;pointer-events:none}
+body #fusioncdn #cdnDash .cdn-map .cdn-node{stroke:#fff;stroke-width:2;filter:drop-shadow(0 0 6px #165DFF80)}
+body #fusioncdn #cdnDash .cdn-map .cdn-hub{stroke-width:3;filter:drop-shadow(0 0 8px #165DFF99)}
+@keyframes cdn-location-pulse{0%,100%{transform:scale(.85);opacity:.8}75%{transform:scale(1.6);opacity:0}}
+@media(prefers-reduced-motion:reduce){body #fusioncdn #cdnDash .cdn-location-halo{animation:none;opacity:.7}}
+/* Matching full-width command footers; feedback aligns with the dollar prompt. */
+body #featured #cdnVer{--cdn-command-left:calc(23.3% + 24px)}
+body #fusioncdn #cdnDash{--cdn-command-left:calc(18% + 22px)}
+body #featured #cdnVer>#cdn2Cmd,body #fusioncdn #cdnDash>#fusCmd{display:flex;align-items:center;gap:9px;box-sizing:border-box;width:100%;height:auto;min-height:44px;margin:0;padding:10px 20px 10px var(--cdn-command-left);border:0;border-top:1px solid #E7EDF6;border-radius:0;background:#F7F9FF;font-size:10px;line-height:1.6;white-space:normal;overflow-wrap:anywhere}
+body #featured #cdnVer>#cdn2Out,body #fusioncdn #cdnDash>#fusOut{box-sizing:border-box;padding-left:var(--cdn-command-left);padding-right:20px;text-align:left;font-size:11px;line-height:1.7}
+body #featured #cdnVer>#cdn2Out.show,body #fusioncdn #cdnDash>#fusOut.show{padding-top:8px;padding-bottom:10px;max-height:120px}
+@media(max-width:900px){body #fusioncdn #cdnDash{--cdn-command-left:16px}}
+@media(max-width:700px){body #featured #cdnVer{--cdn-command-left:14px}}
+body #featured #cdnVer>#cdn2Out,body #fusioncdn #cdnDash>#fusOut{color:#00B42A!important}
+body #billing .billing-changelog{background:#ffffff4d!important;background-clip:padding-box!important}
+body #billing .billing-changelog span:not(.arrow){background:linear-gradient(105deg,#FF592B,#3774F3 52%,#00CDD5);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+
+/* Fusion CDN uses the same Racore brand asset as the site header. */
+body .replacement-home .hp-product-icon.hp-brand-icon{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#EEE1FC 0%,#E3EBFF 48%,#CFF0F8 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.8);padding:12px;overflow:hidden}
+body .replacement-home .hp-brand-icon img{display:block;width:100%;height:auto;max-width:114px;max-height:100%;object-fit:contain}
+
+/* Console detail audit: readable lists and shared semantic colors. */
+body #featured #cdnVer .cdn-row-t{font-family:var(--racore-ui-font)!important;font-size:14px;line-height:1.8;gap:12px;padding:13px 0;align-items:flex-start;color:#4E5969;border-bottom-color:#E7EDF6}
+body #featured #cdnVer .cdn-row-t .tx{font-family:var(--racore-ui-font)!important;overflow-wrap:anywhere}
+body #featured #cdnVer .cdn-row-t .tg{font-family:var(--racore-ui-font)!important;font-size:11px;font-weight:500;line-height:24px;min-height:24px;padding:0 8px;margin-top:1px;border-radius:6px}
+body #featured #cdnVer .tg-new{color:#165DFF;background:#E8F3FF}
+body #featured #cdnVer .tg-opt{color:#722ED1;background:#F5E8FF}
+body #featured #cdnVer .tg-fix{color:#F5319D;background:#FFE8F1}
+body #featured #cdnVer .claw-panehead{margin-bottom:24px}
+body #featured #cdnVer .claw-panehead h3{color:#1D2129;letter-spacing:0}
+body #featured #cdnVer .claw-panehead p{font-family:var(--racore-ui-font)!important;font-size:13px;line-height:1.7;color:#86909C;margin-top:8px}
+body :is(#cdnVer,#cdnDash) .cdn-row{padding:13px 0;gap:16px;font-size:13px;line-height:1.75;border-bottom-color:#E7EDF6}
+body :is(#cdnVer,#cdnDash) .cdn-row b{color:#1D2129;font-weight:500}
+body :is(#cdnVer,#cdnDash) .cdn-row .m{color:#4E5969;font-size:13px}
+body :is(#cdnVer,#cdnDash) .pill-ok,body :is(#cdnVer,#cdnDash) .cdn-chip.ok{color:#00B42A;background:#E8FFEA}
+body :is(#cdnVer,#cdnDash) .pill-new{color:#FF7D00;background:#FFF3E8}
+body :is(#cdnVer,#cdnDash) .claw-navitem:hover:not(.on){color:#165DFF;background:#F2F7FF}
+@media(max-width:700px){body #featured #cdnVer .cdn-row-t{font-size:13px;line-height:1.8;padding:11px 0;gap:9px}body #featured #cdnVer .cdn-row-t .tg{font-size:10px;line-height:22px;min-height:22px;padding-inline:6px}body #featured #cdnVer .claw-panehead{margin-bottom:18px}body #featured #cdnVer .claw-panehead p{font-size:12px}body :is(#cdnVer,#cdnDash) .cdn-row{font-size:12px;gap:12px;padding:11px 0}body :is(#cdnVer,#cdnDash) .cdn-row .m{font-size:12px}}
+
+/* Supplied static prototype illustration, without its duplicated hero copy. */
+body .replacement-home .hp-prototype-hero{position:relative;background:#f3f8ff!important;min-height:560px;isolation:isolate}body .replacement-home .hp-prototype-hero::before,body .replacement-home .hp-prototype-hero::after{display:none!important}body .replacement-home .hp-prototype-art{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:-1}body .replacement-home .hp-prototype-hero .hp-hero-inner{display:flex;min-height:max(560px,39.1vw);padding-block:60px;align-items:center;pointer-events:none}body .replacement-home .hp-prototype-hero .hp-hero-copy{width:42%;pointer-events:auto}body .replacement-home .hp-prototype-hero h1{font-size:clamp(36px,3.7vw,64px)}@media(max-width:760px){body .replacement-home .hp-prototype-hero .hp-hero-inner{min-height:0;padding-block:42px 470px}body .replacement-home .hp-prototype-hero .hp-hero-copy{width:100%}body .replacement-home .hp-prototype-art{top:auto;bottom:0;height:460px}body .replacement-home .hp-prototype-hero h1{font-size:clamp(32px,7.8vw,54px)}}
+/* Subtle blue tint behind the launch copy without changing the globe. */
+body .replacement-home .hp-prototype-hero::after{content:"";display:block!important;position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 12% 62%,rgba(184,218,255,.24) 0%,rgba(211,233,255,.15) 34%,transparent 61%)}
+body .replacement-home .hp-prototype-hero .hp-hero-inner{position:relative;z-index:1}
+body .replacement-home .hp-prototype-hero .two-actions :is(a,span){font-family:"PingFang SC","苹方","Microsoft YaHei",Inter,Arial,sans-serif!important}
+body .replacement-home .hp-prototype-hero::after{background:radial-gradient(ellipse at 13% 39%,rgba(169,208,253,.32) 0%,rgba(201,226,254,.21) 37%,transparent 65%)}
+/* Match the Racore logo gradient on the launch headline. */
+body .replacement-home .hp-prototype-hero h1 em{background:var(--racore-brand-gradient,linear-gradient(105deg,#FF592B 0%,#9270A0 27%,#3774F3 52%,#00CDD5 100%))!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important;font-weight:800!important;font-style:normal}
+/* Brighter logo-inspired headline gradient. */
+body .replacement-home .hp-prototype-hero h1 em{background-image:linear-gradient(105deg,#FF704D 0%,#AB83BE 27%,#428BFF 53%,#00CFE2 100%)!important}
+/* Vivid brand headline and a soft blue wash across the upper left. */
+body .replacement-home .hp-prototype-hero h1 em{background-image:linear-gradient(105deg,#FF592B 0%,#9568B9 28%,#2878FF 53%,#00C8DB 100%)!important;opacity:1!important}
+body .replacement-home .hp-prototype-hero::after{background:radial-gradient(ellipse at 15% 8%,rgba(166,207,255,.34) 0%,rgba(193,221,255,.22) 31%,transparent 61%),radial-gradient(ellipse at 13% 48%,rgba(183,217,255,.19) 0%,transparent 62%)}
+/* Luminous headline transition and pale logo-color product tile. */
+body .replacement-home .hp-prototype-hero h1 em{background-image:linear-gradient(105deg,#FF6540 0%,#B77CD2 27%,#3985FF 52%,#00CDE0 100%)!important}
+body .replacement-home .hp-product-icon.hp-brand-icon{background:linear-gradient(135deg,#FFE5DF 0%,#E5EAFF 48%,#CEF3F5 100%);box-shadow:inset 0 0 0 1px #FFFFFFB3}
+body .product-feedback .feedback-notice{margin:4px 0 0;padding:0;border-radius:0;font-family:var(--racore-ui-font);font-size:12px;line-height:1.65;color:#165DFF;background:transparent}
+body .product-feedback .feedback-notice[data-state=error]{color:#CB2634;background:transparent}
+body .product-feedback .feedback-notice[hidden]{display:none}
+
+/* Shared interface typography; code retains its monospace face. */
+body :is(li,time,option,legend,caption,small,.feedback-options button,.log-date,.page-meta,.log-pill){font-family:var(--racore-ui-font)!important}
+body .feedback-options button{color:#1D2129}
+body .feedback-options button:is(:hover,[aria-selected="true"]){color:#165DFF}
+
+
+/* Regular weight for the hero action labels. */
+body .replacement-home .hp-prototype-hero .two-actions :is(a,span){font-weight:400!important}
+/* Strengthen the hero headline while retaining the two-line composition. */
+body .replacement-home .hp-prototype-hero h1{font-size:clamp(38px,4.05vw,72px);font-weight:800;line-height:1.22;letter-spacing:-.035em}
+body .replacement-home .hp-prototype-hero h1 em{font-weight:800!important}
+@media(max-width:760px){body .replacement-home .hp-prototype-hero h1{font-size:clamp(32px,8.3vw,58px);line-height:1.25;letter-spacing:-.04em}}
+
+/* Use the shared Racore brand gradient for the headline. */
+body .replacement-home .hp-prototype-hero h1 em{background-image:var(--racore-brand-gradient)!important}
+
+/* Brighter cyan endpoint for the hero headline. */
+body .replacement-home .hp-prototype-hero h1 em{background-image:linear-gradient(105deg,#ff592b 0%,#9270a0 27%,#3774f3 52%,#00e5ed 100%)!important}
+/* Consistent regular weight for action buttons and their labels. */
+body button,body button span,body .btn,body .btn span,body .two-btn,body .two-btn span,body .claw-btn,body .hp-button{font-weight:400!important}
+body .bar .bar-right .btn.btn-ghost,body .bar .bar-right .btn.btn-ghost>span:not(.arrow):not([aria-hidden]),body #next-release .product-feedback .btn-grad{font-weight:400!important}
+
+/* Success feedback uses the same muted gray as supporting copy. */
+body .product-feedback .feedback-notice[data-state=ready]{color:#86909C}
+/* Empty controls stay neutral; missing-field notices turn red on submit. */
+body #next-release .product-feedback ::placeholder{color:#86909C;opacity:1}
+body #next-release .feedback-select-button:not(.has-value){color:#86909C}
+body .product-feedback .feedback-notice[data-state=error]{color:#CB2634}

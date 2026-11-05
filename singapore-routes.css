@@ -1,0 +1,2 @@
+/* Route overlay uses the same source coordinates and scale as the globe bitmap. */
+body .replacement-home .hero-network-routes{position:absolute;left:var(--art-left);top:var(--art-top);width:var(--art-width);height:var(--art-height);max-width:none;z-index:1;pointer-events:none;user-select:none}

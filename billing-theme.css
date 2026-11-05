@@ -1,0 +1,52 @@
+#billing{position:relative;isolation:isolate;overflow:hidden;width:100%;max-width:none;margin:0;padding:65px max(5.2vw,calc((100vw - 1440px)/2)) 64px;background:#f7fbff;box-sizing:border-box;color:#1D2129}
+#billing .billing-art{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse at 14% 52%,#b3e4ff66,transparent 45%),radial-gradient(ellipse at 90% 16%,#bce7ff60,transparent 50%),linear-gradient(180deg,#f7fbff,#f6fbff 72%,#fff)}
+#billing .billing-art i{position:absolute;display:block;border-radius:50%;border:1px solid #ffffffc9;opacity:.7}
+#billing .billing-art i:nth-child(1){width:145%;height:880px;top:-750px;left:-30%;transform:rotate(-9deg);background:linear-gradient(100deg,#ffffffbd,#f5fbff)}
+#billing .billing-art i:nth-child(2){width:160%;height:850px;top:-550px;left:-38%;transform:rotate(12deg);border-bottom:50px solid #d5eeff77}
+#billing .billing-art i:nth-child(3){width:160%;height:920px;top:-250px;left:-34%;transform:rotate(-20deg);border-bottom:70px solid #d9e7ff66}
+#billing .billing-art i:nth-child(4){width:180%;height:850px;top:20px;left:-45%;transform:rotate(-18deg);border-bottom:84px solid #d6efff6b}
+#billing .billing-art i:nth-child(5){width:165%;height:1000px;top:-20px;left:-35%;transform:rotate(-18deg);border-bottom:24px solid #ffffffc2}
+#billing .feat-head{margin-bottom:32px}#billing .sec-sub{color:#4E5969}
+#billing .feat-split{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:3%;align-items:start}
+#billing #apiWin{width:100%;max-width:none;min-width:0;border:1px solid transparent;border-radius:18px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#b782ff,#6296ff 28%,#00c9f1 68%,#aa75ff) border-box;box-shadow:0 16px 35px #4b9bda1b;overflow:hidden}
+#billing #apiWin .console-bar{height:54px;padding:0 24px;gap:8px;border-bottom:1px solid #e2edfb;background:linear-gradient(100deg,#f4f8ff,#eaf4ff)}
+#billing #apiWin .console-bar .dot{width:12px;height:12px;flex-shrink:0}
+#billing #apiWin .console-title{font:14px/1.4 ui-monospace,Consolas,monospace;color:#33416f;letter-spacing:.015em;margin-left:20px}
+#billing #apiWin .console-body{padding:0 22px 14px;background:#fff;color:#1D2129;font-family:var(--racore-ui-font);min-width:0}
+#billing #apiWin .api-tabs{min-height:56px;height:auto;display:flex;align-items:center;gap:12px;padding:8px 0;margin:0 0 0;border-bottom:1px solid #dde9f8;overflow-x:auto;scrollbar-width:thin}
+#billing #apiWin .api-tab{min-height:36px;padding:0 12px;border:1px solid transparent;border-radius:9px;font-size:13px;color:#4E5969;white-space:nowrap;flex-shrink:0;background:none}
+#billing #apiWin .api-tab.on{color:#126cff;background:linear-gradient(110deg,#e8f5ff,#deedff);border-color:#add2ff;box-shadow:0 1px 2px #4079b30b}
+#billing #apiWin .api-tab:hover{color:#165DFF}
+#billing #apiWin .api-pane[hidden]{display:none}
+#billing #apiWin .api-req{min-height:50px;padding:10px 0;display:flex;align-items:center;gap:15px;color:#172350;min-width:0;margin:0;background:none;border:0}
+#billing #apiWin .api-path{font:12px/1.5 ui-monospace,Consolas,monospace;min-width:0;overflow:auto;white-space:nowrap;color:#172350}
+#billing #apiWin .api-m{display:inline-flex;align-items:center;justify-content:center;border-radius:9px;height:34px;padding:0 13px;font:600 12px ui-monospace,Consolas,monospace;flex-shrink:0}
+#billing #apiWin .api-m.get{color:#0098a8;background:#e5fbff;border:1px solid #98eaf5}
+#billing #apiWin .api-m.post{color:#0874ff;background:#eaf3ff;border:1px solid #c5dcff}
+#billing #apiWin .api-m.put{color:#96621c;background:#fff6e6;border:1px solid #ffe1af}
+#billing #apiWin .api-code{box-sizing:border-box;margin:0;padding:16px 20px;width:100%;height:auto;min-height:0;max-height:none;overflow:auto;border:1px solid #d9e8ff;border-radius:10px;background:linear-gradient(105deg,#f5f9ff,#f3f8ff);font:12px/1.4 ui-monospace,Consolas,monospace;color:#354470;white-space:pre;tab-size:2;scrollbar-width:thin;scrollbar-color:#b9cbe3 transparent}
+#billing #apiWin .api-code::-webkit-scrollbar{width:8px;height:8px}#billing #apiWin .api-code::-webkit-scrollbar-thumb{background:#b9cbe3;border-radius:20px}#billing #apiWin .api-code::-webkit-scrollbar-track{background:transparent}
+#billing #apiWin .billing-json-key{color:#0874ff}#billing #apiWin .billing-json-string{color:#fa5948}#billing #apiWin .billing-json-number{color:#008f91}#billing #apiWin .billing-json-literal{color:#9a52be}
+#billing #apiWin .api-note{font:12px/1.7 Inter,"Microsoft YaHei",sans-serif;color:#66799f;margin:0;padding:12px 3px 0}
+#billing .feat-copy{padding-top:8px;min-width:0}#billing .ide-feats{display:flex;flex-direction:column;gap:23px}#billing .ide-feat{display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px;padding:0;background:transparent;border:0;box-shadow:none}
+#billing .ide-feat-ic{width:52px;height:52px;border-radius:15px;background:#eaf4ff;color:#1475ff}#billing .ide-feat-ic svg{width:27px;height:27px}
+#billing .ide-feat:nth-child(2) .ide-feat-ic{background:#efe8ff;color:#853dff}#billing .ide-feat:nth-child(3) .ide-feat-ic{background:#fff0f0;color:#ff405e}
+#billing .ide-feat h4{font-size:18px;font-weight:600;line-height:1.4;color:#1D2129;margin:3px 0 8px}#billing .ide-feat p{font-size:14px;line-height:1.8;color:#4E5969;margin:0}
+#billing .spec{margin-top:25px;padding:0 20px;border:1px solid #dae7fb;border-radius:17px;background:linear-gradient(110deg,#f8fbffe8,#f4f7ffe8);box-shadow:none}
+#billing .spec-h{font-size:16px;color:#4E5969;padding:13px 0 10px}
+#billing .spec-row{display:grid;grid-template-columns:24% minmax(0,1fr);gap:12px;align-items:center;border-top:1px solid #e2ebfa;min-height:36px;padding:7px 0;font-size:12px}
+#billing .spec-row>span{color:#4E5969}#billing .spec-row b{font-size:11px;text-align:left;overflow-wrap:anywhere;color:#1D2129}#billing .spec-row b.m{color:#0e73ff}
+#billing .feat-cta-row{margin-top:24px}
+@media(min-width:1800px){#billing #apiWin .api-code{font-size:14px;line-height:1.4}#billing #apiWin .api-tab{font-size:15px}#billing #apiWin .api-path{font-size:14px}}
+@media(max-width:1100px){#billing .feat-split{grid-template-columns:1fr;gap:32px}#billing .feat-copy{width:100%}#billing #apiWin .api-tabs{gap:10px}#billing .ide-feat{grid-template-columns:52px minmax(0,1fr)}}
+@media(max-width:600px){#billing{padding:35px 4% 38px}#billing #apiWin .console-bar{height:46px;padding:0 15px;gap:5px}#billing #apiWin .console-bar .dot{width:10px;height:10px}#billing #apiWin .console-title{font-size:11px;margin-left:12px}#billing #apiWin .console-body{padding:0 12px 12px}#billing #apiWin .api-tab{min-height:32px;font-size:10px;padding:0 9px}#billing #apiWin .api-tabs{gap:5px}#billing #apiWin .api-code{font-size:10px;line-height:1.55;padding:13px}#billing #apiWin .api-path{font-size:10px}#billing #apiWin .api-m{font-size:10px;height:29px;padding:0 10px}#billing #apiWin .api-note{font-size:10px}#billing .ide-feat h4{font-size:17px}#billing .ide-feat p{font-size:13px}}
+@media(min-width:601px) and (max-width:1799px){#billing #apiWin .api-code{font-size:13px;line-height:1.4}}
+/* All API examples share the measured usage-file window height. */
+#billing #apiWin{height:490px;min-height:490px;max-height:490px;display:flex;flex-direction:column}
+#billing #apiWin .console-bar{flex-shrink:0}
+#billing #apiWin .console-body{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+#billing #apiWin .api-tabs{flex-shrink:0}
+#billing #apiWin .api-pane:not([hidden]){display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+#billing #apiWin .api-req{flex-shrink:0}
+#billing #apiWin .api-code{flex:0 1 auto;min-height:0;max-height:100%;height:auto;overflow:auto;overscroll-behavior:contain}
+#billing #apiWin .api-note{flex-shrink:0;margin-top:auto}
