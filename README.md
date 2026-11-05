@@ -7,6 +7,8 @@ Racore 新产品 / 新能力发布页（中英双语），纯静态站点，无�
 
 ## 当前版本
 
+- **2026-11-05（r2）**：首屏改用整幅 `assets/banner-unified-v2.webp`（无损 WebP，2172×724）背景并预加载；
+  移除废弃的 `assets/launch-prototype/` 首屏原型页与 `banner-unified-v2.png`、`banner-balance.before-redesign.css`。
 - **2026-11-05**：采用徐超林交付的新版 UI（地球首屏 + 玻璃卡片 + 字号重整版），整站重构为「HTML + 分层 CSS/JS 模块」结构。
   旧版（2026-10-23，单文件内联 CSS/JS）保留在 git 历史与标签 `baseline-2026-10-23` 中。
 
@@ -20,10 +22,9 @@ CNAME                       GitHub Pages 自定义域名
 assets/
   racore-logo.webp          品牌字标
   singapore-routes.svg      首屏路由/地球视效
-  banner-unified-v2.png     横幅素材
+  banner-unified-v2.webp    首屏整幅背景（蓝调大气 + 地球 + 平台，2172×724，`<head>` 内已预加载）
   racore-fusioncdn-whitepaper-v1.1.pdf   融合 CDN 白皮书（公示版）
   fonts/inter-400..700.woff2            本地字体（离线可用）
-  launch-prototype/         首屏地球交互原型（index.html + embed.js + styles.css + racore-globe-hd.png）
   mcp-json-import.html      MCP JSON 导入截图页（内嵌展示用）
   archive-alignment.css/js  旧区块对齐补丁
 *.css / *.js                按主题拆分的样式与脚本，由 index.html / changelog.html 按顺序加载
