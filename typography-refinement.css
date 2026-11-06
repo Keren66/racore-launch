@@ -118,3 +118,5 @@ body #cdncli .cli-title-ending{display:block}
  body #cdn-products #cdncli .two-section-head>h2{max-width:none!important;width:100%!important}
 }
 @media(max-width:760px){body #cdncli .cli-title-ending{display:inline}}
+/* Keep the full wordmark legible in the compact product tile. */
+@media(max-width:760px){body .replacement-home .hp-product-icon.hp-brand-icon{box-sizing:border-box;flex-shrink:0;width:80px;min-width:80px;flex-basis:80px;padding:8px}body .replacement-home .hp-product-icon.hp-brand-icon img{width:100%;height:auto;object-fit:contain}}
