@@ -13,7 +13,7 @@
   requestAnimationFrame(()=>{
    const bar=document.querySelector('.bar');
    const headerBottom=Math.max(0,bar?.getBoundingClientRect().bottom||0);
-   const gap=window.matchMedia('(max-width:600px)').matches?16:24;
+   const gap=index===1?(window.matchMedia('(max-width:600px)').matches?28:56):(window.matchMedia('(max-width:600px)').matches?16:24);
    const top=window.scrollY+heads[index].getBoundingClientRect().top-headerBottom-gap;
    window.scrollTo({top:Math.max(0,top),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':behavior});
   });

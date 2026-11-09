@@ -168,3 +168,47 @@ body .replacement-home .hero-singapore::after{display:none!important}
 
 /* Release date shares the status value text color. */
 body .replacement-home .hero-status-card .status-rows dd time{color:inherit}
+
+/* Blend the translated artwork's right boundary into the hero atmosphere. */
+@media(min-width:601px) and (max-width:700px){body .replacement-home .hp-prototype-hero::after{background:linear-gradient(90deg,transparent calc(var(--art-left) + var(--art-width) - 100px),#e1efff calc(var(--art-left) + var(--art-width)))!important}}
+
+
+/* Tablet status card follows the globe center instead of the hero bottom. */
+@media(min-width:601px) and (max-width:1100px){body .replacement-home .hp-prototype-hero .hero-status-card{top:var(--globe-y,50%)!important;bottom:auto!important;transform:translateY(-50%)!important}}
+
+/* Give the compact landscape card a taller, more relaxed surface. */
+@media(min-width:601px) and (max-width:700px){body .replacement-home .hp-prototype-hero .hero-status-card{padding-top:24px;padding-bottom:24px}body .replacement-home .hero-status-card .status-rows>div{padding-top:14px;padding-bottom:14px}body .replacement-home .hero-status-card .featured-release{margin-bottom:18px}}
+@media(min-width:601px) and (max-width:700px){body .replacement-home .hp-prototype-hero .hero-status-card{min-height:160px!important;padding-top:18px!important;padding-bottom:18px!important}body .replacement-home .hero-status-card .status-rows>div{padding-top:12px!important;padding-bottom:12px!important}}
+
+/* Keep the Chinese hero description on one line at small desktop widths. */
+@media(min-width:1000px) and (max-width:1279px){html:not([lang^=en]) body .replacement-home .hp-prototype-hero .hp-hero-copy>p{width:max-content;max-width:none;white-space:nowrap}}
+
+/* Small desktop: widen leftwards while retaining the existing right anchor. */
+@media(min-width:1000px) and (max-width:1100px){body .replacement-home .hp-prototype-hero .hero-status-card{width:260px!important}}
+
+/* Refine the card proportion around the 1560px desktop layout. */
+
+
+/* Medium desktop and wide desktop have separate hero proportions. */
+@media(min-width:1280px) and (max-width:1559px){
+ body .replacement-home .hp-prototype-hero{height:clamp(480px,33.333vw,520px)!important;min-height:0!important;max-height:none!important}
+ body .replacement-home .hp-prototype-hero .hp-hero-inner{height:100%;min-height:0;padding-block:40px;box-sizing:border-box}
+ body .replacement-home .hp-prototype-hero .hero-status-card{width:312px!important;padding:20px;min-height:0;top:50%;transform:translateY(-50%)}
+ body .replacement-home .hero-status-card .terminal-heading{padding-bottom:12px}
+ body .replacement-home .hero-status-card .status-intro{margin-top:14px}
+ body .replacement-home .hero-status-card .featured-release{margin:10px 0 18px}
+ body .replacement-home .hero-status-card .status-rows>div{padding-block:10px}
+ body .replacement-home .hero-status-card .command{margin-top:14px}
+}
+@media(min-width:1560px){
+ body .replacement-home .hp-prototype-hero{height:clamp(520px,33.333vw,620px)!important;min-height:0!important;max-height:none!important}
+ body .replacement-home .hp-prototype-hero .hp-hero-inner{height:100%;min-height:0;padding-block:48px;box-sizing:border-box}
+ body .replacement-home .hp-prototype-hero .hero-status-card{width:328px!important;padding:24px;min-height:0;top:50%;transform:translateY(-50%)}
+}
+
+/* Side-by-side tablet hero: balance the space above and below the card. */
+@media(min-width:701px) and (max-width:999px){body .replacement-home .hp-prototype-hero .hero-status-card{top:50%!important;bottom:auto!important;transform:translateY(-50%)!important}}
+
+/* Balance the 1024 card vertically; refine the medium desktop width. */
+@media(min-width:1000px) and (max-width:1100px){body .replacement-home .hp-prototype-hero .hero-status-card{top:50%!important;bottom:auto!important;transform:translateY(-50%)!important}}
+@media(min-width:1280px) and (max-width:1559px){body .replacement-home .hp-prototype-hero .hero-status-card{width:300px!important}}

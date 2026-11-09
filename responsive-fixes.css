@@ -114,3 +114,12 @@ body #billing #apiWin .api-tab:focus-visible{outline:2px solid #165DFF;outline-o
 /* Full-width billing navigation, with a white active tab. */
 body #billing #apiWin>.api-tabs{width:100%;max-width:100%;box-sizing:border-box;margin:0;flex-shrink:0}
 body #billing #apiWin .api-tab.on:hover{background:#fff!important}
+
+/* Touch controls occupy their own row so the code stays readable. */
+@media(max-width:700px){
+ body #ideApp .ide-ctrl,body #ideApp:hover .ide-ctrl,body #ideApp .ide-ctrl:focus-within{position:static;inset:auto;transform:none;opacity:1;pointer-events:auto;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:12px;width:auto;margin:0;padding:10px;border:0;border-top:1px solid #E7EDF6;border-radius:0;box-shadow:none;background:#F7F9FF}
+ body #ideApp .ide-prog{height:32px;flex:0 0 6px}
+ body #ideApp .ide-speed{flex-direction:row;gap:4px}
+ body #ideApp .ide-speed button{min-width:32px;min-height:32px}
+ body #ideApp .ide-ctrl-btn{width:32px;height:32px;flex-shrink:0}
+}
